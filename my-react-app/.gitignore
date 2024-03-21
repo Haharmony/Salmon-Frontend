@@ -1,0 +1,23 @@
+# Dependencias npm
+/node_modules
+
+# Archivos de construcción
+/build
+/dist
+
+# Archivos de desarrollo locales (por ejemplo, configuraciones de editor)
+/.vscode
+/.idea
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Archivo de entorno local
+.env.local
+
+# Archivos de compilación
+.DS_Store
+Thumbs.db
+
+# Otros archivos y directorios específicos del proyecto que deseas ignorar
