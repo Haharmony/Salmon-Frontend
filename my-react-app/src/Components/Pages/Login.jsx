@@ -15,7 +15,7 @@ export const Login = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail)\.com$/;
 
     const navigateToMenu = () => {
-        window.location.href = "home-page";
+        window.location.href = "PaginaInicio";
     };
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';

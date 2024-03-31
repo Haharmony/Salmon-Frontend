@@ -1,0 +1,40 @@
+.boton-barra-inferior{
+    border: rgb(0, 0, 0);
+    border-radius: 10%;
+    width: 170px;
+    height: 130px;
+    background: transparent;
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: Black;
+    margin: auto;
+    justify-content: space-evenly;
+    transition: background-color 0.3s ease; /* Transición suave */
+    margin-top: 1%;
+}
+
+.boton-barra-inferior:hover{
+    background: rgba(173, 216, 230, 0.445);
+}
+
+.boton-barra-inferior:hover .texto-boton-barra-inferior{
+    text-decoration: underline;
+    color:blue;
+}
+
+.imagen-boton-barra-inferior{
+    width: 40%;
+    height: 40%;
+    /*border-radius: 50%;*/
+    opacity: 0.8;
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.boton-barra-inferior:hover .imagen-boton-barra-inferior{
+    opacity: 1;
+}

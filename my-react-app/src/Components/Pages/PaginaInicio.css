@@ -1,0 +1,9 @@
+.contenedor-pagina{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(173, 216, 230, 0.527);
+    width: 100%;
+    height: 100%;
+}
+

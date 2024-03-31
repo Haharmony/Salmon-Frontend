@@ -1,0 +1,38 @@
+.barra-superior{
+    display: flex;
+    width: 1150px;
+    height: 100px;
+    background-color: transparent;
+}
+
+.barra-superior-contenedor-izquierdo{
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    height: 100%;
+    flex: 1; /* Ocupan el espacio restante */
+    
+}
+
+.barra-superior-contenedor-central{
+    display: flex;
+    justify-content:  center;
+    width: auto;
+    height: 100%;
+    flex: 0; /* Ocupan el espacio restante */
+}
+
+.barra-superior-contenedor-derecho{
+    display: flex;
+    justify-content:  flex-end;
+    width: auto;
+    height: 100%;
+    flex: 1; /* Ocupan el espacio restante */
+}
+.barra-superior-division{
+    border: none; /* Elimina el borde predeterminado */
+    border-right: 4px dotted rgba(0, 0, 255, 0.37); /* Estilo de línea punteada de 2px de ancho y color negro */
+    width: 5px; /* Ancho de la línea, ajusta según tus necesidades */
+    margin: 20px auto; /* Margen superior e inferior de 20px, centrado horizontalmente */
+    margin-right: 10px;
+}

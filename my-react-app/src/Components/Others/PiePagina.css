@@ -1,0 +1,25 @@
+.pie-pagina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1150px;
+    height: auto;
+    margin: 30px;
+    background: white;
+    border-radius: 15px;
+}
+
+.pie-pagina .imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 30px;
+    width: 1120px;
+    height: 250px;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+footer{
+    margin-bottom: 30PX;
+}

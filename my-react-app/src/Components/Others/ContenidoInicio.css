@@ -1,0 +1,27 @@
+.contenido-inicio {
+    display: flex;
+    
+    flex-direction: column;
+    width: 1150px;
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    background: transparent;
+    flex-direction: row;
+    align-content: center;
+    
+    
+  }
+  
+  .contenido-inicio .contenedor-izquierdo {
+    flex: 2; /* Ocupa más espacio */
+    height: auto;    
+    flex-wrap: wrap;
+    margin-right: 20px;
+  }
+
+  .contenido-inicio .contenedor-derecho {
+    flex: 1; /* Ocupa menos espacio */
+    height: auto;
+    justify-content: space-between;
+    margin-left: 20px;
+  }

@@ -1,0 +1,21 @@
+.boton-contenedor-desplegable{
+    background: transparent;
+    min-height: 40px;
+    min-height: 40px;
+    max-width: auto;
+    max-height: auto;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Transición suave */
+    padding: 10px;
+    border: none;
+}
+
+.boton-contenedor-desplegable .imagen{
+    width: 100%;
+    height: 100%;
+}
+
+
+.boton-contenedor-desplegable:hover{
+    background: rgba(0, 0, 255, 0.658);
+}

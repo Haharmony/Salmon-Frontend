@@ -1,0 +1,11 @@
+.contenedor-materias{
+    display: flex;
+    justify-content: first stretch;
+    flex-wrap: wrap;
+    padding: 24px;
+    
+}
+
+.contenedor > .componente {
+    margin-bottom: 20px; /* Espacio entre los componentes */
+  }

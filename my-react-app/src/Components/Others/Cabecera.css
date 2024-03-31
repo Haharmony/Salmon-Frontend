@@ -1,0 +1,19 @@
+.cabecera{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alineación vertical centrada */
+    width: 100%;
+    height: 256px; /* Altura del contenedor (puedes ajustar según sea necesario) */
+    background: white;
+    border-top: darkblue solid;
+    border-bottom: darkblue solid 15px;
+}
+
+.barra-divisoria{
+    height:1px; /* Altura de la línea */
+    width: 100%; /* Ancho de la línea */
+    background: blue;
+    margin: 0 10px;
+    border: none;
+}
+

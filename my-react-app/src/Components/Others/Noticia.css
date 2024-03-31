@@ -1,0 +1,48 @@
+.noticia {
+  height: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background: rgba(173, 216, 230, 0.445);
+  color: black;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+  padding: 30px;
+}
+
+.noticia:hover {
+  background-color: lightblue;
+  color: blue;
+}
+
+.noticia:hover .titulo{
+  text-decoration: underline;
+  /* Subrayado del texto al pasar el mouse */
+}
+
+.noticia .titulo {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  text-decoration: none;
+  /* Por defecto, el subrayado del texto está desactivado */
+}
+
+
+.noticia .descripcion {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.noticia .imagen {
+  flex: 1;
+  /* La imagen ocupa todo el espacio disponible */
+  width: 100%;
+  opacity: 0.7;
+  border-radius: 10px;
+}
