@@ -4,14 +4,23 @@
     height: 100px;
     background-color: transparent;
 }
+.barra-superior head{
+    font-size: large;
+}
 
 .barra-superior-contenedor-izquierdo{
     display: flex;
-    justify-content: flex-start;
+    justify-content: left;
     width: auto;
     height: 100%;
     flex: 1; /* Ocupan el espacio restante */
     
+}
+.barra-superior-contenedor-izquierdo p{    
+    font-size: xx-large;
+    font-weight: bolder;
+    align-content: center;
+    color: darkblue;
 }
 
 .barra-superior-contenedor-central{

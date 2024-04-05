@@ -10,6 +10,11 @@
   
 }
 
+.contenedor-desplegable .contenido{
+  width: 100%;
+  height: auto;
+}
+
 .contenedor-desplegable  .barra-divisoria{
   width: auto;
 }

@@ -7,9 +7,7 @@
     align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
     background: transparent;
     flex-direction: row;
-    align-content: center;
-    
-    
+    align-content: center;  
   }
   
   .contenido-inicio .contenedor-izquierdo {

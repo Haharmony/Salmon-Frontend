@@ -13,43 +13,36 @@ import imagen_actualizaciones from "../Assets/actualizaciones.png"
 import imagen_usuario from "../Assets/usuario.png"
 import imagen_herramientas from "../Assets/herramientas.png"
 
-const BarraSuperior = () => {
+const BarraSuperior = ({texto_cabecera, menu_materias, menu_mensajes, menu_alertas, menu_actualizaciones}) => {
     return (
         <div className="barra-superior">
             <div className="barra-superior-contenedor-izquierdo">
                 <BotonHome  redireccion={"pagina-inicio"} imagenSrc={imagen_home}/>
+                <p>{texto_cabecera}</p>
             </div>
             <div className="barra-superior-contenedor-central">
                 <BotonDesplegableBarraSuperior menu ={
                     <>
-                    <BotonMenuDesplegable texto={"Materia2"}/>
-                    <BotonMenuDesplegable texto={"Materia3"}/>
-                    <BotonMenuDesplegable texto={"Materia4"}/>
+                    {menu_materias}
                     </>
                 
                 } imagenSrc={imagen_seleccionarRecurso} />
                 <hr className="barra-superior-division" />
                 <BotonDesplegableBarraSuperior menu ={
                     <>
-                    <BotonMenuDesplegable texto={"Mensaje 1"}/>
-                    <BotonMenuDesplegable texto={"Mensaje 2"}/>
-                    <BotonMenuDesplegable texto={"Mensaje 3"}/>
+                    {menu_mensajes}
                     </>
                 
                 }imagenSrc={imagen_mensajes} />
                 <BotonDesplegableBarraSuperior menu ={
                     <>
-                    <BotonMenuDesplegable texto={"Alerta 1"}/>
-                    <BotonMenuDesplegable texto={"Alerta 2"}/>
-                    <BotonMenuDesplegable texto={"Alerta 3"}/>
+                    {menu_alertas}
                     </>
                 
                 } imagenSrc={imagen_alertasSuscripciones} />
                 <BotonDesplegableBarraSuperior menu ={
                     <>
-                    <BotonMenuDesplegable texto={"Actualizacion 1"}/>
-                    <BotonMenuDesplegable texto={"Actualizacion 2"}/>
-                    <BotonMenuDesplegable texto={"Actualizacion 3"}/>
+                    {menu_actualizaciones}
                     </>
                 
                 }imagenSrc={imagen_actualizaciones} />
@@ -75,5 +68,3 @@ const BarraSuperior = () => {
 };
 
 export default BarraSuperior;
-
-
