@@ -19,7 +19,7 @@ export const Login = () => {
 
 
     const navigateToMenu = () => {
-        window.location.href = "PaginaInicio";
+        window.location.href = "pagina-inicio";
     };
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
