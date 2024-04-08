@@ -1,0 +1,56 @@
+.contenedor-desplegable {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  background: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.contenedor-desplegable .contenido{
+  width: 100%;
+  height: auto;
+}
+
+.contenedor-desplegable  .barra-divisoria{
+  width: auto;
+}
+
+.contenedor-desplegable .boton{
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease; /* Transición suave */
+  padding: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: none;
+}
+
+.contenedor-desplegable .boton .imagen {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.contenedor-desplegable .boton:hover {
+  background: rgba(0, 0, 255, 0.658);
+}
+
+.contenedor-desplegable .cabecera{
+  display: flex;
+  flex-direction: row;
+}
+
+.contenedor-desplegable .cabecera-contenedor-desplegable .texto{
+  width: auto;
+  height: auto;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-left: 20px;
+}

@@ -1,0 +1,63 @@
+.boton-desplegable-container {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.boton-desplegable-barra-superior{
+    border: none;
+    border-radius: 5%;
+    width: auto;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: Black;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-top: 5px solid transparent;
+    transition: border-top-color 0.3s ease;
+    border-bottom: 5px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+    transition: border-top-color 0.3s ease;
+    font-weight: bold;
+}
+
+.boton-desplegable-barra-superior:hover{
+    border-top-color: rgba(0, 0, 255, 0.658);
+    border-bottom-color:rgba(0, 0, 255, 0.658);
+}
+
+.boton-desplegable-barra-superior:hover .texto-boton-barra-superior{
+    color: blue;
+}
+
+.imagen-boton-barra-superior{
+    width: 40px;
+    height: auto;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% ); /* Ajusta la posición del menú debajo del botón */
+    left: 0;
+    background-color: #ffffffd3;
+    border-top: white 1px solid;
+    border-right: blue 1px solid;
+    border-left: blue 1px solid;
+    border-bottom: blue 1px solid;
+    border-radius: 3px;
+    width: fit-content;
+    height: fit-content;
+
+    padding: 1px ;
+    z-index: 1; /* Asegúrate de que el menú esté encima del contenido */
+    display: none; /* Inicialmente oculto */
+}
+
+.boton-desplegable-container:hover .dropdown-menu {
+    display: block; /* Muestra el menú cuando se hace clic en el botón */
+    width: auto;
+    height: auto;
+}

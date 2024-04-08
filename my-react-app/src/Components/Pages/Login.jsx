@@ -17,8 +17,9 @@ export const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook)\.com$/;
 
-    const navigateToMenu = () => { // Función para cambiar de páginas.
-        window.location.href = "home-page";
+
+    const navigateToMenu = () => {
+        window.location.href = "PaginaInicio";
     };
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
