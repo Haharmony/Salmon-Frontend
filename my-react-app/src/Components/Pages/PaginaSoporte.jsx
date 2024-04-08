@@ -40,7 +40,7 @@ const menu_actualizaciones =<>
 </>
 const barra_superior = <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} />
 
-const PaginaSoporte= () => {
+export const PaginaSoporte= () => {
   return (
     <div className='contenedor-pagina'>
       <Cabecera contenidosuperior = {barra_superior} contenidoInferior={barra_inferior} />
@@ -50,5 +50,3 @@ const PaginaSoporte= () => {
     </div>
   )
 }
-
-export default PaginaSoporte;

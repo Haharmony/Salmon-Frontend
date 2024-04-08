@@ -50,7 +50,7 @@ const anuncios_tablon = <>
     <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
 </>
 
-const PaginaTablon = () => {
+export const PaginaTablon = () => {
     return (
         <div className='contenedor-pagina'>
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
@@ -61,4 +61,3 @@ const PaginaTablon = () => {
     )
 }
 
-export default PaginaTablon;

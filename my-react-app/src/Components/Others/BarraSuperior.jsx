@@ -56,9 +56,9 @@ const BarraSuperior = ({texto_cabecera, menu_materias, menu_mensajes, menu_alert
                 }imagenSrc={imagen_usuario} texto={"Nombre Apellido Apellido"} />
                 <BotonDesplegableBarraSuperior menu ={
                     <>
-                    <BotonMenuDesplegable texto={"Conficuracion 1"}/>
-                    <BotonMenuDesplegable texto={"Conficuracion 2"}/>
-                    <BotonMenuDesplegable texto={"Conficuracion 3"}/>
+                    <BotonMenuDesplegable texto={"Configuración 1"}/>
+                    <BotonMenuDesplegable texto={"Configuración 2"}/>
+                    <BotonMenuDesplegable texto={"Configuración 3"}/>
                     </>
                 
                 }imagenSrc={imagen_herramientas} />
