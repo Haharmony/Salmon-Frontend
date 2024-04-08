@@ -1,0 +1,133 @@
+.container2{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%; /* 90% of the parent container's width */
+    max-width: 600px; /* Maximum width of 600px */
+    min-height: 80vh; /* Minimum height of 80% of viewport height */
+    margin-top: 5vh; /* 5% of viewport height */
+    margin-bottom: 5vh; /* 5% of viewport height */
+    border-radius: 40px;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.title-uu{
+    color: #1608de;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.update-teachers button{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}
+
+.update-students button{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}
+
+.email-field-uu{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.email-field-uu-input input{
+
+}
+
+.name-field-uu{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.name-field-uu-input input{
+
+}
+
+.lastname-field-uu{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.lastname-field-uu-input input{
+
+}
+
+.phone-number-uu{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.phone-number-uu-input input{
+
+}
+
+.img-uu{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.img-uu-input input{
+
+}
+
+.id-field-uu{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.id-field-uu-input input{
+
+}
+
+.return-home-uu button{
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+.update-button{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}

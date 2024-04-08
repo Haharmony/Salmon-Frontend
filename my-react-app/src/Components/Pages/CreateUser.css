@@ -1,0 +1,160 @@
+.container1{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%; /* 90% of the parent container's width */
+    max-width: 600px; /* Maximum width of 600px */
+    min-height: 80vh; /* Minimum height of 80% of viewport height */
+    margin-top: 5vh; /* 5% of viewport height */
+    margin-bottom: 5vh; /* 5% of viewport height */
+    border-radius: 40px;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.title{
+    color: #1608de;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.underline1{
+    width: 490px;
+    margin-left: 50px;
+    height: 1px;
+    background: #0e0e0e;
+    border-radius: 9px;
+}
+
+.email-field{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.email-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+    
+}
+
+.name-field{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.name-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.lastname-field{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.lastname-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+.phone-number{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.phone-number-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.password-field{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.password-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.role-field{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.role-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.id-field{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.id-input input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.error-message1{
+    margin-left: 50px;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #d00d0d;
+}
+
+.create-user button{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}
+
+.underline2{
+    margin-top: 30px;
+    width: 490px;
+    margin-left: 50px;
+    height: 1px;
+    background: #0e0e0e;
+    border-radius: 9px;
+}
+
+.return-home{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-size: 17px;
+    color: #003fb4;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

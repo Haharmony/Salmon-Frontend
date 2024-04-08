@@ -15,7 +15,7 @@ export const Login = () => {
     const [contraseña, setPassword] = useState('');
     const [errorM, setError] = useState('');
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo)\.com$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook)\.com$/;
 
     const navigateToMenu = () => { // Función para cambiar de páginas.
         window.location.href = "home-page";
@@ -58,7 +58,7 @@ export const Login = () => {
 
     return (
         <div className="fullpage">
-            <div className="container">
+            <div className='container'>
                 <div className="background">
                     <img src={background_img} alt="" />
                 </div>
@@ -81,10 +81,10 @@ export const Login = () => {
                         </div>
                     </div>
                 </div>
-                <div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>
+                {/*<div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>*/}
                 <div className="error-message"> {errorM && <div>{errorM}</div>} </div>
                 <div className="submit-container"><button onClick={handleSubmit} disabled={isLoginDisabled}>Iniciar Sesión</button></div>
-                <div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>
+                {/*<div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
             </div>
         </div>
     )

@@ -127,13 +127,13 @@
 
 .error-message{
     color: #cb0000;
-    margin: 25px auto;
+    margin: 60px auto;
     font-size: 16px;
 }
 
 .submit-container{
     display: flex;
-    margin: -15px auto;
+    margin: -45px auto;
 }
 
 .submit-container button{
