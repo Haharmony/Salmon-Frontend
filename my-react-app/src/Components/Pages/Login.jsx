@@ -35,6 +35,10 @@ export const Login = () => {
         }
     };
 
+    const tesHandleSubmit = () => {
+        navigateToMenu();
+    }
+
     const handleSubmit = async (e) => {
         validateEmail();
         e.preventDefault();
@@ -84,7 +88,7 @@ export const Login = () => {
                 </div>
                 {/*<div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>*/}
                 <div className="error-message"> {errorM && <div>{errorM}</div>} </div>
-                <div className="submit-container"><button onClick={handleSubmit} disabled={isLoginDisabled}>Iniciar Sesión</button></div>
+                <div className="submit-container"><button onClick={tesHandleSubmit} disabled={isLoginDisabled}>Iniciar Sesión</button></div>
                 {/*<div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
             </div>
         </div>
