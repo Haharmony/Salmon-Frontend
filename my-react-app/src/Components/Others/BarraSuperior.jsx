@@ -2,6 +2,7 @@ import React from "react";
 import './BarraSuperior.css';
 import "./BotonDesplegableBarraSuperior";
 import  "./BotonMenuDesplegable";
+import { Navigate, useNavigate } from "react-router-dom";
 import BotonDesplegableBarraSuperior from "./BotonDesplegableBarraSuperior";
 import { BotonMenuDesplegable } from "./BotonMenuDesplegable";
 import BotonHome from "./BotonHome";
@@ -50,7 +51,7 @@ const BarraSuperior = ({texto_cabecera, menu_materias, menu_mensajes, menu_alert
             <div className="barra-superior-contenedor-derecho">
                 <BotonDesplegableBarraSuperior  menu ={
                     <>
-                    <BotonMenuDesplegable  redireccion={"/"} texto={"Cerrar Sesion"}/>
+                    <BotonMenuDesplegable redireccion={"/"} texto={"Cerrar Sesion"}/>
                     </>
                 
                 }imagenSrc={imagen_usuario} texto={"Nombre Apellido Apellido"} />

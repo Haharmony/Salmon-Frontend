@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Login.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import username_icon from '../Assets/username.png'
 import password_icon from '../Assets/password.png'
@@ -11,6 +12,7 @@ import passwordEyeClosed_icon from '../Assets/noPassword.png'
 const apiLogin = 'http://192.168.1.113:3000/api/users/login'
 
 export const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [contraseña, setPassword] = useState('');
     const [errorM, setError] = useState('');
@@ -19,7 +21,7 @@ export const Login = () => {
 
 
     const navigateToMenu = () => {
-        window.location.href = "Salmon-Frontend/pagina-inicio";
+        navigate("/pagina-inicio");
     };
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
