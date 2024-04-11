@@ -20,18 +20,18 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path ="/" element={<Login />} />
-          <Route path="pagina-inicio" element={<PaginaInicio />} />
-          <Route path="pagina-noticias" element={<PaginaNoticias />} />
-          <Route path="pagina-calendario" element={<PaginaCalendario />} />
-          <Route path="pagina-tutoriales" element={<PaginaTutoriales />} />
-          <Route path="pagina-bancoRecursos" element={<PaginaBancoRecursos />} />
-          <Route path="pagina-directorio" element={<Paginadirectorio />} />
-          <Route path="pagina-soporte" element={<PaginaSoporte />} />
-          <Route path="pagina-tablon" element={<PaginaTablon/>} />
-          <Route path="home-page" element={<HomeTest />} />
-          <Route path="create-user" element={<CreateUser />} />
-          <Route path="update-user" element={<UpdateUser />} />
+          <Route path ="Salmon-Frontend/" element={<Login />} />
+          <Route path="Salmon-Frontend/pagina-inicio" element={<PaginaInicio />} />
+          <Route path="Salmon-Frontend/pagina-noticias" element={<PaginaNoticias />} />
+          <Route path="Salmon-Frontend/pagina-calendario" element={<PaginaCalendario />} />
+          <Route path="Salmon-Frontend/pagina-tutoriales" element={<PaginaTutoriales />} />
+          <Route path="Salmon-Frontend/pagina-bancoRecursos" element={<PaginaBancoRecursos />} />
+          <Route path="Salmon-Frontend/pagina-directorio" element={<Paginadirectorio />} />
+          <Route path="Salmon-Frontend/pagina-soporte" element={<PaginaSoporte />} />
+          <Route path="Salmon-Frontend/pagina-tablon" element={<PaginaTablon/>} />
+          <Route path="Salmon-Frontend/home-page" element={<HomeTest />} />
+          <Route path="Salmon-Frontend/create-user" element={<CreateUser />} />
+          <Route path="Salmon-Frontend/update-user" element={<UpdateUser />} />
         </Routes>
       </BrowserRouter>
     </>
