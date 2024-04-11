@@ -50,7 +50,7 @@ const BarraSuperior = ({texto_cabecera, menu_materias, menu_mensajes, menu_alert
             <div className="barra-superior-contenedor-derecho">
                 <BotonDesplegableBarraSuperior  menu ={
                     <>
-                    <BotonMenuDesplegable  redireccion={"/"} texto={"Cerrar Sesion"}/>
+                    <BotonMenuDesplegable  redireccion={"Salmon-Frontend/"} texto={"Cerrar Sesion"}/>
                     </>
                 
                 }imagenSrc={imagen_usuario} texto={"Nombre Apellido Apellido"} />
