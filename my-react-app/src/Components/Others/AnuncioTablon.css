@@ -1,0 +1,61 @@
+.anuncio-tablon{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    background: transparent;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.anuncio-tablon .cabecera{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+.anuncio-tablon .contenido{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.anuncio-tablon .contenido .imagen{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.anuncio-tablon .caja-comentarios{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    margin-bottom: 50px;
+}
+.anuncio-tablon .caja-comentarios input{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border-radius: 10px;
+}
+.anuncio-tablon .comentarios{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 10px;
+}

@@ -1,0 +1,38 @@
+.boton-materia {
+    display: flex;
+    flex-direction: column;
+    width: 29%;
+    background-color: skyblue;
+    margin: 5px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    transition: COLORr 0.3s ease;
+    color: white;
+    border-radius: 10px;
+    border-style: double;
+    border-color: blue;
+  }
+
+  .boton-materia:hover{
+    background: rgb(113, 145, 250);
+    border: blue 3px solid;
+  }
+
+  .boton-materia:hover .nombre{
+    color: GOLD;
+  }
+
+  .boton-materia:hover .detalle{
+    color: gold;
+  }
+  
+  .boton-materia .imagen {
+    width: 100%;
+    max-height: 150px;
+    opacity: 0.7;
+    border-radius: 10px;
+  }
+  .boton-materia .detalle {
+    font-size: 12px;
+    text-align: left;
+  }

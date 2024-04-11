@@ -1,0 +1,9 @@
+.barra-inferior{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1150px;
+    height: 155px;
+    gap: 20px;
+    background: transparent;
+}
