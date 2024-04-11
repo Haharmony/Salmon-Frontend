@@ -20,7 +20,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path ="Salmon-Frontend/" element={<Login />} />
+          <Route path="Salmon-Frontend/" element={<Login />} />
           <Route path="Salmon-Frontend/pagina-inicio" element={<PaginaInicio />} />
           <Route path="Salmon-Frontend/pagina-noticias" element={<PaginaNoticias />} />
           <Route path="Salmon-Frontend/pagina-calendario" element={<PaginaCalendario />} />
