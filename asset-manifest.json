@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Salmon-Frontend/static/css/main.a1019e83.css",
-    "main.js": "/Salmon-Frontend/static/js/main.c97d61b6.js",
+    "main.js": "/Salmon-Frontend/static/js/main.0be1c2a5.js",
     "static/js/453.ad6eb26e.chunk.js": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js",
     "static/media/background.jpg": "/Salmon-Frontend/static/media/background.decbb8c13395e5e0a39b.jpg",
     "static/media/taller.png": "/Salmon-Frontend/static/media/taller.adfd52dec6968c2c2240.png",
@@ -24,11 +24,11 @@
     "static/media/tareas.png": "/Salmon-Frontend/static/media/tareas.92555e83ef982399e767.png",
     "index.html": "/Salmon-Frontend/index.html",
     "main.a1019e83.css.map": "/Salmon-Frontend/static/css/main.a1019e83.css.map",
-    "main.c97d61b6.js.map": "/Salmon-Frontend/static/js/main.c97d61b6.js.map",
+    "main.0be1c2a5.js.map": "/Salmon-Frontend/static/js/main.0be1c2a5.js.map",
     "453.ad6eb26e.chunk.js.map": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a1019e83.css",
-    "static/js/main.c97d61b6.js"
+    "static/js/main.0be1c2a5.js"
   ]
 }
