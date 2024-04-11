@@ -1,0 +1,28 @@
+# Dependencias npm
+/node_modules
+
+# Directorio de archivos generados por el servidor durante la ejecución
+/build
+
+# Archivos de registro y errores
+/logs
+*.log
+
+# Archivos de configuración locales
+.env
+
+# Dependencias específicas del sistema operativo o del entorno
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación y caché
+/dist
+/.next
+/.cache
+
+# Archivos de entorno local
+.env.local
+
+# Dependencias de control de versiones generadas automáticamente
+.lock
+yarn.lock

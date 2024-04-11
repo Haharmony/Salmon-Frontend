@@ -1,0 +1,11 @@
+Librerias para el server
+//Libreria necesaria npm i cors
+//Libreria necesaria npm i morgan
+//libreria necesaria npm i http
+//libreria necesaria npm i express
+//libreria necesaria encriptado de constraseñas npm i bcryptjs
+//Libreria importante npm i mysql
+
+
+Librerias para React
+//Libreria necesaria npm i axios
