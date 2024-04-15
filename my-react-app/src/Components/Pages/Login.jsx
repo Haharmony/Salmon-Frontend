@@ -23,6 +23,9 @@ export const Login = () => {
     const navigateToMenu = () => {
         navigate("/pagina-inicio");
     };
+    const testHandleSubmitAdmin = () => {
+        navigate("/admin-home");
+    }
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
     const isShowPasswordDisabled = contraseña.trim() === '';
@@ -91,6 +94,7 @@ export const Login = () => {
                 {/*<div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>*/}
                 <div className="error-message"> {errorM && <div>{errorM}</div>} </div>
                 <div className="submit-container"><button onClick={tesHandleSubmit} disabled={isLoginDisabled}>Iniciar Sesión</button></div>
+                <div className="submit-container2"><button onClick={testHandleSubmitAdmin}>Admin Home</button></div>
                 {/*<div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
             </div>
         </div>

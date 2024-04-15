@@ -13,6 +13,7 @@ import {PaginaBancoRecursos} from './Components/Pages/PaginaBancoRecursos';
 import {Paginadirectorio} from './Components/Pages/PaginaDirectorio';
 import {PaginaSoporte} from './Components/Pages/PaginaSoporte';
 import {PaginaTablon} from './Components/Pages/PaginaTablon';
+import {AdminHome} from './Components/Pages/AdminHome';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/home-page" element={<HomeTest />} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
+          <Route path="/admin-home" element={<AdminHome />} />
         </Routes> 
       </BrowserRouter>
     </>

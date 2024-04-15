@@ -20,9 +20,9 @@ const barra_inferior = <BarraInferior contenido={
 }/>
 
 const menu_materias =<>
-  <BotonMenuDesplegable texto={'Materia 1'} redireccion={'pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 2'} redireccion={'pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 3'} redireccion={'pagina-tablon'}/>
+  <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/pagina-tablon'}/>
+  <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/pagina-tablon'}/>
+  <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/pagina-tablon'}/>
 </>
 const menu_mensajes =<>
 <BotonMenuDesplegable texto={'Mensaje 1'} />

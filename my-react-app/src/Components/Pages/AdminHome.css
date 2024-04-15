@@ -1,0 +1,17 @@
+.a-fullpage {
+    height: 100%;
+    width: 100%;
+}
+
+.a-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 190vh;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.a-title {
+
+}

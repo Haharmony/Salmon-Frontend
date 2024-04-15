@@ -1,6 +1,6 @@
 import React from "react";
 import './BotonMenuDesplegable.css'
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const BotonMenuDesplegable = ({texto, redireccion}) =>{
     const navigate = useNavigate();

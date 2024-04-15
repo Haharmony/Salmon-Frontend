@@ -2,7 +2,6 @@ import React from "react";
 import './BarraSuperior.css';
 import "./BotonDesplegableBarraSuperior";
 import  "./BotonMenuDesplegable";
-import { Navigate, useNavigate } from "react-router-dom";
 import BotonDesplegableBarraSuperior from "./BotonDesplegableBarraSuperior";
 import { BotonMenuDesplegable } from "./BotonMenuDesplegable";
 import BotonHome from "./BotonHome";
@@ -18,7 +17,7 @@ const BarraSuperior = ({texto_cabecera, menu_materias, menu_mensajes, menu_alert
     return (
         <div className="barra-superior">
             <div className="barra-superior-contenedor-izquierdo">
-                <BotonHome  redireccion={"pagina-inicio"} imagenSrc={imagen_home}/>
+                <BotonHome  redireccion={"/pagina-inicio"} imagenSrc={imagen_home}/>
                 <p>{texto_cabecera}</p>
             </div>
             <div className="barra-superior-contenedor-central">

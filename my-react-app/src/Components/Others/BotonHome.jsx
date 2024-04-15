@@ -1,11 +1,13 @@
 import React from "react";
 import './BotonHome.css';
+import {useNavigate} from "react-router-dom";
 
 const BotonHome = ({ imagenSrc, redireccion }) => {
+    const navigate = useNavigate();
     const navigateToMenu = () => {
-        window.location.href = redireccion;
+        const absolutePath = `/${redireccion}`;
+        navigate(absolutePath);
     };
-
 
     return (
         <div className="boton-desplegable-container">

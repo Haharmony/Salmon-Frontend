@@ -159,6 +159,29 @@
     }
 }
 
+.submit-container2{
+    display: flex;
+    margin: 65px auto;
+}
+
+.submit-container2 button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}
+
 .create-account{
     color: #797979;
     font-size: 16px;
