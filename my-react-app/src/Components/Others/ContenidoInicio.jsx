@@ -12,7 +12,7 @@ const ContenidoInicio = () =>{
         <div className="contenido-inicio">            
             <div className="contenedor-izquierdo">
                 <ContenedorDesplegable titulo={'Mis Cursos'} contenido={<ContenedorMaterias/>}/>
-                <ContenedorDesplegable titulo={'Calendario de eventos'} contenido={<p>Contenido de calendario</p>} />
+                <ContenedorDesplegable titulo={'Calendario de eventos'} contenido={<div className="calendario-texto">Calendario Texto</div>} />
             </div>
             <div className="contenedor-derecho">
             <ContenedorDesplegable contenido={

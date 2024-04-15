@@ -17,6 +17,12 @@
     margin-right: 20px;
   }
 
+  .calendario-texto{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   .contenido-inicio .contenedor-derecho {
     flex: 1; /* Ocupa menos espacio */
     height: auto;

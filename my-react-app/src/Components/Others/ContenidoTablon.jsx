@@ -3,10 +3,10 @@ import ContenedorDesplegable from './ContenedorDesplegable'
 import './ContenidoTablon.css'
 import backgroundlaw23 from '../Assets/footpage.jpg'
 
-export const ContenidoTablon = ({ backgroundlaw, anuncios_tablon, calendario }) => {
+export const ContenidoTablon = ({ anuncios_tablon, calendario }) => {
     return (
         <div className='contenido-tablon'>
-            <img className='imagen-portada' src={backgroundlaw23} alt='portada' />
+            {/*<img className='imagen-portada' src={backgroundlaw23} alt='portada' />*/}
             <div className='contenido'>
                 <div className='tablon'>
                     <ContenedorDesplegable titulo={'Tablón'} contenido={<ContenedorAnuncios anuncios={anuncios_tablon} />} />
