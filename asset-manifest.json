@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/Salmon-Frontend/static/css/main.a1019e83.css",
-    "main.js": "/Salmon-Frontend/static/js/main.a1044912.js",
+    "main.css": "/Salmon-Frontend/static/css/main.74fcce6c.css",
+    "main.js": "/Salmon-Frontend/static/js/main.b2d0014e.js",
     "static/js/453.ad6eb26e.chunk.js": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js",
     "static/media/background.jpg": "/Salmon-Frontend/static/media/background.decbb8c13395e5e0a39b.jpg",
+    "static/media/lawbackground23.jpg": "/Salmon-Frontend/static/media/lawbackground23.2dad6758bc9ba15f1f3b.jpg",
     "static/media/taller.png": "/Salmon-Frontend/static/media/taller.adfd52dec6968c2c2240.png",
     "static/media/comunicado.png": "/Salmon-Frontend/static/media/comunicado.2d69be9f2c8a6035134d.png",
     "static/media/capacitacion.png": "/Salmon-Frontend/static/media/capacitacion.a44f176fcb0674874de3.png",
+    "static/media/footpage.jpg": "/Salmon-Frontend/static/media/footpage.246f67ad7b90ad4e2e49.jpg",
     "static/media/piepagina.jpg": "/Salmon-Frontend/static/media/piepagina.22a4801dad3c09a3f0cf.jpg",
     "static/media/herramientas.png": "/Salmon-Frontend/static/media/herramientas.83164dbad42146d54c58.png",
     "static/media/zoom.png": "/Salmon-Frontend/static/media/zoom.65223643f4294988d684.png",
@@ -23,12 +25,12 @@
     "static/media/materia.jpg": "/Salmon-Frontend/static/media/materia.ef4720c1b9aa99ca81b2.jpg",
     "static/media/tareas.png": "/Salmon-Frontend/static/media/tareas.92555e83ef982399e767.png",
     "index.html": "/Salmon-Frontend/index.html",
-    "main.a1019e83.css.map": "/Salmon-Frontend/static/css/main.a1019e83.css.map",
-    "main.a1044912.js.map": "/Salmon-Frontend/static/js/main.a1044912.js.map",
+    "main.74fcce6c.css.map": "/Salmon-Frontend/static/css/main.74fcce6c.css.map",
+    "main.b2d0014e.js.map": "/Salmon-Frontend/static/js/main.b2d0014e.js.map",
     "453.ad6eb26e.chunk.js.map": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1019e83.css",
-    "static/js/main.a1044912.js"
+    "static/css/main.74fcce6c.css",
+    "static/js/main.b2d0014e.js"
   ]
 }
