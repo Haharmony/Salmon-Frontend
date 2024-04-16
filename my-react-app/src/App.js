@@ -23,6 +23,8 @@ import { AdminPaginaCalendario } from './Components/Pages/AdminPaginaCalendario'
 import { AdminPaginaTutoriales } from './Components/Pages/AdminPaginaTutoriales';
 import { AdminPaginaBancoRecursos } from './Components/Pages/AdminPaginaBancoRecursos';
 import { AdminPaginaDirectorio } from './Components/Pages/AdminPaginaDirectorio';
+import { ProfilePage } from './Components/Pages/ProfilePage';
+import { AdminProfilePage } from './Components/Pages/AdminProfilePage';
 
 function App() {
 
@@ -52,6 +54,8 @@ function App() {
           <Route path="/a-pagina-tutoriales" element={<AdminPaginaTutoriales />} />
           <Route path="/a-pagina-bancoRecursos" element={<AdminPaginaBancoRecursos />} />
           <Route path="/a-pagina-directorio" element={<AdminPaginaDirectorio />} />
+          <Route path="/profile-page" element={<ProfilePage />} />
+          <Route path="/a-profile-page" element={<AdminProfilePage />} />
         </Routes> 
       </BrowserRouter>
     </>

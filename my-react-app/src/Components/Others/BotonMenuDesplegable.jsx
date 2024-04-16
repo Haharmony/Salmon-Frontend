@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 export const BotonMenuDesplegable = ({texto, redireccion}) =>{
     const navigate = useNavigate();
     const navigateToMenu = () => {
-        navigate(redireccion)
+        const absolutePath = `/${redireccion}`;
+        navigate(absolutePath);
     };
 
     return(

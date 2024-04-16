@@ -14,7 +14,7 @@ import imagen_usuario from "../Assets/usuario.png"
 import imagen_herramientas from "../Assets/herramientas.png"
 import logoBackground from '../Assets/logo.jpeg'
 
-const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_alertas, menu_actualizaciones, redireccion }) => {
+const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_alertas, menu_actualizaciones, redireccion, profile_redireccion }) => {
 
     return (
 
@@ -54,6 +54,7 @@ const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_aler
             <div className="barra-superior-contenedor-derecho">
                 <BotonDesplegableBarraSuperior menu={
                     <>
+                        <BotonMenuDesplegable redireccion={profile_redireccion} texto={"Ver Perfil"} />
                         <BotonMenuDesplegable redireccion={"/"} texto={"Cerrar Sesion"} />
                     </>
 

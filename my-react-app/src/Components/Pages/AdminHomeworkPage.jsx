@@ -37,7 +37,7 @@ const menu_actualizaciones = <>
     <BotonMenuDesplegable texto={'Actualizacion 2'} />
     <BotonMenuDesplegable texto={'Actualizacion 3'} />
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"}/>
+const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"}/>
 
 export const AdminHomeworkPage = () => {
     return (
