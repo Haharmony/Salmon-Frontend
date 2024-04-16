@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Salmon-Frontend/static/css/main.74fcce6c.css",
-    "main.js": "/Salmon-Frontend/static/js/main.b2d0014e.js",
+    "main.css": "/Salmon-Frontend/static/css/main.9492dbdb.css",
+    "main.js": "/Salmon-Frontend/static/js/main.708b2e7d.js",
     "static/js/453.ad6eb26e.chunk.js": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js",
     "static/media/background.jpg": "/Salmon-Frontend/static/media/background.decbb8c13395e5e0a39b.jpg",
     "static/media/lawbackground23.jpg": "/Salmon-Frontend/static/media/lawbackground23.2dad6758bc9ba15f1f3b.jpg",
     "static/media/taller.png": "/Salmon-Frontend/static/media/taller.adfd52dec6968c2c2240.png",
     "static/media/comunicado.png": "/Salmon-Frontend/static/media/comunicado.2d69be9f2c8a6035134d.png",
     "static/media/capacitacion.png": "/Salmon-Frontend/static/media/capacitacion.a44f176fcb0674874de3.png",
-    "static/media/footpage.jpg": "/Salmon-Frontend/static/media/footpage.246f67ad7b90ad4e2e49.jpg",
-    "static/media/piepagina.jpg": "/Salmon-Frontend/static/media/piepagina.22a4801dad3c09a3f0cf.jpg",
+    "static/media/piepagina.jpg": "/Salmon-Frontend/static/media/piepagina.e2ff987e166729c2a1f5.jpg",
     "static/media/herramientas.png": "/Salmon-Frontend/static/media/herramientas.83164dbad42146d54c58.png",
     "static/media/zoom.png": "/Salmon-Frontend/static/media/zoom.65223643f4294988d684.png",
     "static/media/soporte.png": "/Salmon-Frontend/static/media/soporte.8c96e92b1384276beef9.png",
     "static/media/bancorecursos.png": "/Salmon-Frontend/static/media/bancorecursos.c43f24add9ed0944eee2.png",
     "static/media/calendario.png": "/Salmon-Frontend/static/media/calendario.c0065ec27fb1378fe4f9.png",
+    "static/media/entregables.png": "/Salmon-Frontend/static/media/entregables.bb46ff046e8725b6aded.png",
     "static/media/directorio.png": "/Salmon-Frontend/static/media/directorio.e6241120f7fa342287a6.png",
     "static/media/usuario.png": "/Salmon-Frontend/static/media/usuario.37439f66370d084f28de.png",
     "static/media/contenido.png": "/Salmon-Frontend/static/media/contenido.559dba82d4e501080972.png",
@@ -22,15 +22,16 @@
     "static/media/tablon.png": "/Salmon-Frontend/static/media/tablon.b74f4d02d74b447066e2.png",
     "static/media/correo.png": "/Salmon-Frontend/static/media/correo.5aedc2b2f78f45d2bac3.png",
     "static/media/actualizaciones.png": "/Salmon-Frontend/static/media/actualizaciones.7c3e59f99cc37ba9e255.png",
+    "static/media/logo.jpeg": "/Salmon-Frontend/static/media/logo.801abce83ce2d8d7178a.jpeg",
     "static/media/materia.jpg": "/Salmon-Frontend/static/media/materia.ef4720c1b9aa99ca81b2.jpg",
     "static/media/tareas.png": "/Salmon-Frontend/static/media/tareas.92555e83ef982399e767.png",
     "index.html": "/Salmon-Frontend/index.html",
-    "main.74fcce6c.css.map": "/Salmon-Frontend/static/css/main.74fcce6c.css.map",
-    "main.b2d0014e.js.map": "/Salmon-Frontend/static/js/main.b2d0014e.js.map",
+    "main.9492dbdb.css.map": "/Salmon-Frontend/static/css/main.9492dbdb.css.map",
+    "main.708b2e7d.js.map": "/Salmon-Frontend/static/js/main.708b2e7d.js.map",
     "453.ad6eb26e.chunk.js.map": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74fcce6c.css",
-    "static/js/main.b2d0014e.js"
+    "static/css/main.9492dbdb.css",
+    "static/js/main.708b2e7d.js"
   ]
 }
