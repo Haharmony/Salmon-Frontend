@@ -1,5 +1,6 @@
 import React from 'react'
 import './PaginaInicio.css'
+import './HomeworkPage.css'
 import Cabecera from '../Others/Cabecera';
 import PiePagina from '../Others/PiePagina';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
@@ -41,22 +42,16 @@ const menu_actualizaciones = <>
 </>
 const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"}/>
 
-const anuncios_tablon = <>
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
-</>
-
-export const PaginaTablon = () => {
+export const HomeworkPage = () => {
     return (
         <div className='contenedor-pagina'>
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
-            <ContenidoTablon imagen_materia={require("../Assets/materia.jpg")} anuncios_tablon={anuncios_tablon}/>
-            <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />
-            <footer>Grupo Derecho & Progreso &copy; 2024</footer>
+            <div className="homework-container">
+                <div className="h-title"><h1>Tareas</h1></div>
+                <div className="h-holder">
+                    <div className="h-content">No hay tareas</div>
+                </div>
+            </div>
         </div>
     )
 }

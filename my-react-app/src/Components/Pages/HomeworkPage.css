@@ -1,0 +1,14 @@
+.h-title{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.h-holder{
+    border: 1px solid black;
+    padding: 25px;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    width: 110vh;
+    margin: 0 auto;
+}

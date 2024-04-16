@@ -27,7 +27,7 @@
     align-items: center;
     gap: 9px;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .text{
@@ -43,8 +43,21 @@
     border-radius: 9px;
 }
 
+.logo img{
+    height: 200px;
+    height: 200px;
+    margin: auto;
+    object-fit: cover;
+}
+
+.login-text{
+    margin-top: 60px;
+    margin-left: 62px;
+    color: #5d5d5dc4;
+}
+
 .inputs{
-    margin-top: 80px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;

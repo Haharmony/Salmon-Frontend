@@ -7,11 +7,11 @@ import imagen_capacitacion from '../Assets/capacitacion.png'
 import imagen_taller from '../Assets/taller.png'
 import imagen_comunicado from '../Assets/comunicado.png'
 
-const ContenidoInicio = () =>{
+const ContenidoInicio = ({redireccionC}) =>{
     return(
         <div className="contenido-inicio">            
             <div className="contenedor-izquierdo">
-                <ContenedorDesplegable titulo={'Mis Cursos'} contenido={<ContenedorMaterias/>}/>
+                <ContenedorDesplegable titulo={'Mis Cursos'} contenido={<ContenedorMaterias redireccionB={redireccionC}/>}/>
                 <ContenedorDesplegable titulo={'Calendario de eventos'} contenido={<div className="calendario-texto">Calendario Texto</div>} />
             </div>
             <div className="contenedor-derecho">

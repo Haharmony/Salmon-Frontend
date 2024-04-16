@@ -40,15 +40,15 @@ const menu_actualizaciones =<>
 <BotonMenuDesplegable texto={'Actualizacion 3'} />
 </>
 
-const barra_superior = <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} />
+const barra_superior = <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"}/>
 
 export const PaginaInicio= () => {
   return (
     <div className='contenedor-pagina'>
       <Cabecera contenidosuperior = {barra_superior} contenidoInferior={barra_inferior} />
-      <ContenidoInicio />
+      <ContenidoInicio redireccionC={"/pagina-tablon"}/>
       <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />
-      <footer>Pie de pagina</footer>
+      <footer>Grupo Derecho & Progreso &copy; 2024</footer>
     </div>
   )
 }

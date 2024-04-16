@@ -16,8 +16,9 @@
     margin-block: 30px;
     width: 1120px;
     height: 250px;
-    opacity: 0.8;
+    opacity: 0.85;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 footer{

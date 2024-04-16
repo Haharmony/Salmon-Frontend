@@ -8,6 +8,7 @@ import password_icon from '../Assets/password.png'
 import background_img from '../Assets/background.jpg'
 import passwordEyeOpen_icon from '../Assets/showPassword.png'
 import passwordEyeClosed_icon from '../Assets/noPassword.png'
+import logoBackground from '../Assets/logo.jpeg'
 
 const apiLogin = 'http://192.168.1.113:3000/api/users/login'
 
@@ -73,9 +74,13 @@ export const Login = () => {
                     <img src={background_img} alt="" />
                 </div>
                 <div className="header">
-                    <div className="text">Inicio de Sesión</div>
-                    <div className="underline"></div>
+                    {/*<div className="text">Inicio de Sesión</div>
+                    <div className="underline"></div>*/}
+                    <div className="logo">
+                        <img src={logoBackground} alt="" />
+                    </div>
                 </div>
+                <div className="login-text">Iniciar sesión con su correo institucional.</div>
                 <div className="inputs">
                     <div className="input">
                         <div className={`input ${email && !emailRegex.test(email) ? 'error' : ''}`} id="emailInput">

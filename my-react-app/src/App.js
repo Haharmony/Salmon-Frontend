@@ -6,7 +6,7 @@ import { HomeTest } from './Components/Pages/HomeTest'; //REPLACE
 import {CreateUser} from './Components/Pages/CreateUser';
 import {UpdateUser} from './Components/Pages/UpdateUser';
 import {PaginaInicio} from './Components/Pages/PaginaInicio';
-import {PaginaNoticias} from './Components/Pages/PaginaNotiacias';
+import {PaginaNoticias} from './Components/Pages/PaginaNoticias';
 import {PaginaCalendario} from './Components/Pages/PaginaCalendario';
 import {PaginaTutoriales} from './Components/Pages/PaginaTutoriales';
 import {PaginaBancoRecursos} from './Components/Pages/PaginaBancoRecursos';
@@ -14,6 +14,15 @@ import {Paginadirectorio} from './Components/Pages/PaginaDirectorio';
 import {PaginaSoporte} from './Components/Pages/PaginaSoporte';
 import {PaginaTablon} from './Components/Pages/PaginaTablon';
 import {AdminHome} from './Components/Pages/AdminHome';
+import { HomeworkPage } from './Components/Pages/HomeworkPage';
+import { AssignmentPage } from './Components/Pages/AssignmentPage';
+import { AdminHomeworkPage } from './Components/Pages/AdminHomeworkPage';
+import { AdminPaginaTablon } from './Components/Pages/AdminPaginaTablon';
+import { AdminPaginaNoticias } from './Components/Pages/AdminPaginaNoticias';
+import { AdminPaginaCalendario } from './Components/Pages/AdminPaginaCalendario';
+import { AdminPaginaTutoriales } from './Components/Pages/AdminPaginaTutoriales';
+import { AdminPaginaBancoRecursos } from './Components/Pages/AdminPaginaBancoRecursos';
+import { AdminPaginaDirectorio } from './Components/Pages/AdminPaginaDirectorio';
 
 function App() {
 
@@ -34,6 +43,15 @@ function App() {
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
           <Route path="/admin-home" element={<AdminHome />} />
+          <Route path="/pagina-tareas" element={<HomeworkPage />} />
+          <Route path="/pagina-entregables" element={<AssignmentPage />} />
+          <Route path="/a-pagina-tareas" element={<AdminHomeworkPage />} />
+          <Route path="/a-pagina-tablon" element={<AdminPaginaTablon />} />
+          <Route path="/a-pagina-noticias" element={<AdminPaginaNoticias />} />
+          <Route path="/a-pagina-calendario" element={<AdminPaginaCalendario />} />
+          <Route path="/a-pagina-tutoriales" element={<AdminPaginaTutoriales />} />
+          <Route path="/a-pagina-bancoRecursos" element={<AdminPaginaBancoRecursos />} />
+          <Route path="/a-pagina-directorio" element={<AdminPaginaDirectorio />} />
         </Routes> 
       </BrowserRouter>
     </>

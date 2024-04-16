@@ -1,11 +1,19 @@
 .barra-superior{
+    margin: auto;
     display: flex;
-    width: 1150px;
+    width: 1220px;
     height: 100px;
     background-color: transparent;
 }
 .barra-superior head{
     font-size: large;
+}
+
+.logo-home img{
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+    object-position: -10px 11px;
 }
 
 .barra-superior-contenedor-izquierdo{

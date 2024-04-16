@@ -1,11 +1,11 @@
 import React from 'react';
 import './BotonMateria.css';
 import {useNavigate} from "react-router-dom"
-const BotonMateria = ({ imagen, nombre, horario, salon, profesor }) => {
+const BotonMateria = ({ imagen, nombre, horario, salon, profesor, redireccion }) => {
 
   const navigate = useNavigate();
   const navigateToMenu = () => {
-    navigate("/pagina-tablon")
+    navigate(redireccion)
   }
 
   return (
