@@ -1,0 +1,68 @@
+.class-name{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.class-name input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.class-description{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.class-description input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.teacher-id{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.teacher-id input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.class-id{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.class-id input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+
+.submit button{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}

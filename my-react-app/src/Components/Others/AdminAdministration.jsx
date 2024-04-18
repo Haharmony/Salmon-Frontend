@@ -6,13 +6,13 @@ const AdminAdministration = () => {
     const navigation = useNavigate();
 
     const handleCrearUsuariosButton = () => {
-        navigation("/01_CrearUsuariosAdmin");
+        navigation("/create-user");
     };
     const handleActualizarUsuariosButton = () => {
-        navigation("/01_ActualizarUsuarios");
+        navigation("/update-user");
     };
     const handleCrearClase = () => {
-        navigation("/01_CrearClases");
+        navigation("/create-class");
     };
     const handleInsertarAlumno = () => {
         navigation("/01_AsignarClases");

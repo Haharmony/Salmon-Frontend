@@ -93,7 +93,7 @@ const PaginaActualizarUsuarios = () => {
             <button onClick={() => handleActualizarUsuarios('alumno')}>Actualizar Estudiantes</button>
             </div>
             <div>
-                <button onClick={handleRegresarButton}>Regresar Home</button>
+                <span onClick={handleRegresarButton}>Regresar Home</span>
             </div>
          {/* Campos de entrada para datos de usuario */}
          <div>

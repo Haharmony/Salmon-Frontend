@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //const getUsuarios = 'http://192.168.1.89:3000/api/users/directory';
 //const getUsuarios = 'http://172.102.0.78:3000/api/users/directory'; //SCHOOL
-const getUsuarios = 'http://34.70.85.26:3000/api/users/directory';
+const getUsuarios = 'https://haharmony.github.io/Salmon-Frontend/api/users/directory';
 
 
 const DirectorioPage = () => {

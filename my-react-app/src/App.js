@@ -1,10 +1,13 @@
 //import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { DataProvider } from './Components/Pages/DataContext';
 import {Login} from './Components/Pages/Login';
 import { HomeTest } from './Components/Pages/HomeTest'; //REPLACE
 import {CreateUser} from './Components/Pages/CreateUser';
 import {UpdateUser} from './Components/Pages/UpdateUser';
+import {CreateClass} from './Components/Pages/CreateClass';
 import {PaginaInicio} from './Components/Pages/PaginaInicio';
 import {PaginaNoticias} from './Components/Pages/PaginaNoticias';
 import {PaginaCalendario} from './Components/Pages/PaginaCalendario';
@@ -29,7 +32,7 @@ import { AdminProfilePage } from './Components/Pages/AdminProfilePage';
 function App() {
 
   return (
-    <>
+    <DataProvider>
       <BrowserRouter basename='Salmon-Frontend'>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -44,6 +47,7 @@ function App() {
           <Route path="/home-page" element={<HomeTest />} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
+          <Route path="/create-class" element={<CreateClass />} />
           <Route path="/admin-home" element={<AdminHome />} />
           <Route path="/pagina-tareas" element={<HomeworkPage />} />
           <Route path="/pagina-entregables" element={<AssignmentPage />} />
@@ -58,7 +62,7 @@ function App() {
           <Route path="/a-profile-page" element={<AdminProfilePage />} />
         </Routes> 
       </BrowserRouter>
-    </>
+    </DataProvider>
   )
 }
 

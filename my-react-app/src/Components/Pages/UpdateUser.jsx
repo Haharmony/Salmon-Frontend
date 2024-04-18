@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './UpdateUser.css'
-
+import { useNavigate } from "react-router-dom";
 const routeFindUserByRol = 'http://192.168.1.89:3000/api/users/findByRole';
 const routeUpdateUser = 'http://192.168.1.89:3000/api/users/update';
 
@@ -16,6 +16,7 @@ export const UpdateUser = () => {
     const [matricula, setMatricula] = useState('');
     const [telefono, setTelefono] = useState('');
     const [id, setId] = useState(0);
+    const navigate = useNavigate();
 
     const [editar, setEditar] = useState(false);
 
@@ -35,8 +36,9 @@ export const UpdateUser = () => {
         }
     };
 
+
     const handleRegresarButton = () => {
-        window.location.href = "admin-home"
+        navigate("/admin-home");
     };
 
     const editarEmpleados = (val) => {

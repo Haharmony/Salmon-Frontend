@@ -10,9 +10,6 @@ const multer = require('multer');
 //const XLSM = require('xlsx');
 //const fs = require('fs');
 
-const ipconfig = "192.168.1.89"; //dirección ipv4 de la compu
-//const ipconfig ="172.102.0.78"; //direccion school
-
 //const ipconfig = "34.70.85.26";
 /*const uploadOpts = {
     useTempFile : true,
@@ -73,13 +70,13 @@ clasesRoutes(app);
 contenidoClaseRoute(app);
 contenidoXMLSRoutes(app);
 
-/*server.listen(3000,function(){
-    console.log('Aplicacion de NodeJS ' + process.pid + ' iniciada..... en puerto: ' + port)
-});*/
-
-server.listen(3000, ipconfig || 'localhost',function(){
+server.listen(3000,function(){
     console.log('Aplicacion de NodeJS ' + process.pid + ' iniciada..... en puerto: ' + port)
 });
+
+{/*server.listen(3000, ipconfig || 'localhost',function(){
+    console.log('Aplicacion de NodeJS ' + process.pid + ' iniciada..... en puerto: ' + port)
+});*/}
 app.get('/',(req, res)=>{
     res.send('Ruta raiz del backend')
 });
