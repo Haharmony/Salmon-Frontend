@@ -15,10 +15,12 @@ User.create = async (user, result) =>{
                 telefono,
                 imagen,
                 contraseña,
+                rol,
+                matricula,
                 created_at,
                 update_at 
             )
-            VALUES(?,?,?,?,?,?,?,?)
+            VALUES(?,?,?,?,?,?,?,?,?,?)
     `;
 
     db.query
@@ -31,6 +33,8 @@ User.create = async (user, result) =>{
             user.telefono,
             user.imagen,
             hash,
+            user.rol,
+            user.matricula,
             new Date(),
             new Date()
         ],
@@ -56,7 +60,9 @@ User.findById = (id, result)=>{
         nombre,
         apellido,
         imagen,
-        contraseña
+        contraseña,
+        rol,
+        matricula
     FROM
          users
     WHERE
@@ -90,7 +96,9 @@ User.findByEmail = (email, result)=>{
         nombre,
         apellido,
         imagen,
-        contraseña
+        contraseña,
+        rol,
+        matricula
     FROM
          users
     WHERE
@@ -113,7 +121,104 @@ User.findByEmail = (email, result)=>{
     )
     
 };
-/*User.Login = async (req,res)=>{
 
-};*/
+User.directory = (req, result)=>{
+
+    const sql = `
+        SELECT
+        email,
+        nombre,
+        apellido,
+        rol,
+        contraseña,
+        matricula
+    FROM
+         users
+    `;
+    db.query(sql, (err, users) => {
+        if(err){
+            console.log('Error: ', err);
+            result(err, null);
+        } else {
+            console.log('Usuarios obtenidos: ', users);
+            result(null, users);
+        }
+    });
+};
+
+
+User.findByRol = (rol, result)=>{
+    const sql  = `
+    SELECT
+        id,
+        email,
+        nombre,
+        apellido,
+        imagen,
+        contraseña,
+        matricula,
+        telefono
+    FROM
+         users
+    WHERE
+    rol = ? 
+    `;
+    db.query(
+        sql,
+        [rol],
+        (err, users)=>{
+            if(err){
+               console.log('Error: ', err);
+               result(err, null);
+            }
+            else{
+               console.log('Usuario obtenido: ', users);
+               result(null, users);
+            }
+        }
+    )
+};
+User.update = async (id, updatedUserData, result) => {
+    const hash = await bcrypt.hash(updatedUserData.contraseña,10);
+    const sql = `
+    UPDATE users
+    SET 
+        email = ?,
+        nombre = ?,
+        apellido = ?,
+        telefono = ?,
+        imagen = ?,
+        contraseña=?,
+        matricula = ?,
+        tiene_certificado
+
+    WHERE id = ?
+`;
+   
+    db.query(
+        sql,
+        [
+            updatedUserData.email,
+            updatedUserData.nombre,
+            updatedUserData.apellido,
+            updatedUserData.telefono,
+            updatedUserData.imagen,
+            hash,
+            updatedUserData.matricula,
+            updatedUserData.tiene_certificado,
+           
+            id
+        ],
+        (err, res) => {
+            if (err) {
+                console.log('Error: ', err);
+                result(err, null);
+            } else {
+                console.log('Usuario actualizado');
+                result(null, res.affectedRows); // Devuelve el número de filas afectadas
+            }
+        }
+    );
+};
+
 module.exports = User;

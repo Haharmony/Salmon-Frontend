@@ -36,7 +36,7 @@ export const UpdateUser = () => {
     };
 
     const handleRegresarButton = () => {
-        window.location.href = "home-page"
+        window.location.href = "admin-home"
     };
 
     const editarEmpleados = (val) => {
@@ -69,88 +69,90 @@ export const UpdateUser = () => {
     };
 
     return (
-        <div className="container2">
-            <div className="title-uu"><h1>Actualización de datos de usuarios</h1></div>
-            <div className="update-teachers">
-                <button onClick={() => handleActualizarUsuarios('maestro')}>Actualizar Maestros</button>
-            </div>
-            <div className="update-students">
-                <button onClick={() => handleActualizarUsuarios('alumno')}>Actualizar Estudiantes</button>
-            </div>
-            {/* Campos de entrada para datos de usuario */}
-            <div className="email-field-uu">
-                <label>Email:</label>
-                <div className="email-field-uu-input"><input type="text" value={email} onChange={e => setEmail(e.target.value)} /></div>
-            </div>
-            <div className="name-field-uu">
-                <label>Nombre:</label>
-                <div className="name-field-uu-input"><input type="text" value={nombre} onChange={e => setNombre(e.target.value)} /></div>
-            </div>
-            <div className="lastname-field-uu">
-                <label>Apellido:</label>
-                <div className="lastname-field-uu-input"><input type="text" value={apellido} onChange={e => setApellido(e.target.value)} /></div>
-            </div>
-            <div className="phone-number-uu">
-                <label>Telefono:</label>
-                <div className="phone-number-uu-input"><input type="text" value={telefono} onChange={e => setTelefono(e.target.value)} /></div>
-            </div>
-            <div className="img-uu">
-                <label>Imagen:</label>
-                <div className="img-uu-input"><input type="text" value={imagen} onChange={e => setImagen(e.target.value)} /></div>
-            </div>
-            <div className="id-field-uu">
-                <label>Matri­cula:</label>
-                <div className="id-field-uu-input"><input type="text" value={matricula} onChange={e => setMatricula(e.target.value)} /></div>
-            </div>
-            <div className="return-home-uu">
-                <button onClick={handleRegresarButton}>Regresar Home</button>
-            </div>
-            {editar ? (
-                <div className="update-button">
-                    <button onClick={update}>Actualizar</button>
+        <div className="full-page">
+            <div className="container2">
+                <div className="title-uu"><h1>Actualización de datos de usuarios</h1></div>
+                <div className="update-teachers">
+                    <button onClick={() => handleActualizarUsuarios('maestro')}>Actualizar Maestros</button>
                 </div>
-            ) : null}
+                <div className="update-students">
+                    <button onClick={() => handleActualizarUsuarios('alumno')}>Actualizar Estudiantes</button>
+                </div>
+                {/* Campos de entrada para datos de usuario */}
+                <div className="email-field-uu">
+                    <label>Email:</label>
+                    <div className="email-field-uu-input"><input type="text" value={email} onChange={e => setEmail(e.target.value)} /></div>
+                </div>
+                <div className="name-field-uu">
+                    <label>Nombre:</label>
+                    <div className="name-field-uu-input"><input type="text" value={nombre} onChange={e => setNombre(e.target.value)} /></div>
+                </div>
+                <div className="lastname-field-uu">
+                    <label>Apellido:</label>
+                    <div className="lastname-field-uu-input"><input type="text" value={apellido} onChange={e => setApellido(e.target.value)} /></div>
+                </div>
+                <div className="phone-number-uu">
+                    <label>Telefono:</label>
+                    <div className="phone-number-uu-input"><input type="text" value={telefono} onChange={e => setTelefono(e.target.value)} /></div>
+                </div>
+                <div className="img-uu">
+                    <label>Imagen:</label>
+                    <div className="img-uu-input"><input type="text" value={imagen} onChange={e => setImagen(e.target.value)} /></div>
+                </div>
+                <div className="id-field-uu">
+                    <label>Matri­cula:</label>
+                    <div className="id-field-uu-input"><input type="text" value={matricula} onChange={e => setMatricula(e.target.value)} /></div>
+                </div>
+                <div className="underline2"></div>
+                <div className="return-home-uu">
+                    <span onClick={handleRegresarButton}>Regresar Home</span>
+                </div>
+                {editar ? (
+                    <div className="update-button">
+                        <button onClick={update}>Actualizar</button>
+                    </div>
+                ) : null}
 
 
 
-            {/* Tabla para mostrar los datos de los usuarios */}
-            {showTable ? (
-                <div>
-                    <h2>Usuarios:</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Email</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Telefono</th>
-                                <th>Imagen</th>
-                                <th>Matricula</th>
+                {/* Tabla para mostrar los datos de los usuarios */}
+                {showTable ? (
+                    <div>
+                        <h2>Usuarios:</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Telefono</th>
+                                    <th>Imagen</th>
+                                    <th>Matricula</th>
 
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {usuarios.map(usuario => (
-                                <tr key={usuario.email}>
-                                    <td>{usuario.email}</td>
-                                    <td>{usuario.nombre}</td>
-                                    <td>{usuario.apellido}</td>
-                                    <td>{usuario.telefono}</td>
-                                    <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
-                                    <td>{usuario.matricula}</td>
-
-
-                                    <td>
-                                        <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
-                                        <button>Eliminar</button>
-                                    </td>
+                                    <th>Acciones</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            ) : null}
+                            </thead>
+                            <tbody>
+                                {usuarios.map(usuario => (
+                                    <tr key={usuario.email}>
+                                        <td>{usuario.email}</td>
+                                        <td>{usuario.nombre}</td>
+                                        <td>{usuario.apellido}</td>
+                                        <td>{usuario.telefono}</td>
+                                        <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
+                                        <td>{usuario.matricula}</td>
+
+                                        <td>
+                                            <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
+                                            <button>Eliminar</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                ) : null}
+            </div>
         </div>
     );
 };

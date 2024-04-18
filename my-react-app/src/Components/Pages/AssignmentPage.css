@@ -49,6 +49,7 @@
     align-content: center;
     width: 110vh;
     margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 .remove-file span{
@@ -57,4 +58,32 @@
     &:hover {
         text-decoration: underline;
     }
+}
+
+.folder-handler button{
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}
+
+.underline-assignments {
+    width: 20%;
+    height: 1px;
+    background: #03002c;
+    border-radius: 9px;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }

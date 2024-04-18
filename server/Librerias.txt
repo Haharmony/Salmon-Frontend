@@ -5,6 +5,13 @@ Librerias para el server
 //libreria necesaria npm i express
 //libreria necesaria encriptado de constraseñas npm i bcryptjs
 //Libreria importante npm i mysql
+//Libreria importante npm i passport
+//Libreria importante npm i passport-jwt
+//Libreria importante npm i jsonwebtoken
+//npm install multer
+//npm install xlsx
+//npm install express-fileupload
+
 
 
 Librerias para React

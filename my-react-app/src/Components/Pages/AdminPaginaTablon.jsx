@@ -43,12 +43,7 @@ const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias
 
 const anuncios_tablon = <>
     <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
-</>
+    </>
 
 export const AdminPaginaTablon = () => {
     return (

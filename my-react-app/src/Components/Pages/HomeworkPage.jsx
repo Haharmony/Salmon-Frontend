@@ -2,13 +2,10 @@ import React from 'react'
 import './PaginaInicio.css'
 import './HomeworkPage.css'
 import Cabecera from '../Others/Cabecera';
-import PiePagina from '../Others/PiePagina';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
 import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
-import { ContenidoTablon } from '../Others/ContenidoTablon';
-import { AnuncioTablon } from '../Others/AnuncioTablon';
 
 const barra_inferior = <BarraInferior contenido={
     <>
@@ -40,7 +37,7 @@ const menu_actualizaciones = <>
     <BotonMenuDesplegable texto={'Actualizacion 2'} />
     <BotonMenuDesplegable texto={'Actualizacion 3'} />
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"}/>
+const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"} profile_redireccion={"profile-page"}/>
 
 export const HomeworkPage = () => {
     return (

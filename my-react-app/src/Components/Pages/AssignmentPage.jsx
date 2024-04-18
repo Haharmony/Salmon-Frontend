@@ -50,7 +50,7 @@ const barra_inferior = (
   );
   
   const barra_superior = (
-    <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} />
+    <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"}/>
   );
   
   export const AssignmentPage = () => {
@@ -114,9 +114,10 @@ const barra_inferior = (
                   <div className="folder-header">
                     <div className="folder-underline"></div>
                     <div className='folder-name'>{folder.name}</div>
-                    <button onClick={() => handleDeleteFolder(folderIndex)}>Eliminar Carpeta</button>
+                    <div className="folder-handler"><button onClick={() => handleDeleteFolder(folderIndex)}>Eliminar Carpeta</button></div>
+                    <div className="underline-assignments"></div>
                   </div>
-                  <input type="file" onChange={(event) => handleFileInputChange(event, folderIndex)} multiple />
+                  <div className="file-handler"><input type="file" onChange={(event) => handleFileInputChange(event, folderIndex)} multiple /></div>
                   {folder.files.length > 0 && (
                     <div>
                       <h4>Archivos en esta carpeta:</h4>
