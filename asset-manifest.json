@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Salmon-Frontend/static/css/main.c917fa0a.css",
-    "main.js": "/Salmon-Frontend/static/js/main.641edd16.js",
+    "main.css": "/Salmon-Frontend/static/css/main.cad56237.css",
+    "main.js": "/Salmon-Frontend/static/js/main.7dd85147.js",
     "static/js/453.ad6eb26e.chunk.js": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js",
     "static/media/background.jpg": "/Salmon-Frontend/static/media/background.decbb8c13395e5e0a39b.jpg",
     "static/media/lawbackground23.jpg": "/Salmon-Frontend/static/media/lawbackground23.2dad6758bc9ba15f1f3b.jpg",
@@ -26,12 +26,12 @@
     "static/media/materia.jpg": "/Salmon-Frontend/static/media/materia.ef4720c1b9aa99ca81b2.jpg",
     "static/media/tareas.png": "/Salmon-Frontend/static/media/tareas.92555e83ef982399e767.png",
     "index.html": "/Salmon-Frontend/index.html",
-    "main.c917fa0a.css.map": "/Salmon-Frontend/static/css/main.c917fa0a.css.map",
-    "main.641edd16.js.map": "/Salmon-Frontend/static/js/main.641edd16.js.map",
+    "main.cad56237.css.map": "/Salmon-Frontend/static/css/main.cad56237.css.map",
+    "main.7dd85147.js.map": "/Salmon-Frontend/static/js/main.7dd85147.js.map",
     "453.ad6eb26e.chunk.js.map": "/Salmon-Frontend/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c917fa0a.css",
-    "static/js/main.641edd16.js"
+    "static/css/main.cad56237.css",
+    "static/js/main.7dd85147.js"
   ]
 }
