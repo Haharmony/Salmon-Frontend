@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import './UpdateUser.css'
 import { useNavigate } from "react-router-dom";
-const routeFindUserByRol = 'http://192.168.1.89:3000/api/users/findByRole';
-const routeUpdateUser = 'http://192.168.1.89:3000/api/users/update';
+import{ routeFindUserByRol, routeUpdateUser} from "./constants";
 
 export const UpdateUser = () => {
 
@@ -13,8 +12,10 @@ export const UpdateUser = () => {
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [imagen, setImagen] = useState('');
+    const [contraseña, setContraseña] = useState('');
     const [matricula, setMatricula] = useState('');
     const [telefono, setTelefono] = useState('');
+    const [tiene_certificado, setTieneCertificado] = useState(false);
     const [id, setId] = useState(0);
     const navigate = useNavigate();
 
@@ -48,7 +49,9 @@ export const UpdateUser = () => {
         setApellido(val.apellido);
         setImagen(val.imagen);
         setMatricula(val.matricula);
+        setContraseña(val.contraseña);
         setTelefono(val.telefono);
+        setTieneCertificado(val.tiene_certificado);
         setId(val.id);
     };
 
@@ -61,10 +64,13 @@ export const UpdateUser = () => {
                 apellido: apellido,
                 telefono: telefono,
                 imagen: imagen,
-                matricula: matricula
+                contraseña: contraseña,
+                matricula: matricula,
+                tiene_certificado: tiene_certificado
             });
             alert("usuario actualizado");
             setShowTable(!showTable);
+            console.log(response);
         } catch (error) {
             console.error('Error actualizando usuario:', error);
         }
@@ -73,7 +79,7 @@ export const UpdateUser = () => {
     return (
         <div className="full-page">
             <div className="container2">
-                <div className="title-uu"><h1>Actualización de datos de usuarios</h1></div>
+                <div className="title-uu"><h1>Actualización de Datos de Usuario</h1></div>
                 <div className="update-teachers">
                     <button onClick={() => handleActualizarUsuarios('maestro')}>Actualizar Maestros</button>
                 </div>
@@ -101,9 +107,17 @@ export const UpdateUser = () => {
                     <label>Imagen:</label>
                     <div className="img-uu-input"><input type="text" value={imagen} onChange={e => setImagen(e.target.value)} /></div>
                 </div>
+                <div className="password-uu">
+                    <label>Imagen:</label>
+                    <div className="password-uu-input"><input type="text" value={contraseña} onChange={e => setContraseña(e.target.value)} /></div>
+                </div>
                 <div className="id-field-uu">
                     <label>Matri­cula:</label>
                     <div className="id-field-uu-input"><input type="text" value={matricula} onChange={e => setMatricula(e.target.value)} /></div>
+                </div>
+                <div className="cert-field-uu">
+                    <label>Certificado:</label>
+                    <div className="cert-field-uu-input"><input type="bool" value={tiene_certificado} onChange={e => setTieneCertificado(e.target.value)} /></div>
                 </div>
                 <div className="underline2"></div>
                 <div className="return-home-uu">
@@ -129,7 +143,9 @@ export const UpdateUser = () => {
                                     <th>Apellido</th>
                                     <th>Telefono</th>
                                     <th>Imagen</th>
+                                    <th>Contraseña</th>
                                     <th>Matricula</th>
+                                    <th>Certificado</th>
 
                                     <th>Acciones</th>
                                 </tr>
@@ -142,7 +158,9 @@ export const UpdateUser = () => {
                                         <td>{usuario.apellido}</td>
                                         <td>{usuario.telefono}</td>
                                         <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
+                                        <td>{usuario.contraseña}</td>
                                         <td>{usuario.matricula}</td>
+                                        <td>{usuario.tiene_certificado}</td>
 
                                         <td>
                                             <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>

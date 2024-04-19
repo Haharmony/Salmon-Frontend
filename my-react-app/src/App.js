@@ -3,14 +3,13 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { DataProvider } from './Components/Pages/DataContext';
-import {Login} from './Components/Pages/Login';
-import { HomeTest } from './Components/Pages/HomeTest'; //REPLACE
+import Login from './Components/Pages/Login';
 import {CreateUser} from './Components/Pages/CreateUser';
 import {UpdateUser} from './Components/Pages/UpdateUser';
 import {CreateClass} from './Components/Pages/CreateClass';
+import {AssignClass} from './Components/Pages/AssignClass';
 import {PaginaInicio} from './Components/Pages/PaginaInicio';
 import {PaginaNoticias} from './Components/Pages/PaginaNoticias';
-import {PaginaCalendario} from './Components/Pages/PaginaCalendario';
 import {PaginaTutoriales} from './Components/Pages/PaginaTutoriales';
 import {PaginaBancoRecursos} from './Components/Pages/PaginaBancoRecursos';
 import {Paginadirectorio} from './Components/Pages/PaginaDirectorio';
@@ -28,6 +27,14 @@ import { AdminPaginaBancoRecursos } from './Components/Pages/AdminPaginaBancoRec
 import { AdminPaginaDirectorio } from './Components/Pages/AdminPaginaDirectorio';
 import { ProfilePage } from './Components/Pages/ProfilePage';
 import { AdminProfilePage } from './Components/Pages/AdminProfilePage';
+import { ZoomLink } from './Components/Pages/Zoomlink';
+import { ExcelTable } from './Components/Pages/ExcelTable';
+import { UploadExcel } from './Components/Pages/UploadExcel';
+import { Directorio } from './Components/Pages/Directorio';
+import AssignmentPagePDF from './Components/Pages/AssignmentPagePDF';
+import GradeHomework from './Components/Pages/GradeHomework';
+import CalendarPage from './Components/Pages/CalendarPage';
+import CalendarPageStudent from './Components/Pages/CalenderPageStudent';
 
 function App() {
 
@@ -38,19 +45,24 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/pagina-inicio" element={<PaginaInicio />} />
           <Route path="/pagina-noticias" element={<PaginaNoticias />} />
-          <Route path="/pagina-calendario" element={<PaginaCalendario />} />
+          <Route path="/calendar-page" element={<CalendarPage />} />
+          <Route path="/calendar-page-s" element={<CalendarPageStudent />} />
           <Route path="/pagina-tutoriales" element={<PaginaTutoriales />} />
           <Route path="/pagina-bancoRecursos" element={<PaginaBancoRecursos />} />
           <Route path="/pagina-directorio" element={<Paginadirectorio />} />
           <Route path="/pagina-soporte" element={<PaginaSoporte />} />
           <Route path="/pagina-tablon" element={<PaginaTablon/>} />
-          <Route path="/home-page" element={<HomeTest />} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
           <Route path="/create-class" element={<CreateClass />} />
+          <Route path="/assign-class" element={<AssignClass />} />
+          <Route path="/zoom-link" element={<ZoomLink />} />
+          <Route path="/upload-excel" element={<UploadExcel />} />
           <Route path="/admin-home" element={<AdminHome />} />
+          <Route path="/excel-table" element={<ExcelTable />} />
           <Route path="/pagina-tareas" element={<HomeworkPage />} />
           <Route path="/pagina-entregables" element={<AssignmentPage />} />
+          <Route path="/pagina-entregables-pdf" element={<AssignmentPagePDF />} />
           <Route path="/a-pagina-tareas" element={<AdminHomeworkPage />} />
           <Route path="/a-pagina-tablon" element={<AdminPaginaTablon />} />
           <Route path="/a-pagina-noticias" element={<AdminPaginaNoticias />} />
@@ -60,6 +72,8 @@ function App() {
           <Route path="/a-pagina-directorio" element={<AdminPaginaDirectorio />} />
           <Route path="/profile-page" element={<ProfilePage />} />
           <Route path="/a-profile-page" element={<AdminProfilePage />} />
+          <Route path="/directory" element={<Directorio />} />
+          <Route path="/grade-homework" element={< GradeHomework/>} />
         </Routes> 
       </BrowserRouter>
     </DataProvider>

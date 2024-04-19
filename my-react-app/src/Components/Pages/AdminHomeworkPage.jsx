@@ -6,6 +6,7 @@ import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
 import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
+import { useNavigate } from 'react-router-dom';
 
 const barra_inferior = <BarraInferior contenido={
     <>
@@ -18,9 +19,9 @@ const barra_inferior = <BarraInferior contenido={
 } />
 
 const menu_materias = <>
-    <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/a-pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/a-pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/a-pagina-tablon'}/>
+    <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/a-pagina-tablon'} />
+    <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/a-pagina-tablon'} />
+    <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/a-pagina-tablon'} />
 </>
 const menu_mensajes = <>
     <BotonMenuDesplegable texto={'Mensaje 1'} />
@@ -37,14 +38,22 @@ const menu_actualizaciones = <>
     <BotonMenuDesplegable texto={'Actualizacion 2'} />
     <BotonMenuDesplegable texto={'Actualizacion 3'} />
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"}/>
+const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"} />
 
 export const AdminHomeworkPage = () => {
+    const navigate = useNavigate();
+    const navigateToMenu = () => {
+      navigate("/grade-homework")
+    }
+
     return (
         <div className='contenedor-pagina'>
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
             <div className="homework-container">
-                <div className="h-title"><h1>Tareas</h1></div>
+                <div className="h-title">
+                    <h1>Tareas</h1>
+                    <div className="button"><button onClick={navigateToMenu}>Calificar Tareas</button></div>
+                </div>
                 <div className="h-holder">
                     <div className="h-content">No hay tareas</div>
                 </div>

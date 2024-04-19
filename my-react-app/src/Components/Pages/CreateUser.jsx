@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'; //Libreria necesaria npm i axios// Importa el hook useHistory
 import './CreateUser.css'
 import { useNavigate } from 'react-router-dom';
-
-const routeCreateUser = 'http://192.168.1.89:3000/api/users/create';
+import {routeCreateUser} from "./constants";
 
 export const CreateUser = () => {
     const [email, setEmail] = useState('');
@@ -36,15 +35,14 @@ export const CreateUser = () => {
             setError('Error al crear usuario, por favor intentelo de nuevo.');
         }
     };
-    const handleRegresarButton=()=>{
+    const handleRegresarButton = () => {
         navigate("/admin-home");
-      };
+    };
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="full-page">
-                <div className='container1'>
-                    <div className='title'><h1>CREAR USUARIO</h1></div>
-                    <div className="underline1"></div>
+        <div className="full-page">
+            <div className='container1'>
+                <form onSubmit={handleSubmit}>
+                    <div className='title'><h1>Crear Usuario</h1></div>
                     <div className='email-field'>
                         <label>Email</label>
                         <div className="email-input"><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} /></div>
@@ -78,11 +76,11 @@ export const CreateUser = () => {
                         <button type="submit">Crear usuario</button>
                     </div>
                     <div className="underline2"></div>
-                    <div className='return-home'>
-                        <span onClick={handleRegresarButton}>Regresar Home</span>
-                    </div>
+                </form>
+                <div className='return-home'>
+                    <span onClick={handleRegresarButton}>Regresar Home</span>
                 </div>
             </div>
-        </form>
+        </div>
     );
 }

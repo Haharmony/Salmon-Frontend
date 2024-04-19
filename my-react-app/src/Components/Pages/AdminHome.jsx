@@ -12,10 +12,10 @@ import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
 const barra_inferior = <BarraInferior contenido={
   <>
     <BotonBarraInferior imagenSrc={require("../Assets/noticias.png")} texto={"Noticias"} redireccion={"a-pagina-noticias"} />
-    <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/04/2024"} redireccion={"a-pagina-calendario"} />
+    <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/04/2024"} redireccion={"calendar-page"} />
     <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
     <BotonBarraInferior imagenSrc={require("../Assets/bancorecursos.png")} texto={"Banco de recursos"} redireccion={"a-pagina-bancoRecursos"} />
-    <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"a-pagina-directorio"} />
+    <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"directory"} />
     <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"pagina-entregables"} />
   </>
 }/>

@@ -46,6 +46,29 @@
     width: 300px;
 }
 
+.student-id{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.student-id input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
+
+.zoom-url-a{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.zoom-url-a input{
+    margin-top: 6px;
+    height: 30px;
+    width: 300px;
+}
 
 .submit button{
     display: flex;

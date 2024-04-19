@@ -1,10 +1,10 @@
 const ClaseController = require('../controllers/clasesController');
 
 module.exports = (app) => {
-    app.get('/api/alumnos_clases/ClasesAlumno', ClaseController.ClasesAlumno);
-    app.get('/api/clases/ClasesMaestro', ClaseController.ClasesMaestro);
-    app.post('/api/clases/createClaseMaestro', ClaseController.createClaseMaestro);
-    app.post('/api/alumnos_clases/insertarAlumnoClase', ClaseController.insertarAlumnoClase);
-    app.post('/api/zoom/generarLink', ClaseController.generarLink);
-    app.get('/api/zoom/getUltimoLinkZoom', ClaseController.getUltimoLinkZoom);
+    app.get('/Salmon-Frontend/api/alumnos_clases/ClasesAlumno', ClaseController.ClasesAlumno);
+    app.get('/Salmon-Frontend/api/clases/ClasesMaestro', ClaseController.ClasesMaestro);
+    app.post('/Salmon-Frontend/api/clases/createClaseMaestro', ClaseController.createClaseMaestro);
+    app.post('/Salmon-Frontend/api/alumnos_clases/insertarAlumnoClase', ClaseController.insertarAlumnoClase);
+    app.post('/Salmon-Frontend/api/zoom/generarLink', ClaseController.generarLink);
+    app.get('/Salmon-Frontend/api/zoom/getUltimoLinkZoom', ClaseController.getUltimoLinkZoom);
 };

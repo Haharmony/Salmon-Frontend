@@ -1,11 +1,11 @@
 const mysql = require('mysql'); //Libreria importante npm i mysql
 
-/*const db = mysql.createConnection({
+const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
     database: 'buffetabogados'
-});*/
+});
 
 /*const db = mysql.createConnection({
     host: '34.70.85.26',
@@ -20,17 +20,20 @@ db.connect(function(err){
     console.log('DATABASE CONNECTED!!');
 });
 */
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host: '34.70.85.26',
     user: 'root',
     password: 'password',
     database: 'buffetabogados',
     port: '3306'
-});
+});*/
 
 db.connect(function(err){
-    if (err) console.log("[mysql error]",err);
-    console.log('DATABASE CONNECTED!');
+    if (!err) {
+        console.log("Database is connected");
+    } else {
+        console.log("Database is not connected" + err);
+    }
 });
 /*
 const db = mysql.createPool({

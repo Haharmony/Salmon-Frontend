@@ -13,8 +13,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 module.exports = (app) => {
-    app.post('/api/archivosXMLS/subirExcel', upload.single('excelFile'), ContenidoXMLSController.subirExcel);
-    app.get('/api/archivosXMLS/descargarExcel', ContenidoXMLSController.descargarExcel);
-    app.get('/api/archivosXMLS/mostrarExcel', ContenidoXMLSController.mostrarExcel);
-    app.delete('/api/archivosXMLS/eliminarExcel', ContenidoXMLSController.eliminarExcel);
+    app.post('/Salmon-Frontend/api/archivosXMLS/subirExcel', upload.single('excelFile'), ContenidoXMLSController.subirExcel);
+    app.get('/Salmon-Frontend/api/archivosXMLS/descargarExcel', ContenidoXMLSController.descargarExcel);
+    app.get('/Salmon-Frontend/api/archivosXMLS/mostrarExcel', ContenidoXMLSController.mostrarExcel);
+    app.delete('/Salmon-Frontend/api/archivosXMLS/eliminarExcel', ContenidoXMLSController.eliminarExcel);
 };

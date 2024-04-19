@@ -15,12 +15,6 @@ const BotonDesplegableBarraSuperior = ({ imagenSrc, texto, menu }) => {
         }
     };
 
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
 
     return (
         <div className="boton-desplegable-container">

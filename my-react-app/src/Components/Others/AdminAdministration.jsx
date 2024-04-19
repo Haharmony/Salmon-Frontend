@@ -15,17 +15,17 @@ const AdminAdministration = () => {
         navigation("/create-class");
     };
     const handleInsertarAlumno = () => {
-        navigation("/01_AsignarClases");
+        navigation("/assign-class");
     };
     const handleInsertarLink = () => {
-        navigation("/01_ZoomLink");
+        navigation("/zoom-link");
     };
 
     const handleDescargarExcel = () => {
-        navigation("/01_TablaArchivoExcel");
+        navigation("/excel-table");
     };
     const handleSubirExcel = () => {
-        navigation("/01_FormularioSubirExcel");
+        navigation("/upload-excel");
     };
     return (
         <div className="administration">

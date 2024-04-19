@@ -1,34 +1,28 @@
-import React, { useState } from 'react'
-import './Login.css'
+import React, { useState } from 'react';
+import './Login.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useData } from './DataContext'; // Importa el contexto
 
-import username_icon from '../Assets/username.png'
-import password_icon from '../Assets/password.png'
-import background_img from '../Assets/background.jpg'
-import passwordEyeOpen_icon from '../Assets/showPassword.png'
-import passwordEyeClosed_icon from '../Assets/noPassword.png'
-import logoBackground from '../Assets/logo.jpeg'
+import username_icon from '../Assets/username.png';
+import password_icon from '../Assets/password.png';
+import background_img from '../Assets/background.jpg';
+import passwordEyeOpen_icon from '../Assets/showPassword.png';
+import passwordEyeClosed_icon from '../Assets/noPassword.png';
+import logoBackground from '../Assets/logo.jpeg';
+import {apiLogin} from "./constants";
 
-//const apiLogin = 'http://192.168.1.113:3000/api/users/login'
-const apiLogin = 'http://172.102.0.78:3000/api/users/login'
-
-export const Login = () => {
+function Login() {
     const navigate = useNavigate();
     const { setData, setUserId } = useData();
     const [email, setEmail] = useState('');
     const [contraseña, setPassword] = useState('');
     const [errorM, setError] = useState('');
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook)\.com$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook|example)\.com$/;
 
-
-    const navigateToMenu = () => {
-        navigate("/pagina-inicio");
-    };
     const testHandleSubmitAdmin = () => {
-        navigate("/admin-home");
+        navigate("/pagina-inicio");
     }
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
@@ -43,10 +37,6 @@ export const Login = () => {
             document.getElementById('emailInput').classList.remove('error');
         }
     };
-
-    const tesHandleSubmit = () => {
-        navigateToMenu();
-    }
 
     const handleSubmit = async (e) => {
         validateEmail();
@@ -110,42 +100,42 @@ export const Login = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="fullpage">
-                <div className='container'>
-                    <div className="background">
-                        <img src={background_img} alt="" />
-                    </div>
-                    <div className="header">
-                        {/*<div className="text">Inicio de Sesión</div>
-                    <div className="underline"></div>*/}
-                        <div className="logo">
-                            <img src={logoBackground} alt="" />
-                        </div>
-                    </div>
-                    <div className="login-text">Iniciar sesión con su correo institucional.</div>
-                    <div className="inputs">
-                        <div className="input">
-                            <div className={`input ${email && !emailRegex.test(email) ? 'error' : ''}`} id="emailInput">
-                                <img src={username_icon} alt="" />
-                                <input type="email" placeholder='Correo Electrónico' value={email} onChange={(e) => setEmail(e.target.value)} />
-                            </div>
-                        </div>
-                        <div className="input">
-                            <img src={password_icon} alt="" />
-                            <input type={passwordVisible ? "text" : "password"} placeholder='Contraseña' value={contraseña} onChange={(e) => setPassword(e.target.value)} />
-                            <div className="show-password">
-                                <button onClick={togglePasswordVis} disabled={isShowPasswordDisabled}><img src={passwordVisible ? passwordEyeOpen_icon : passwordEyeClosed_icon} alt="" /></button>
-                            </div>
-                        </div>
-                    </div>
-                    {/*<div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>*/}
-                    <div className="error-message"> {errorM && <div>{errorM}</div>} </div>
-                    <div className="submit-container"><button type='submit' disabled={isLoginDisabled}>Iniciar Sesión</button></div>
-                    <div className="submit-container2"><button onClick={testHandleSubmitAdmin}>Admin Home</button></div>
-                    {/*<div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
+        <div className="fullpage">
+            <div className='container'>
+                <div className="background">
+                    <img src={background_img} alt="" />
                 </div>
+                <div className="header">
+                    {/*<div className="text">Inicio de Sesión</div>
+                    <div className="underline"></div>*/}
+                    <div className="logo">
+                        <img src={logoBackground} alt="" />
+                    </div>
+                </div>
+                <div className="login-text">Iniciar sesión con su correo institucional.</div>
+                <div className="inputs">
+                    <div className="input">
+                        <div className={`input ${email && !emailRegex.test(email) ? 'error' : ''}`} id="emailInput">
+                            <img src={username_icon} alt="" />
+                            <input type="email" placeholder='Correo Electrónico' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </div>
+                    </div>
+                    <div className="input">
+                        <img src={password_icon} alt="" />
+                        <input type={passwordVisible ? "text" : "password"} placeholder='Contraseña' value={contraseña} onChange={(e) => setPassword(e.target.value)} />
+                        <div className="show-password">
+                            <button onClick={togglePasswordVis} disabled={isShowPasswordDisabled}><img src={passwordVisible ? passwordEyeOpen_icon : passwordEyeClosed_icon} alt="" /></button>
+                        </div>
+                    </div>
+                </div>
+                {/*<div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>*/}
+                <div className="error-message"> {errorM && <div>{errorM}</div>} </div>
+                <div className="submit-container"><button onClick={handleSubmit} disabled={isLoginDisabled}>Iniciar Sesión</button></div>
+                <div className="submit-container2"><button onClick={testHandleSubmitAdmin}>Admin Home</button></div>
+                {/*<div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
             </div>
-        </form>
+        </div>
     )
 }
+
+export default Login;

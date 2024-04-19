@@ -41,6 +41,25 @@
     }
 }
 
+.button button{
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    color: #fff;
+    background: #0082d2;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+        background: #003e8a;
+        color: #b9b9b9;
+    }
+}
+
 .assignment-holder{
     border: 1px solid black;
     padding: 25px;
@@ -49,6 +68,7 @@
     align-content: center;
     width: 110vh;
     margin: 0 auto;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
