@@ -38,7 +38,7 @@ export const ExcelTable = () => {
 
   const handleEliminarArchivo = async (idArchivo) => {
     try {
-      await axios.delete(`${apiEliminarExcel}?idArchivo=${idArchivo}`);
+      await axios.delete(`${apiEliminarExcel}?id_archivo=${idArchivo}`);
       console.log('Archivo eliminado exitosamente.');
       alert("Excel eliminado correctamente");
       handleMostrarArchivos();
@@ -55,12 +55,6 @@ export const ExcelTable = () => {
     <div className='full-page'>
       <div className="container1">
         <div>
-          <input
-            type="text"
-            placeholder="Ingrese matrícula"
-            value={matricula}
-            onChange={(e) => setMatricula(e.target.value)}
-          />
           <button onClick={handleMostrarArchivos}>Mostrar Archivos</button>
         </div>
         {message && <p>{message}</p>}

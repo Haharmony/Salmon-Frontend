@@ -79,7 +79,7 @@ export const UploadExcel = () => {
                             onChange={handleArchivoChange} required
                         />
                     </div>
-                    <button type="submit">Subir Archivo</button>
+                    <div className="ingresar-mat"><button type="submit">Subir Archivo</button></div>
                 </form>
                 <div className="underline2"></div>
                     <div className='return-home'>

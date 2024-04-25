@@ -38,6 +38,8 @@ import CalendarPageStudent from './Components/Pages/CalenderPageStudent';
 import { DirectorioStudent } from './Components/Pages/DirectorioStudent';
 import ZoomPage from './Components/Pages/ZoomPage';
 import AdminZoomPage from './Components/Pages/AdminZoomPage';
+import { AdminPaginaContenido } from './Components/Pages/AdminPaginaContenido';
+import { PaginaContenido } from './Components/Pages/PaginaContenido';
 
 function App() {
 
@@ -56,6 +58,7 @@ function App() {
           <Route path="/pagina-soporte" element={<PaginaSoporte />} />
           <Route path="/pagina-tablon" element={<PaginaTablon/>} />
           <Route path="/pagina-zoom" element={<ZoomPage/>} />
+          <Route path="/pagina-contenido" element={<PaginaContenido/>} />
           <Route path="/a-pagina-zoom" element={<AdminZoomPage/>} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
@@ -75,6 +78,7 @@ function App() {
           <Route path="/a-pagina-tutoriales" element={<AdminPaginaTutoriales />} />
           <Route path="/a-pagina-bancoRecursos" element={<AdminPaginaBancoRecursos />} />
           <Route path="/a-pagina-directorio" element={<AdminPaginaDirectorio />} />
+          <Route path="/a-pagina-contenido" element={<AdminPaginaContenido />} />
           <Route path="/profile-page" element={<ProfilePage />} />
           <Route path="/a-profile-page" element={<AdminProfilePage />} />
           <Route path="/directory" element={<Directorio />} />
