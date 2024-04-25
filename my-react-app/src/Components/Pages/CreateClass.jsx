@@ -52,7 +52,7 @@ export const CreateClass = () => {
                         <div><input type="text" value={matricula_maestro} onChange={(e) => setMatriculaMaestro(e.target.value)}></input></div>
                     </div>
                     <div className='class-id'>
-                        <label>Matricula de la clase</label>
+                        <label>Crear Matricula de la clase</label>
                         <div><input type="text" value={matricula_clase} onChange={(e) => setMatriculaClase(e.target.value)}></input></div>
                     </div>
                     <div className='submit'>

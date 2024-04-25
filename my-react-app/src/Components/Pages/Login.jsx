@@ -21,10 +21,6 @@ function Login() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook|example)\.com$/;
 
-    const testHandleSubmitAdmin = () => {
-        navigate("/pagina-inicio");
-    }
-
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
     const isShowPasswordDisabled = contraseña.trim() === '';
 
@@ -49,7 +45,7 @@ function Login() {
             console.log(response.data);
             console.log('Exito al validar usuario log in');
 
-            const userData = response.data.data; // Obtén los datos del usuario desde la respuesta
+            const userData = response.data; // Obtén los datos del usuario desde la respuesta
             console.log("Datos del usuario:", userData);
 
             setData(userData);
@@ -131,8 +127,8 @@ function Login() {
                 {/*<div className="forgot-password">¿Olvidaste tu contraseña? <span>¡Presiona aquí!</span></div>*/}
                 <div className="error-message"> {errorM && <div>{errorM}</div>} </div>
                 <div className="submit-container"><button onClick={handleSubmit} disabled={isLoginDisabled}>Iniciar Sesión</button></div>
-                <div className="submit-container2"><button onClick={testHandleSubmitAdmin}>Admin Home</button></div>
-                {/*<div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
+                {/*<div className="submit-container2"><button onClick={testHandleSubmitAdmin}>Admin Home</button></div>
+                <div className="create-account">¿Todavía no tienes una cuenta? <span>Crear cuenta</span></div>*/}
             </div>
         </div>
     )

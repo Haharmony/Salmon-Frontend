@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import './UpdateUser.css'
 import { useNavigate } from "react-router-dom";
-import{ routeFindUserByRol, routeUpdateUser} from "./constants";
+import { routeFindUserByRol, routeUpdateUser } from "./constants";
 
 export const UpdateUser = () => {
 
@@ -31,7 +31,7 @@ export const UpdateUser = () => {
                 }
             }); // Utilizar axios.get en lugar de fetch
             setShowTable(!showTable);
-            setUsuarios(response.data.data); // Guardar los datos recibidos en el estado usuarios
+            setUsuarios(response.data); // Guardar los datos recibidos en el estado usuarios
         } catch (error) {
             console.error('Error:', error);
         }
@@ -108,7 +108,7 @@ export const UpdateUser = () => {
                     <div className="img-uu-input"><input type="text" value={imagen} onChange={e => setImagen(e.target.value)} /></div>
                 </div>
                 <div className="password-uu">
-                    <label>Imagen:</label>
+                    <label>Contraseña:</label>
                     <div className="password-uu-input"><input type="text" value={contraseña} onChange={e => setContraseña(e.target.value)} /></div>
                 </div>
                 <div className="id-field-uu">
@@ -133,44 +133,42 @@ export const UpdateUser = () => {
 
                 {/* Tabla para mostrar los datos de los usuarios */}
                 {showTable ? (
-                    <div>
-                        <h2>Usuarios:</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Telefono</th>
-                                    <th>Imagen</th>
-                                    <th>Contraseña</th>
-                                    <th>Matricula</th>
-                                    <th>Certificado</th>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Telefono</th>
+                                <th>Imagen</th>
+                                <th>Contraseña</th>
+                                <th>Matricula</th>
+                                <th>Certificado</th>
 
-                                    <th>Acciones</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {usuarios.map(usuario => (
+                                <tr key={usuario.email}>
+                                    <td>{usuario.email}</td>
+                                    <td>{usuario.nombre}</td>
+                                    <td>{usuario.apellido}</td>
+                                    <td>{usuario.telefono}</td>
+                                    <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
+                                    <td>{usuario.contraseña}</td>
+                                    <td>{usuario.matricula}</td>
+                                    <td>{usuario.tiene_certificado}</td>
+
+                                    <td>
+                                        <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
+                                        <button>Eliminar</button>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {usuarios.map(usuario => (
-                                    <tr key={usuario.email}>
-                                        <td>{usuario.email}</td>
-                                        <td>{usuario.nombre}</td>
-                                        <td>{usuario.apellido}</td>
-                                        <td>{usuario.telefono}</td>
-                                        <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
-                                        <td>{usuario.contraseña}</td>
-                                        <td>{usuario.matricula}</td>
-                                        <td>{usuario.tiene_certificado}</td>
+                            ))}
+                        </tbody>
+                    </table>
 
-                                        <td>
-                                            <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
-                                            <button>Eliminar</button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
                 ) : null}
             </div>
         </div>

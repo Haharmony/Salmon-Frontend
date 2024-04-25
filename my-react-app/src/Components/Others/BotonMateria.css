@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 29%;
-    background-color: skyblue;
+    background-color: rgb(105, 162, 241);
     margin: 5px;
     padding: 5px;
     transition: background-color 0.3s ease;
@@ -10,7 +10,7 @@
     color: white;
     border-radius: 10px;
     border-style: double;
-    border-color: blue;
+    border-color: rgb(0, 0, 124);
   }
 
   .boton-materia:hover{
@@ -19,11 +19,11 @@
   }
 
   .boton-materia:hover .nombre{
-    color: GOLD;
+    color: rgb(0, 76, 255);
   }
 
   .boton-materia:hover .detalle{
-    color: gold;
+    color: rgb(0, 76, 255);
   }
   
   .boton-materia .imagen {

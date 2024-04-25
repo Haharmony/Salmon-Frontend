@@ -4,13 +4,12 @@ import Cabecera from '../Others/Cabecera';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
-import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
 import { useNavigate } from 'react-router-dom';
+import PiePagina from '../Others/PiePagina';
 
 const barra_inferior = (
   <BarraInferior contenido={
     <>
-      <BotonBarraInferior imagenSrc={require("../Assets/noticias.png")} texto={"Noticias"} redireccion={"a-pagina-noticias"} />
       <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/23/2004"} redireccion={"calendar-page"} />
       <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
       <BotonBarraInferior imagenSrc={require("../Assets/bancorecursos.png")} texto={"Banco de recursos"} redireccion={"a-pagina-bancoRecursos"} />
@@ -20,34 +19,18 @@ const barra_inferior = (
   } />
 );
 
-const menu_materias = (
-  <>
-    <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/a-pagina-tablon'} />
-    <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/a-pagina-tablon'} />
-    <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/a-pagina-tablon'} />
-  </>
-);
-const menu_mensajes = (
-  <>
-    <BotonMenuDesplegable texto={'Mensaje 1'} />
-    <BotonMenuDesplegable texto={'Mensaje 2'} />
-    <BotonMenuDesplegable texto={'Mensaje 3'} />
-  </>
-);
-const menu_alertas = (
-  <>
-    <BotonMenuDesplegable texto={'Alerta 1'} />
-    <BotonMenuDesplegable texto={'Alerta 2'} />
-    <BotonMenuDesplegable texto={'Alerta 3'} />
-  </>
-);
-const menu_actualizaciones = (
-  <>
-    <BotonMenuDesplegable texto={'Actualizacion 1'} />
-    <BotonMenuDesplegable texto={'Actualizacion 2'} />
-    <BotonMenuDesplegable texto={'Actualizacion 3'} />
-  </>
-);
+const menu_materias =<>
+
+</>
+const menu_mensajes =<>
+
+</>
+const menu_alertas =<>
+
+</>
+const menu_actualizaciones =<>
+
+</>
 
 const barra_superior = (
   <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"} />
@@ -108,7 +91,7 @@ export const AssignmentPage = () => {
       <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
       <div className="folders-container">
         <div className="assignment-title">
-          <div className="button"><button onClick={navigateToMenu}>PDF Uploader</button></div>
+          <div className="button"><button onClick={navigateToMenu}>Subir Tarea</button></div>
           <button onClick={handleGenerateFolder}>Generar Carpeta</button>
           <div className="warning-text"><button onClick={handleClearFolders}>Limpiar Carpetas</button> *Elimina todas las carpetas.</div>
         </div>
@@ -144,6 +127,8 @@ export const AssignmentPage = () => {
           )}
         </div>
       </div>
+      <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />
+            <footer>Grupo Derecho & Progreso &copy; 2024</footer>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 {
   "name": "my-react-app",
   "version": "0.1.0",
-  "homepage": "https://haharmony.github.io/Salmon-Frontend",
+  "homepage": "http://jmf.0b1.mytemp.website/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

@@ -13,8 +13,11 @@ import imagen_actualizaciones from "../Assets/actualizaciones.png"
 import imagen_usuario from "../Assets/usuario.png"
 import imagen_herramientas from "../Assets/herramientas.png"
 import logoBackground from '../Assets/logo.jpeg'
+import { useData } from '../Pages/DataContext'; 
 
 const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_alertas, menu_actualizaciones, redireccion, profile_redireccion }) => {
+
+    const { data } = useData(); 
 
     return (
 
@@ -55,15 +58,13 @@ const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_aler
                 <BotonDesplegableBarraSuperior menu={
                     <>
                         <BotonMenuDesplegable redireccion={profile_redireccion} texto={"Ver Perfil"} />
-                        <BotonMenuDesplegable redireccion={"/"} texto={"Cerrar Sesion"} />
+                        <BotonMenuDesplegable redireccion={""} texto={"Cerrar Sesion"} />
                     </>
 
-                } imagenSrc={imagen_usuario} texto={"Nombre Apellido Apellido"} />
+                } imagenSrc={imagen_usuario} texto={data.nombre + " " + data.apellido} />
                 <BotonDesplegableBarraSuperior menu={
                     <>
                         <BotonMenuDesplegable texto={"Configuración 1"} />
-                        <BotonMenuDesplegable texto={"Configuración 2"} />
-                        <BotonMenuDesplegable texto={"Configuración 3"} />
                     </>
 
                 } imagenSrc={imagen_herramientas} />

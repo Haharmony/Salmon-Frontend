@@ -7,38 +7,38 @@ export const UploadExcel = () => {
     const [archivo, setArchivo] = useState(null);
     //const [nombreArchivo, setNombreArchivo] = useState('');
     const [matriculaAdmin, setMatriculaAdmin] = useState('');
-    const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
+
     const handleArchivoChange = (event) => {
         setArchivo(event.target.files[0]);
     };
 
+    const handleMatriculaAdminChange = (e) => {
+        setMatriculaAdmin(e.target.value);
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        if (!archivo || !matriculaAdmin) {
-            setError('Por favor completa todos los campos.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('excelFile', archivo);
-        //formData.append('nombreArchivo', nombreArchivo);
-        formData.append('matricula_admin', matriculaAdmin);
-
         try {
-            await axios.post(apiSubirExcel, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
+            const formData = new FormData();
+            formData.append('archivo', archivo);
+            formData.append('matricula_admin', matriculaAdmin);
+            const response = await axios.post(apiSubirExcel, formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
             });
-            console.log('Archivo Excel subido exitosamente.');
-            alert("exito");
-            // Puedes agregar aquí una lógica adicional después de subir el archivo, como actualizar la lista de archivos.
-        } catch (error) {
-            setError('Error al subir el archivo Excel.');
-            console.error('Error al subir el archivo Excel:', error);
-        }
+            if (response.data.success) {
+              setMessage('Archivo Excel subido exitosamente');
+              // Realizar acciones adicionales después de subir el archivo
+            } else {
+              setMessage('Hubo un error al subir el archivo Excel');
+            }
+          } catch (error) {
+            console.error('Error uploading Excel file:', error);
+            setMessage('Hubo un error al subir el archivo Excel');
+          }
     };
 
     const handleRegresarButton = () => {
@@ -49,7 +49,7 @@ export const UploadExcel = () => {
         <div className='full-page'>
             <div className="container1">
                 <h2>Subir Archivo Excel</h2>
-                {error && <p>{error}</p>}
+                {message && <p>{message}</p>}
                 <form onSubmit={handleSubmit}>
                     {/*<div>
           <label htmlFor="nombreArchivo">Nombre del Archivo:</label>
@@ -66,7 +66,7 @@ export const UploadExcel = () => {
                             type="text"
                             id="matriculaAdmin"
                             value={matriculaAdmin}
-                            onChange={(e) => setMatriculaAdmin(e.target.value)}
+                            onChange={handleMatriculaAdminChange} required
                         />
                     </div>
                     <div>
@@ -76,7 +76,7 @@ export const UploadExcel = () => {
                             id="archivo"
                             name="archivo" // Nombre del campo de archivo necesario para el servidor
                             accept=".xlsx, .xls"
-                            onChange={handleArchivoChange}
+                            onChange={handleArchivoChange} required
                         />
                     </div>
                     <button type="submit">Subir Archivo</button>

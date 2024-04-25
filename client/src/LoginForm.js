@@ -26,7 +26,7 @@ function LoginForm() {
             console.log(response.data);
             console.log('Exito al validar usuario log in');
 
-            const userData = response.data.data; // Obtén los datos del usuario desde la respuesta
+            const userData = response.data; // Obtén los datos del usuario desde la respuesta
             console.log("Datos del usuario:", userData);
             
             // Guarda los datos del usuario en el contexto

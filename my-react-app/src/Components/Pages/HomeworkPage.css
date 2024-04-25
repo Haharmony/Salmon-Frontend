@@ -12,3 +12,62 @@
     width: 110vh;
     margin: 0 auto;
 }
+
+.descargar-pdf-alumno{
+    font-size: 17px;
+    color: #003fb4;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.ingresar-mat button{
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 34px;
+    color: #fff;
+    background: #0700d2;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+        background: #05008a;
+        color: #b9b9b9;
+    }
+}
+
+.pdf-name{
+    margin-top: 10px;
+}
+
+.pdf-class-id{
+    margin-top: 10px;
+}
+
+.pdf-file{
+    margin-top: 10px;
+}
+
+.upload-pdf{
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    color: #fff;
+    background: #3755dc;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+        background: #001c8a;
+        color: #b9b9b9;
+    }
+}

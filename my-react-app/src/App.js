@@ -35,12 +35,15 @@ import AssignmentPagePDF from './Components/Pages/AssignmentPagePDF';
 import GradeHomework from './Components/Pages/GradeHomework';
 import CalendarPage from './Components/Pages/CalendarPage';
 import CalendarPageStudent from './Components/Pages/CalenderPageStudent';
+import { DirectorioStudent } from './Components/Pages/DirectorioStudent';
+import ZoomPage from './Components/Pages/ZoomPage';
+import AdminZoomPage from './Components/Pages/AdminZoomPage';
 
 function App() {
 
   return (
     <DataProvider>
-      <BrowserRouter basename='Salmon-Frontend'>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/pagina-inicio" element={<PaginaInicio />} />
@@ -52,6 +55,8 @@ function App() {
           <Route path="/pagina-directorio" element={<Paginadirectorio />} />
           <Route path="/pagina-soporte" element={<PaginaSoporte />} />
           <Route path="/pagina-tablon" element={<PaginaTablon/>} />
+          <Route path="/pagina-zoom" element={<ZoomPage/>} />
+          <Route path="/a-pagina-zoom" element={<AdminZoomPage/>} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
           <Route path="/create-class" element={<CreateClass />} />
@@ -73,6 +78,7 @@ function App() {
           <Route path="/profile-page" element={<ProfilePage />} />
           <Route path="/a-profile-page" element={<AdminProfilePage />} />
           <Route path="/directory" element={<Directorio />} />
+          <Route path="/directory-s" element={<DirectorioStudent />} />
           <Route path="/grade-homework" element={< GradeHomework/>} />
         </Routes> 
       </BrowserRouter>

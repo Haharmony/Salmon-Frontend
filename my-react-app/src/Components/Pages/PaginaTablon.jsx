@@ -5,39 +5,30 @@ import PiePagina from '../Others/PiePagina';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
-import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
 import { ContenidoTablon } from '../Others/ContenidoTablon';
 import { AnuncioTablon } from '../Others/AnuncioTablon';
 
 const barra_inferior = <BarraInferior contenido={
     <>
-        <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"/pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"/pagina-contenido"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Tareas y calificaciones"} redireccion={"/pagina-tareas"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"/pagina-zoom"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/correo.png")} texto={"Correo"} redireccion={"/pagina-correo"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-contenido"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Tareas y calificaciones"} redireccion={"pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/correo.png")} texto={"Correo"} redireccion={"pagina-correo"} />
     </>
 } />
 
-const menu_materias = <>
-    <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/pagina-tablon'}/>
+const menu_materias =<>
+
 </>
-const menu_mensajes = <>
-    <BotonMenuDesplegable texto={'Mensaje 1'} />
-    <BotonMenuDesplegable texto={'Mensaje 2'} />
-    <BotonMenuDesplegable texto={'Mensaje 3'} />
+const menu_mensajes =<>
+
 </>
-const menu_alertas = <>
-    <BotonMenuDesplegable texto={'Alerta 1'} />
-    <BotonMenuDesplegable texto={'Alerta 2'} />
-    <BotonMenuDesplegable texto={'Alerta 3'} />
+const menu_alertas =<>
+
 </>
-const menu_actualizaciones = <>
-    <BotonMenuDesplegable texto={'Actualizacion 1'} />
-    <BotonMenuDesplegable texto={'Actualizacion 2'} />
-    <BotonMenuDesplegable texto={'Actualizacion 3'} />
+const menu_actualizaciones =<>
+
 </>
 const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"} profile_redireccion={"profile-page"}/>
 

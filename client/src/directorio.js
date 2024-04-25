@@ -18,7 +18,7 @@ const DirectorioPage = () => {
     try {
       // Realiza una solicitud GET para obtener los datos de usuarios
       const response = await axios.get(getUsuarios); // Reemplaza '/api/usuarios' con tu ruta real
-      setUsers(response.data.data); // Actualiza el estado con los datos de usuarios recuperados
+      setUsers(response.data); // Actualiza el estado con los datos de usuarios recuperados
 
       if (response.data.length === 0) {
         setError('No hay usuarios disponibles');

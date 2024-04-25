@@ -9,11 +9,9 @@ import BotonBarraInferior from '../Others/BotonBarraInferior';
 import PiePagina from '../Others/PiePagina';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
-import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
 
 const barra_inferior = <BarraInferior contenido={
     <>
-        <BotonBarraInferior imagenSrc={require("../Assets/noticias.png")} texto={"Noticias"} redireccion={"a-pagina-noticias"} />
         <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/23/2004"} redireccion={"calendar-page"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
         <BotonBarraInferior imagenSrc={require("../Assets/bancorecursos.png")} texto={"Banco de recursos"} redireccion={"a-pagina-bancoRecursos"} />
@@ -22,25 +20,17 @@ const barra_inferior = <BarraInferior contenido={
     </>
 } />
 
-const menu_materias = <>
-    <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/a-pagina-tablon'} />
-    <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/a-pagina-tablon'} />
-    <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/a-pagina-tablon'} />
+const menu_materias =<>
+
 </>
-const menu_mensajes = <>
-    <BotonMenuDesplegable texto={'Mensaje 1'} />
-    <BotonMenuDesplegable texto={'Mensaje 2'} />
-    <BotonMenuDesplegable texto={'Mensaje 3'} />
+const menu_mensajes =<>
+
 </>
-const menu_alertas = <>
-    <BotonMenuDesplegable texto={'Alerta 1'} />
-    <BotonMenuDesplegable texto={'Alerta 2'} />
-    <BotonMenuDesplegable texto={'Alerta 3'} />
+const menu_alertas =<>
+
 </>
-const menu_actualizaciones = <>
-    <BotonMenuDesplegable texto={'Actualizacion 1'} />
-    <BotonMenuDesplegable texto={'Actualizacion 2'} />
-    <BotonMenuDesplegable texto={'Actualizacion 3'} />
+const menu_actualizaciones =<>
+
 </>
 const barra_superior = <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"} />
 

@@ -9,6 +9,7 @@ export const CreateUser = () => {
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [telefono, setTelefono] = useState('');
+    const [imagen, setImagen] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [rol, setRol] = useState('');
     const [matricula, setMatricula] = useState('');
@@ -24,6 +25,7 @@ export const CreateUser = () => {
                 nombre,
                 apellido,
                 telefono,
+                imagen,
                 contraseña,
                 rol,
                 matricula
@@ -59,12 +61,16 @@ export const CreateUser = () => {
                         <label>Telefono</label>
                         <div className="phone-number-input"><input type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} /></div>
                     </div>
+                    <div className='image-user'>
+                        <label>Imagen</label>
+                        <div className="image-user-input"><input type="url" value={imagen} onChange={(e) => setImagen(e.target.value)} /></div>
+                    </div>
                     <div className='password-field'>
                         <label>Contraseña</label>
                         <div className="password-input"><input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} /></div>
                     </div>
                     <div className='role-field'>
-                        <label>Rol</label>
+                        <label>Rol (Admin, Maestro, Alumno)</label>
                         <div className="role-input"><input type="text" value={rol} onChange={(e) => setRol(e.target.value)} /></div>
                     </div>
                     <div className='id-field'>

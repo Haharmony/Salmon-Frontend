@@ -20,7 +20,7 @@ const ClasesAlumno = () => {
                         matriculaAlumno: data.matricula // Utiliza la matrícula del estudiante desde el contexto
                     }
                 });
-                setLinks(response.data.data);
+                setLinks(response.data);
                 setShowLinks(true); // Mostrar los enlaces cuando se cargan
             } catch (error) {
                 console.error('Error al obtener los enlaces:', error);
@@ -54,14 +54,13 @@ const ClasesAlumno = () => {
                         </tr>
                     </thead>
                     <tbody>
-    {links.map((link, index) => (
-        <tr key={index}>
-            <td>{link.matricula_clase}</td>
-            <td>{link.url}</td>
-        </tr>
-    ))}
-</tbody>
-
+                        {links.map((link, index) => (
+                            <tr key={index}>
+                                <td>{link.matricula_clase}</td>
+                                <td>{link.url}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
             )}
         </div>

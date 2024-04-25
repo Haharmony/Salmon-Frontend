@@ -18,7 +18,7 @@ const TablaArchivoExcel = () => {
   const handleMostrarArchivos = async () => {
     try {
       const response = await axios.get(apiMostrarExcel);
-      setArchivos(response.data.data);
+      setArchivos(response.data);
     } catch (error) {
       setError('Error al cargar archivos');
       console.error('Error al cargar archivos:', error);

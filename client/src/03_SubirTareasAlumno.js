@@ -70,5 +70,4 @@ function SubirTareasAlumno() {
     </div>
   );
 }
-
 export default SubirTareasAlumno;

@@ -28,7 +28,7 @@ const TareasCalificar = () => {
             matricula: data.matricula // Utiliza la matrícula ingresada en el input
           }
         });
-        setTareas(response.data.data);
+        setTareas(response.data);
         setError('');
       } catch (error) {
         setError('Error al obtener las tareas.');

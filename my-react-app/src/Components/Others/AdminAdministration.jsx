@@ -51,14 +51,17 @@ const AdminAdministration = () => {
             </div>
             <div>
                 <button onClick={handleInsertarLink}>Insertar link zoom a Materias</button>
+                Asigna un link de Zoom a las materias deseadas.
                 <div className="a-underline"></div>
             </div>
             <div>
                 <button onClick={handleSubirExcel}>Subir de excel</button>
+                Suba archivos de excel.
                 <div className="a-underline"></div>
             </div>
             <div>
                 <button onClick={handleDescargarExcel}>Ver tabla de excel</button>
+                Visualice archivos de excel.
                 <div className="a-underline"></div>
             </div>
         </div>

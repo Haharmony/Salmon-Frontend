@@ -7,11 +7,9 @@ import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
 import AdminAdministration from '../Others/AdminAdministration'
-import { BotonMenuDesplegable } from '../Others/BotonMenuDesplegable';
 
 const barra_inferior = <BarraInferior contenido={
   <>
-    <BotonBarraInferior imagenSrc={require("../Assets/noticias.png")} texto={"Noticias"} redireccion={"a-pagina-noticias"} />
     <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/04/2024"} redireccion={"calendar-page"} />
     <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
     <BotonBarraInferior imagenSrc={require("../Assets/bancorecursos.png")} texto={"Banco de recursos"} redireccion={"a-pagina-bancoRecursos"} />
@@ -21,24 +19,16 @@ const barra_inferior = <BarraInferior contenido={
 }/>
 
 const menu_materias =<>
-  <BotonMenuDesplegable texto={'Materia 1'} redireccion={'/a-pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 2'} redireccion={'/a-pagina-tablon'}/>
-  <BotonMenuDesplegable texto={'Materia 3'} redireccion={'/a-pagina-tablon'}/>
+
 </>
 const menu_mensajes =<>
-<BotonMenuDesplegable texto={'Mensaje 1'} />
-<BotonMenuDesplegable texto={'Mensaje 2'} />
-<BotonMenuDesplegable texto={'Mensaje 3'} />
+
 </>
 const menu_alertas =<>
-<BotonMenuDesplegable texto={'Alerta 1'} />
-<BotonMenuDesplegable texto={'Alerta 2'} />
-<BotonMenuDesplegable texto={'Alerta 3'} />
+
 </>
 const menu_actualizaciones =<>
-<BotonMenuDesplegable texto={'Actualizacion 1'} />
-<BotonMenuDesplegable texto={'Actualizacion 2'} />
-<BotonMenuDesplegable texto={'Actualizacion 3'} />
+
 </>
 
 const admin_administration = <>

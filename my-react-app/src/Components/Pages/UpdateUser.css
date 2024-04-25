@@ -3,7 +3,7 @@
     align-content: center;
     flex-direction: column;
     margin: 0px auto;
-    width: 45vh; /* 90% of the parent container's width */
+    width: 90vh; /* 90% of the parent container's width */
     margin-top: 5vh; /* 5% of viewport height */
     margin-bottom: 5vh; /* 5% of viewport height */
     border-radius: 40px;
@@ -68,7 +68,7 @@
 .email-field-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .name-field-uu{
@@ -80,7 +80,7 @@
 .name-field-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .lastname-field-uu{
@@ -92,7 +92,7 @@
 .lastname-field-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .phone-number-uu{
@@ -104,7 +104,7 @@
 .phone-number-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .img-uu{
@@ -116,7 +116,7 @@
 .img-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .password-uu{
@@ -128,7 +128,7 @@
 .password-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .id-field-uu{
@@ -140,7 +140,7 @@
 .id-field-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .cert-field-uu{
@@ -152,7 +152,7 @@
 .cert-field-uu-input input{
     margin-top: 6px;
     height: 30px;
-    width: 300px;
+    width: 80%;
 }
 
 .return-home-uu{

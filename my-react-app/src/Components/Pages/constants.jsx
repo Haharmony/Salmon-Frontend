@@ -1,7 +1,6 @@
 // constants.js
-export const apiUrl = 'http://192.168.1.113:3000/Salmon-Frontend';
-//http://172.102.0.78:3000
-//http://192.168.1.113:3000/Salmon-Frontend/api/users/login
+export const apiUrl = 'http://jmf.0b1.mytemp.website/abogadosprogreso';
+//http://jmf.0b1.mytemp.website/abogadosprogreso
 
 export const routeFindUserByRol = `${apiUrl}/api/users/findByRole`;
 export const routeUpdateUser = `${apiUrl}/api/users/update`;
@@ -18,7 +17,7 @@ export const descargarPDFApiAlumno = `${apiUrl}/api/archivos_pdf_alumnos/descarg
 export const updateCalificacionApiAlumno = `${apiUrl}/api/archivos_pdf_alumnos/updateCalificacion`;
 export const postPDFApi = `${apiUrl}/api/archivos_pdf/subirPDF`;
 export const getLinks = `${apiUrl}/api/zoom/getUltimoLinkZoom`;
-export const postPDFApiAlumno = `${apiUrl}/api/archivos_pdf/subirPDFAlumno`;
+export const postPDFApiAlumno = `${apiUrl}/api/archivos_pdf_alumnos/subirPDFAlumno`;
 export const mostrarTareaApi = `${apiUrl}/api/archivos_pdf/mostrarTareas`;
 export const descargarPDFApi = `${apiUrl}/api/archivos_pdf/descargarPDF`;
 export const getUsuarios = `${apiUrl}/api/users/directory`;

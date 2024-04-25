@@ -25,7 +25,7 @@ const TareasTable = () => {
             matricula: data.matricula
           }
         });
-        setTareas(response.data.data);
+        setTareas(response.data);
         setError('');
       } catch (error) {
         setError('Error al obtener las tareas.');

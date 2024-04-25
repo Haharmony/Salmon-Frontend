@@ -38,7 +38,7 @@ const PaginaActualizarUsuarios = () => {
                 }
             }); // Utilizar axios.get en lugar de fetch
             setShowTable(!showTable);
-            setUsuarios(response.data.data); // Guardar los datos recibidos en el estado usuarios
+            setUsuarios(response.data); // Guardar los datos recibidos en el estado usuarios
         } catch (error) {
             console.error('Error:', error);
         }

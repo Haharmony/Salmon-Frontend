@@ -10,8 +10,8 @@ export const BotonMenuDesplegable = ({texto, redireccion}) =>{
     };
 
     return(
-        <button onClick= {navigateToMenu} className="boton-menu-desplegable">
+        <span onClick= {navigateToMenu} className="boton-menu-desplegable">
             <div className="texto"> {texto} </div>
-        </button>
+        </span>
     )
 }

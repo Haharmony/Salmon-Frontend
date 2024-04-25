@@ -40,14 +40,17 @@
     gap: 10px;
 }
 
+.name-text{
+    margin-bottom: 6px;
+}
+
 .data-container input{
     background-color: #ffffff00;
     border: 1px solid rgb(161, 161, 161);
     margin-bottom: 30px;
-}
-
-.name-text{
-
+    pointer-events: none;
+    border-radius: 5px;
+    padding: 8px;
 }
 
 .constance-header{
