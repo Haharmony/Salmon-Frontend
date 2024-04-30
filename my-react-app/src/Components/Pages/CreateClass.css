@@ -70,6 +70,18 @@
     width: 80%;
 }
 
+.insertar-fecha{
+    margin-left: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.insertar-fecha button{
+    margin-top: 6px;
+    height: 30px;
+    width: 80%;
+}
+
 .submit button{
     display: flex;
     margin-left: 50px;

@@ -20,7 +20,6 @@ const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_aler
     const { data } = useData(); 
 
     return (
-
         <div className="barra-superior">
             <div className="barra-superior-contenedor-izquierdo">
                 <div className="logo-home"> <img src={logoBackground} alt="" /></div>
@@ -28,31 +27,7 @@ const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_aler
                 <p>{texto_cabecera}</p>
             </div>
             <div className="barra-superior-contenedor-central">
-                <BotonDesplegableBarraSuperior menu={
-                    <>
-                        {menu_materias}
-                    </>
 
-                } imagenSrc={imagen_seleccionarRecurso} />
-                <hr className="barra-superior-division" />
-                <BotonDesplegableBarraSuperior menu={
-                    <>
-                        {menu_mensajes}
-                    </>
-
-                } imagenSrc={imagen_mensajes} />
-                <BotonDesplegableBarraSuperior menu={
-                    <>
-                        {menu_alertas}
-                    </>
-
-                } imagenSrc={imagen_alertasSuscripciones} />
-                <BotonDesplegableBarraSuperior menu={
-                    <>
-                        {menu_actualizaciones}
-                    </>
-
-                } imagenSrc={imagen_actualizaciones} />
             </div>
             <div className="barra-superior-contenedor-derecho">
                 <BotonDesplegableBarraSuperior menu={
@@ -62,12 +37,6 @@ const BarraSuperior = ({ texto_cabecera, menu_materias, menu_mensajes, menu_aler
                     </>
 
                 } imagenSrc={imagen_usuario} texto={data.nombre + " " + data.apellido} />
-                <BotonDesplegableBarraSuperior menu={
-                    <>
-                        <BotonMenuDesplegable texto={"Configuración 1"} />
-                    </>
-
-                } imagenSrc={imagen_herramientas} />
             </div>
         </div>
     );

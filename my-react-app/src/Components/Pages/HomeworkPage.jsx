@@ -14,10 +14,8 @@ const barra_inferior = (
     <BarraInferior contenido={
         <>
             <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
-            <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-contenido"} />
             <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Tareas y calificaciones"} redireccion={"pagina-tareas"} />
             <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
-            <BotonBarraInferior imagenSrc={require("../Assets/correo.png")} texto={"Correo"} redireccion={"pagina-correo"} />
         </>
     } />
 );
@@ -70,13 +68,13 @@ export const HomeworkPage = () => {
         }
     }, [data]);
 
-    const handleDescargarTarea = async (idArchivo) => {
+    const handleDescargarTarea = async (idArchivo, nombreArchivo) => {
         try {
             const response = await axios.get(`${descargarPDFApi}?id_archivo=${idArchivo}`, { responseType: 'blob' });
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', `${idArchivo}.pdf`);
+            link.setAttribute('download', `${nombreArchivo}`);
             document.body.appendChild(link);
             link.click();
         } catch (error) {
@@ -141,7 +139,7 @@ export const HomeworkPage = () => {
                                         <td>{tarea.nombre_archivo}</td>
                                         <td>{tarea.matricula_clase}</td>
                                         <td>
-                                            <span className='descargar-pdf-alumno' onClick={() => handleDescargarTarea(tarea.id_archivo)}>Descargar</span>
+                                            <span className='descargar-pdf-alumno' onClick={() => handleDescargarTarea(tarea.id_archivo, tarea.nombre_archivo)}>Descargar</span>
                                         </td>
                                     </tr>
                                 ))}

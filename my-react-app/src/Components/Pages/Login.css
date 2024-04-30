@@ -172,12 +172,12 @@
     }
 }
 
-.submit-container2{
+.submit-container3{
     display: flex;
     margin: 65px auto;
 }
 
-.submit-container2 button{
+.submit-container3 button{
     display: flex;
     justify-content: center;
     align-items: center;

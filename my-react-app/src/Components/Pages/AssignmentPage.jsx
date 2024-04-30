@@ -10,9 +10,8 @@ import PiePagina from '../Others/PiePagina';
 const barra_inferior = (
   <BarraInferior contenido={
     <>
-      <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/23/2004"} redireccion={"calendar-page"} />
+      <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"Calendario"} redireccion={"calendar-page"} />
       <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
-      <BotonBarraInferior imagenSrc={require("../Assets/bancorecursos.png")} texto={"Banco de recursos"} redireccion={"a-pagina-bancoRecursos"} />
       <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"directory"} />
       <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"pagina-entregables"} />
     </>
@@ -101,8 +100,7 @@ export const AssignmentPage = () => {
               <div key={folderIndex} className="folder">
                 <div className="folder-header">
                   <div className="folder-underline"></div>
-                  <div className='folder-name'>{folder.name}</div>
-                  <div className="folder-handler"><button onClick={() => handleDeleteFolder(folderIndex)}>Eliminar Carpeta</button></div>
+                  <div className='folder-name'>{folder.name}<button onClick={() => handleDeleteFolder(folderIndex)}>Eliminar Carpeta</button></div>
                   <div className="underline-assignments"></div>
                 </div>
                 <div className="file-handler"><input type="file" onChange={(event) => handleFileInputChange(event, folderIndex)} multiple /></div>

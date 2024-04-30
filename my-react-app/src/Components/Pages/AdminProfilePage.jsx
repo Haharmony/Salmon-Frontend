@@ -10,9 +10,8 @@ import { useData } from './DataContext';
 
 const barra_inferior = <BarraInferior contenido={
     <>
-        <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"20/23/2004"} redireccion={"calendar-page"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"Calendario"} redireccion={"calendar-page"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/bancorecursos.png")} texto={"Banco de recursos"} redireccion={"a-pagina-bancoRecursos"} />
         <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"directory"} />
         <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"pagina-entregables"} />
     </>
@@ -43,7 +42,7 @@ export const AdminProfilePage = () => {
                 <div className="profile-holder">
                     <div className="profile-contents">
                         <div className="profile-image">
-                            <img src={profileImage} alt="" />
+                            <img src={data.imagen} alt={profileImage} />
                         </div>
                         <div className="data-container">
                             <div className="name-text">Nombre</div>

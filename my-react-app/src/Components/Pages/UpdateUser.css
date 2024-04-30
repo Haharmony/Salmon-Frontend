@@ -3,7 +3,8 @@
     align-content: center;
     flex-direction: column;
     margin: 0px auto;
-    width: 90vh; /* 90% of the parent container's width */
+    width: 700px; /* 90% of the parent container's width */
+    min-width: 70vh;
     margin-top: 5vh; /* 5% of viewport height */
     margin-bottom: 5vh; /* 5% of viewport height */
     border-radius: 40px;

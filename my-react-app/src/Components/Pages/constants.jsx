@@ -22,3 +22,11 @@ export const mostrarTareaApi = `${apiUrl}/api/archivos_pdf/mostrarTareas`;
 export const descargarPDFApi = `${apiUrl}/api/archivos_pdf/descargarPDF`;
 export const getUsuarios = `${apiUrl}/api/users/directory`;
 export const apiLogin = `${apiUrl}/api/users/login`;
+export const getAllLinks = `${apiUrl}/api/zoom/getAllLinks`;
+export const getLinkTeacher = `${apiUrl}/api/zoom/getUltimoLinkZoomMaestro`;
+export const getLinksDate = `${apiUrl}/api/zoom/getAllLinksByDate`;
+export const setComment = `${apiUrl}/api/tablon_datos/insertar`;
+export const getComment = `${apiUrl}/api/tablon_datos/todos`;
+export const getClases = `${apiUrl}/api/clases/ClasesMaestroAdmin`;
+export const getCommentMatricula = `${apiUrl}/api/tablon_datos/todosMatricula`;
+

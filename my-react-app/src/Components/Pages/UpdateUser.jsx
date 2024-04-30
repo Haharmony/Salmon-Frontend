@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './UpdateUser.css'
+import './Directories.css';
 import { useNavigate } from "react-router-dom";
 import { routeFindUserByRol, routeUpdateUser } from "./constants";
 
@@ -25,11 +26,7 @@ export const UpdateUser = () => {
     const handleActualizarUsuarios = async (rolSeleccionado) => {
 
         try {
-            const response = await axios.get(routeFindUserByRol, {
-                params: {
-                    rol: rolSeleccionado
-                }
-            }); // Utilizar axios.get en lugar de fetch
+            const response = await axios.get(`${routeFindUserByRol}?role=${rolSeleccionado}`);
             setShowTable(!showTable);
             setUsuarios(response.data); // Guardar los datos recibidos en el estado usuarios
         } catch (error) {
@@ -78,7 +75,7 @@ export const UpdateUser = () => {
 
     return (
         <div className="full-page">
-            <div className="container2">
+            <div className="container1">
                 <div className="title-uu"><h1>Actualización de Datos de Usuario</h1></div>
                 <div className="update-teachers">
                     <button onClick={() => handleActualizarUsuarios('maestro')}>Actualizar Maestros</button>
@@ -120,6 +117,41 @@ export const UpdateUser = () => {
                     <div className="cert-field-uu-input"><input type="bool" value={tiene_certificado} onChange={e => setTieneCertificado(e.target.value)} /></div>
                 </div>
                 <div className="underline2"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Telefono</th>
+                            <th>Imagen</th>
+                            <th>Contraseña</th>
+                            <th>Matricula</th>
+                            <th>Certificado</th>
+
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {usuarios.map(usuario => (
+                            <tr key={usuario.email}>
+                                <td>{usuario.email}</td>
+                                <td>{usuario.nombre}</td>
+                                <td>{usuario.apellido}</td>
+                                <td>{usuario.telefono}</td>
+                                <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
+                                <td>{usuario.contraseña}</td>
+                                <td>{usuario.matricula}</td>
+                                <td>{usuario.tiene_certificado}</td>
+
+                                <td>
+                                    <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
+                                    <button>Eliminar</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
                 <div className="return-home-uu">
                     <span onClick={handleRegresarButton}>Regresar Home</span>
                 </div>
@@ -129,47 +161,6 @@ export const UpdateUser = () => {
                     </div>
                 ) : null}
 
-
-
-                {/* Tabla para mostrar los datos de los usuarios */}
-                {showTable ? (
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Email</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Telefono</th>
-                                <th>Imagen</th>
-                                <th>Contraseña</th>
-                                <th>Matricula</th>
-                                <th>Certificado</th>
-
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {usuarios.map(usuario => (
-                                <tr key={usuario.email}>
-                                    <td>{usuario.email}</td>
-                                    <td>{usuario.nombre}</td>
-                                    <td>{usuario.apellido}</td>
-                                    <td>{usuario.telefono}</td>
-                                    <td><img src={usuario.imagen} alt="Imagen de perfil" /></td>
-                                    <td>{usuario.contraseña}</td>
-                                    <td>{usuario.matricula}</td>
-                                    <td>{usuario.tiene_certificado}</td>
-
-                                    <td>
-                                        <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
-                                        <button>Eliminar</button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-
-                ) : null}
             </div>
         </div>
     );

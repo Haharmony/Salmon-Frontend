@@ -7,14 +7,13 @@ import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
 import { ContenidoTablon } from '../Others/ContenidoTablon';
 import { AnuncioTablon } from '../Others/AnuncioTablon';
+import { useData } from './DataContext';
 
 const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-contenido"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Tareas y calificaciones"} redireccion={"pagina-tareas"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/correo.png")} texto={"Correo"} redireccion={"pagina-correo"} />
     </>
 } />
 
@@ -30,14 +29,16 @@ const menu_alertas =<>
 const menu_actualizaciones =<>
 
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"} profile_redireccion={"profile-page"}/>
 
 const anuncios_tablon = <>
     <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'12/03/2024'} titulo={'Reposición de clase'} imagen={require('../Assets/usuario.png')} descripcion={'La ultima clase que fue cancelada sera el dia 01/04/2024 favor de revisar su calendario'} />
 </>
 
 export const PaginaTablon = () => {
+    const { dataClase } = useData();
+    console.log(dataClase);
+    const barra_superior = <BarraSuperior texto_cabecera={dataClase.nombre_clase} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"} profile_redireccion={"profile-page"}/>
+
     return (
         <div className='contenedor-pagina'>
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />

@@ -8,6 +8,7 @@ export const ZoomLink = () => {
 
     const [matricula_clase, setMatriculaClase] = useState('');
     const [url, setUrl] = useState('');
+    const [fecha, setFecha] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -16,7 +17,8 @@ export const ZoomLink = () => {
         try {
             const response = await axios.post(routeCreateLink, {
                 url,
-                matricula_clase
+                matricula_clase,
+                fecha
             }); console.log(response.data);
             alert("Link creado con exito :)");
         } catch (error) {
@@ -41,6 +43,10 @@ export const ZoomLink = () => {
                 <div className='zoom-url-a'>
                     <label>URL de Zoom</label>
                     <div><input type="text" value={url} onChange={(e) => setUrl(e.target.value)}></input></div>
+                </div>
+                <div className='insertar-fecha'>
+                    <label>Fecha</label>
+                    <div><input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)}></input></div>
                 </div>
                 <div className='submit'>
                     <button type="submit">Insertar Link</button>

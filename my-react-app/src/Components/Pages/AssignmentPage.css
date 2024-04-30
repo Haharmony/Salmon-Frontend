@@ -80,7 +80,7 @@
     }
 }
 
-.folder-handler button{
+.folder-name button{
     justify-content: center;
     align-items: center;
     width: 120px;
@@ -90,8 +90,8 @@
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
+    right: auto;
     margin-top: 10px;
-    margin-right: 10px;
     cursor: pointer;
     &:hover {
         background: #05008a;
@@ -100,8 +100,9 @@
 }
 
 .underline-assignments {
-    width: 20%;
+    width: 90%;
     height: 1px;
+    align-self: center;
     background: #03002c;
     border-radius: 9px;
     margin-top: 14px;

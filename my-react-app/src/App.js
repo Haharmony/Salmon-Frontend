@@ -21,7 +21,6 @@ import { AssignmentPage } from './Components/Pages/AssignmentPage';
 import { AdminHomeworkPage } from './Components/Pages/AdminHomeworkPage';
 import { AdminPaginaTablon } from './Components/Pages/AdminPaginaTablon';
 import { AdminPaginaNoticias } from './Components/Pages/AdminPaginaNoticias';
-import { AdminPaginaCalendario } from './Components/Pages/AdminPaginaCalendario';
 import { AdminPaginaTutoriales } from './Components/Pages/AdminPaginaTutoriales';
 import { AdminPaginaBancoRecursos } from './Components/Pages/AdminPaginaBancoRecursos';
 import { AdminPaginaDirectorio } from './Components/Pages/AdminPaginaDirectorio';
@@ -40,6 +39,18 @@ import ZoomPage from './Components/Pages/ZoomPage';
 import AdminZoomPage from './Components/Pages/AdminZoomPage';
 import { AdminPaginaContenido } from './Components/Pages/AdminPaginaContenido';
 import { PaginaContenido } from './Components/Pages/PaginaContenido';
+import { TeacherHome } from './Components/Pages/TeacherHome';
+import TeacherCalendar from './Components/Pages/TeacherCalendar';
+import { TeacherTutorials } from './Components/Pages/TeacherTutorials';
+import { TeacherDirectory } from './Components/Pages/TeacherDirectory';
+import { TeacherAssignment } from './Components/Pages/TeacherAssignment';
+import TeacherAssignmentPDF from './Components/Pages/TeacherAssignmentPDF';
+import { TeacherProfile } from './Components/Pages/TeacherProfile';
+import { TeacherTablon } from './Components/Pages/TeacherTablon';
+import { TeacherContent } from './Components/Pages/TeacherContent';
+import { TeacherHomework } from './Components/Pages/TeacherHomework';
+import TeacherGradeHomework from './Components/Pages/TeacherGradeHomework';
+import TeacherZoom from './Components/Pages/TeacherZoom';
 
 function App() {
 
@@ -74,7 +85,6 @@ function App() {
           <Route path="/a-pagina-tareas" element={<AdminHomeworkPage />} />
           <Route path="/a-pagina-tablon" element={<AdminPaginaTablon />} />
           <Route path="/a-pagina-noticias" element={<AdminPaginaNoticias />} />
-          <Route path="/a-pagina-calendario" element={<AdminPaginaCalendario />} />
           <Route path="/a-pagina-tutoriales" element={<AdminPaginaTutoriales />} />
           <Route path="/a-pagina-bancoRecursos" element={<AdminPaginaBancoRecursos />} />
           <Route path="/a-pagina-directorio" element={<AdminPaginaDirectorio />} />
@@ -84,6 +94,18 @@ function App() {
           <Route path="/directory" element={<Directorio />} />
           <Route path="/directory-s" element={<DirectorioStudent />} />
           <Route path="/grade-homework" element={< GradeHomework/>} />
+          <Route path="/teacher-home" element={< TeacherHome/>} />
+          <Route path="/t-calendar-page" element={< TeacherCalendar/>} />
+          <Route path="/t-pagina-tutoriales" element={< TeacherTutorials/>} />
+          <Route path="/t-directory" element={< TeacherDirectory/>} />
+          <Route path="/t-pagina-entregables" element={< TeacherAssignment/>} />
+          <Route path="/t-pagina-entregables-pdf" element={< TeacherAssignmentPDF/>} />
+          <Route path="/t-profile-page" element={< TeacherProfile/>} />
+          <Route path="/t-pagina-tablon" element={< TeacherTablon/>} />
+          <Route path="/t-pagina-contenido" element={< TeacherContent/>} />
+          <Route path="/t-pagina-tareas" element={< TeacherHomework/>} />
+          <Route path="/t-grade-homework" element={< TeacherGradeHomework/>} />
+          <Route path="/t-pagina-zoom" element={< TeacherZoom/>} />
         </Routes> 
       </BrowserRouter>
     </DataProvider>

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { apiMostrarExcel, apiDescargarExcel, apiEliminarExcel } from "./constants";
 
 export const ExcelTable = () => {
-  const [idArchivo, setIdArchivo] = useState([]);
+  const [IdArchivos, setIdArchivo] = useState([]);
   const [message, setMessage] = useState('');
   const [matricula, setMatricula] = useState('');
   const navigate = useNavigate();
@@ -19,17 +19,16 @@ export const ExcelTable = () => {
     }
   };
 
-  const handleDescargarArchivo = async (idArchivo) => {
+  const handleDescargarArchivo = async (idArchivo, nombreArchivo) => {
     try {
       const response = await axios.get(`${apiDescargarExcel}?id_archivo=${idArchivo}`, { responseType: 'blob' });
-      const blob = new Blob([response.data], { type: response.headers['content-type'] });
-      const url = window.URL.createObjectURL(blob);
+      console.log(response.data);
+      const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `excel_${idArchivo}.xlsx`);
+      link.setAttribute('download', `${nombreArchivo}`);
       document.body.appendChild(link);
       link.click();
-      link.parentNode.removeChild(link);
     } catch (error) {
       console.error('Error downloading Excel file:', error);
       setMessage('Hubo un error al descargar el archivo Excel');
@@ -69,16 +68,16 @@ export const ExcelTable = () => {
             </tr>
           </thead>
           <tbody>
-            {idArchivo.map((archivo, index) => (
+            {IdArchivos.map((archivo, index) => (
               <tr key={index}>
                 <td>{archivo.nombre_archivo}</td>
                 <td>{archivo.matricula_admin}</td>
                 <td>{archivo.fecha_hora_subida}</td>
                 <td>
-                  <button onClick={() => handleDescargarArchivo(archivo.id)}>Descargar</button>
+                  <span className='descargar-pdf-alumno' onClick={() => handleDescargarArchivo(archivo.id, archivo.nombre_archivo)}>Descargar</span>
                 </td>
                 <td>
-                  <button onClick={() => handleEliminarArchivo(archivo.id)}>Eliminar</button>
+                  <span className='descargar-pdf-alumno' onClick={() => handleEliminarArchivo(archivo.id)}>Eliminar</span>
                 </td>
               </tr>
             ))}

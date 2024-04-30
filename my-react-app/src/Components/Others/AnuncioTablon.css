@@ -48,14 +48,34 @@
     background: transparent;
     border-radius: 10px;
 }
-.anuncio-tablon .comentarios{
-    width: 100%;
-    height: auto;
+
+.comentarios{
     display: flex;
     flex-direction: column;
-    background: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin: 10px;
+}
+
+.comment{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.submit-comment button{
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 20px;
+    color: #fff;
+    background: #1329cd;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    cursor: pointer;
+    &:hover {
+        background: #00408a;
+        color: #b9b9b9;
+    }
 }

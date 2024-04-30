@@ -14,10 +14,8 @@ import { getLinks } from "./constants";
 const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-contenido"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Tareas y calificaciones"} redireccion={"pagina-tareas"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/correo.png")} texto={"Correo"} redireccion={"pagina-correo"} />
     </>
 } />
 
@@ -89,6 +87,7 @@ const ZoomPage = () => {
                                     <tr>
                                         <th>Nombre de la Clase</th>
                                         <th>Enlace Zoom</th>
+                                        <th>Fecha</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,6 +95,7 @@ const ZoomPage = () => {
                                         <tr key={index}>
                                             <td>{link.matricula_clase}</td>
                                             <td>{link.url}</td>
+                                            <td>{link.fecha}</td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -1,8 +1,10 @@
 table{
+    align-self: center;
     margin-top: 20px;
     width: 100%;
     border: 1px solid;
     border-collapse: collapse;
+    table-layout: fixed; /* Fix table layout */
 }
 
 td{
@@ -10,7 +12,11 @@ td{
     padding: 10px;
     border-bottom: 1px solid black;
     border: 1px solid;
-
+    width: auto; /* Let the width adjust based on content */
+    max-width: 300px; /* Adjust the maximum width of table cells */
+    overflow: hidden; /* Hide overflow content */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 th{
