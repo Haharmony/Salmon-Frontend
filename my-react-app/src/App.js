@@ -51,6 +51,12 @@ import { TeacherContent } from './Components/Pages/TeacherContent';
 import { TeacherHomework } from './Components/Pages/TeacherHomework';
 import TeacherGradeHomework from './Components/Pages/TeacherGradeHomework';
 import TeacherZoom from './Components/Pages/TeacherZoom';
+import { MonitorHome } from './Components/Pages/MonitorHome';
+import MonitorCalendar from './Components/Pages/MonitorCalendar';
+import { MonitorProfile } from './Components/Pages/MonitorProfile';
+import MonitorAssignmentPDF from './Components/Pages/MonitorAssignmentPDF';
+import { MonitorDirectory } from './Components/Pages/MonitorDirectory';
+import MonitorGradeHomework from './Components/Pages/MonitorGradeHomework';
 
 function App() {
 
@@ -106,6 +112,12 @@ function App() {
           <Route path="/t-pagina-tareas" element={< TeacherHomework/>} />
           <Route path="/t-grade-homework" element={< TeacherGradeHomework/>} />
           <Route path="/t-pagina-zoom" element={< TeacherZoom/>} />
+          <Route path="/monitor-home" element={< MonitorHome/>} />
+          <Route path="/m-calendar-page" element={< MonitorCalendar/>} />
+          <Route path="/m-profile-page" element={< MonitorProfile/>} />
+          <Route path="/m-pagina-entregables-pdf" element={< MonitorAssignmentPDF/>} />
+          <Route path="/m-directory" element={< MonitorDirectory/>} />
+          <Route path="/m-grade-homework" element={< MonitorGradeHomework/>} />
         </Routes> 
       </BrowserRouter>
     </DataProvider>

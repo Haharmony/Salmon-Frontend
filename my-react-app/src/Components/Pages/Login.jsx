@@ -10,7 +10,7 @@ import background_img from '../Assets/background.jpg';
 import passwordEyeOpen_icon from '../Assets/showPassword.png';
 import passwordEyeClosed_icon from '../Assets/noPassword.png';
 import logoBackground from '../Assets/logo.jpeg';
-import {apiLogin} from "./constants";
+import { apiLogin } from "./constants";
 
 function Login() {
     const navigate = useNavigate();
@@ -78,6 +78,12 @@ function Login() {
                     break;
                 case 'Admin':
                     navigate("/admin-home");
+                    break;
+                case 'monitor':
+                    navigate("/monitor-home");
+                    break;
+                case 'Monitor':
+                    navigate("/monitor-home");
                     break;
                 default:
                     // Manejar caso inesperado

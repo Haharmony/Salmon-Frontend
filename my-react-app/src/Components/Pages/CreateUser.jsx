@@ -70,7 +70,7 @@ export const CreateUser = () => {
                         <div className="password-input"><input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} /></div>
                     </div>
                     <div className='role-field'>
-                        <label>Rol (Admin, Maestro, Alumno)</label>
+                        <label>Rol (Admin, Maestro, Alumno, Monitor)</label>
                         <div className="role-input"><input type="text" value={rol} onChange={(e) => setRol(e.target.value)} /></div>
                     </div>
                     <div className='id-field'>

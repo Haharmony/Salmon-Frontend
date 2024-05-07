@@ -13,7 +13,7 @@ const barra_inferior = (
       <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"Calendario"} redireccion={"t-calendar-page"} />
       <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"t-pagina-tutoriales"} />
       <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"t-directory"} />
-      <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"t-pagina-entregables"} />
+      <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"t-pagina-entregables-pdf"} />
     </>
   } />
 );

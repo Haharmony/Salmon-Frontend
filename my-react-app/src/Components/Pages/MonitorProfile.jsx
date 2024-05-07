@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProfilePage.css';
 import Cabecera from '../Others/Cabecera';
 import PiePagina from '../Others/PiePagina';
@@ -10,10 +10,10 @@ import { useData } from './DataContext';
 
 const barra_inferior = <BarraInferior contenido={
     <>
-        <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"Calendario"} redireccion={"calendar-page"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"a-pagina-tutoriales"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"directory"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"pagina-entregables-pdf"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"Calendario"} redireccion={"m-calendar-page"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"m-pagina-tutoriales"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"m-directory"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/entregables.png")} texto={"Entregables"} redireccion={"m-pagina-entregables-pdf"} />
     </>
 } />
 const menu_materias =<>
@@ -29,9 +29,9 @@ const menu_actualizaciones =<>
 
 </>
 
-const barra_superior = <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"} />
+const barra_superior = <BarraSuperior menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"monitor-home"} profile_redireccion={"m-profile-page"} />
 
-export const AdminProfilePage = () => {
+export const MonitorProfile = () => {
     const { data } = useData();
 
     return (

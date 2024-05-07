@@ -12,10 +12,9 @@ import {mostrarTareaApiAlumno,descargarPDFApiAlumno,updateCalificacionApiAlumno}
 
 const barra_inferior = <BarraInferior contenido={
     <>
-        <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"t-pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"t-pagina-tareas"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"t-pagina-zoom"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"m-pagina-tablon"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"m-pagina-content"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"m-pagina-tareas"} />
     </>
 } />
 
@@ -31,15 +30,15 @@ const menu_alertas =<>
 const menu_actualizaciones =<>
 
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"teacher-home"} profile_redireccion={"t-profile-page"} />
+const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"monitor-home"} profile_redireccion={"m-profile-page"} />
 
-const TeacherGradeHomework = () => {
+const MonitorGradeHomework = () => {
     const { data } = useData(); // Obtiene los datos del contexto
     const [tareas, setTareas] = useState([]);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const navigateToMenu = () => {
-        navigate("/t-pagina-tareas")
+        navigate("/m-pagina-tareas")
     };
 
     const handleMostrarTareas = async () => {
@@ -59,13 +58,13 @@ const TeacherGradeHomework = () => {
         }
     };
 
-    const handleDescargarTarea = async (idArchivo, nombreArchivo) => {
+    const handleDescargarTarea = async (idArchivo) => {
         try {
             const response = await axios.get(`${descargarPDFApiAlumno}?id_archivo=${idArchivo}`, { responseType: 'blob' });
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', `${nombreArchivo}`);
+            link.setAttribute('download', 'tarea.pdf');
             document.body.appendChild(link);
             link.click();
         } catch (error) {
@@ -118,7 +117,7 @@ const TeacherGradeHomework = () => {
                                     <td>{tarea.nombre_archivo}</td>
                                     <td>{tarea.matricula_clase}</td>
                                     <td>
-                                        <button onClick={() => handleDescargarTarea(tarea.id_archivo, tarea.nombre_archivo)}>Descargar</button>
+                                        <button onClick={() => handleDescargarTarea(tarea.id_archivo)}>Descargar</button>
                                     </td>
                                     <td>
                                         <input
@@ -155,4 +154,4 @@ const TeacherGradeHomework = () => {
 
 }
 
-export default TeacherGradeHomework;
+export default MonitorGradeHomework;
