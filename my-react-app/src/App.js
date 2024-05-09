@@ -57,6 +57,10 @@ import { MonitorProfile } from './Components/Pages/MonitorProfile';
 import MonitorAssignmentPDF from './Components/Pages/MonitorAssignmentPDF';
 import { MonitorDirectory } from './Components/Pages/MonitorDirectory';
 import MonitorGradeHomework from './Components/Pages/MonitorGradeHomework';
+import { MonitorTablon } from './Components/Pages/MonitorTablon';
+import { MonitorHomework } from './Components/Pages/MonitorHomework';
+import { MonitorTutorials } from './Components/Pages/MonitorTutorials';
+import { MonitorContent } from './Components/Pages/MonitorContent';
 
 function App() {
 
@@ -75,7 +79,7 @@ function App() {
           <Route path="/pagina-soporte" element={<PaginaSoporte />} />
           <Route path="/pagina-tablon" element={<PaginaTablon/>} />
           <Route path="/pagina-zoom" element={<ZoomPage/>} />
-          <Route path="/pagina-contenido" element={<PaginaContenido/>} />
+          <Route path="/pagina-content" element={<PaginaContenido/>} />
           <Route path="/a-pagina-zoom" element={<AdminZoomPage/>} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
@@ -94,7 +98,7 @@ function App() {
           <Route path="/a-pagina-tutoriales" element={<AdminPaginaTutoriales />} />
           <Route path="/a-pagina-bancoRecursos" element={<AdminPaginaBancoRecursos />} />
           <Route path="/a-pagina-directorio" element={<AdminPaginaDirectorio />} />
-          <Route path="/a-pagina-contenido" element={<AdminPaginaContenido />} />
+          <Route path="/a-pagina-content" element={<AdminPaginaContenido />} />
           <Route path="/profile-page" element={<ProfilePage />} />
           <Route path="/a-profile-page" element={<AdminProfilePage />} />
           <Route path="/directory" element={<Directorio />} />
@@ -108,7 +112,7 @@ function App() {
           <Route path="/t-pagina-entregables-pdf" element={< TeacherAssignmentPDF/>} />
           <Route path="/t-profile-page" element={< TeacherProfile/>} />
           <Route path="/t-pagina-tablon" element={< TeacherTablon/>} />
-          <Route path="/t-pagina-contenido" element={< TeacherContent/>} />
+          <Route path="/t-pagina-content" element={< TeacherContent/>} />
           <Route path="/t-pagina-tareas" element={< TeacherHomework/>} />
           <Route path="/t-grade-homework" element={< TeacherGradeHomework/>} />
           <Route path="/t-pagina-zoom" element={< TeacherZoom/>} />
@@ -117,7 +121,11 @@ function App() {
           <Route path="/m-profile-page" element={< MonitorProfile/>} />
           <Route path="/m-pagina-entregables-pdf" element={< MonitorAssignmentPDF/>} />
           <Route path="/m-directory" element={< MonitorDirectory/>} />
+          <Route path="/m-pagina-tablon" element={< MonitorTablon/>} />
           <Route path="/m-grade-homework" element={< MonitorGradeHomework/>} />
+          <Route path="/m-pagina-tareas" element={< MonitorHomework/>} />
+          <Route path="/m-pagina-tutoriales" element={< MonitorTutorials/>} />
+          <Route path="/m-pagina-content" element={< MonitorContent/>} />
         </Routes> 
       </BrowserRouter>
     </DataProvider>

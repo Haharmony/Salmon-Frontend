@@ -14,7 +14,7 @@ const barra_inferior = (
     <BarraInferior contenido={
         <>
             <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
-            <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-tablon"} />
+            <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-content"} />
             <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"pagina-tareas"} />
             <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
         </>
@@ -34,12 +34,11 @@ const menu_actualizaciones =<>
 
 </>
 
-const barra_superior = (
-    <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"} profile_redireccion={"profile-page"} />
-);
+
 
 export const HomeworkPage = () => {
     const { data } = useData(); // Obtiene los datos del contexto
+    const { dataClase } = useData(); // Obtiene los datos del contexto
     const [tareas, setTareas] = useState([]);
     //const [matricula, setMatricula] = useState('');
     const [error, setError] = useState('');
@@ -47,6 +46,10 @@ export const HomeworkPage = () => {
     const [matriculaClase, setMatriculaClase] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [message, setMessage] = useState('');
+
+    const barra_superior = (
+        <BarraSuperior texto_cabecera={dataClase.nombre_clase} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"pagina-inicio"} profile_redireccion={"profile-page"} />
+    );
 
     useEffect(() => {
         const fetchTasks = async () => {

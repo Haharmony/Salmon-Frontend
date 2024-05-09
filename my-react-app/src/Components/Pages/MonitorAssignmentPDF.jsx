@@ -96,9 +96,6 @@ function MonitorAssignmentPDF() {
         <div className='contenedor-pagina'>
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
             <div className="folders-container">
-                <div className="assignment-title">
-                    <div className="button"><button onClick={navigateToMenu}>Subir Archivos</button></div>
-                </div>
                 <div className="assignment-holder">
                     <h2>Subir Archivo PDF</h2>
                     <form onSubmit={handleSubmitPDF}>

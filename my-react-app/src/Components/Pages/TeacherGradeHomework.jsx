@@ -13,7 +13,7 @@ import {mostrarTareaApiAlumno,descargarPDFApiAlumno,updateCalificacionApiAlumno}
 const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"t-pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-tablon"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"t-pagina-content"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"t-pagina-tareas"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"t-pagina-zoom"} />
     </>
@@ -31,16 +31,18 @@ const menu_alertas =<>
 const menu_actualizaciones =<>
 
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"teacher-home"} profile_redireccion={"t-profile-page"} />
 
 const TeacherGradeHomework = () => {
-    const { data } = useData(); // Obtiene los datos del contexto
+    const { data } = useData();
+    const { dataClase } = useData();
     const [tareas, setTareas] = useState([]);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const navigateToMenu = () => {
         navigate("/t-pagina-tareas")
     };
+
+    const barra_superior = <BarraSuperior texto_cabecera={dataClase.nombre_clase} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"teacher-home"} profile_redireccion={"t-profile-page"}/>
 
     const handleMostrarTareas = async () => {
         if (data) {

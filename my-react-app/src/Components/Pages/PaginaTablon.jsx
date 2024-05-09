@@ -12,7 +12,7 @@ import { useData } from './DataContext';
 const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-tablon"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-content"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"pagina-tareas"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
     </>
@@ -32,7 +32,7 @@ const menu_actualizaciones =<>
 </>
 
 const anuncios_tablon = <>
-    <AnuncioTablon nombre={'Lic. Martinez'} fecha={'01/03/2024'} titulo={'Cambio de salon'} descripcion={'Debido a las actividades que se llevaran a cabo la siguiente semana las clases seran en otro salón'} />
+    <AnuncioTablon nombre={'Instructor'} fecha={'5/9/2024'} titulo={'Foro: '} descripcion={' Expresa tus opiniones y comparte tus ideas con el resto del mundo manteniendo el contacto en este foro.'} />
 </>
 
 export const PaginaTablon = () => {
@@ -43,7 +43,7 @@ export const PaginaTablon = () => {
     return (
         <div className='contenedor-pagina'>
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
-            <ContenidoTablon imagen_materia={require("../Assets/materia.jpg")} anuncios_tablon={anuncios_tablon}/>
+            <ContenidoTablon imagen_materia={require("../Assets/materia.jpg")} anuncios_tablon={anuncios_tablon} redireccion={"pagina-zoom"}/>
             <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />
             <footer>Grupo Derecho & Progreso &copy; 2024</footer>
         </div>

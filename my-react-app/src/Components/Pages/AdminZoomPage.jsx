@@ -14,7 +14,7 @@ import { getLinks } from "./constants";
 const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"a-pagina-tablon"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-contenido"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-content"} />
         <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"a-pagina-tareas"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"a-pagina-zoom"} />
     </>
@@ -32,12 +32,14 @@ const menu_alertas =<>
 const menu_actualizaciones =<>
 
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={"a-profile-page"} />
 
 const AdminZoomPage = () => {
     const { data } = useData(); // Obtiene los datos del contexto
+    const { dataClase } = useData(); // Obtiene los datos del contexto
     const [links, setLinks] = useState([]);
     const [showLinks, setShowLinks] = useState(false);
+
+    const barra_superior = <BarraSuperior texto_cabecera={dataClase.nombre_clase} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"admin-home"} profile_redireccion={" "} />
 
     const fetchLinks = async () => {
         if (data) {

@@ -18,16 +18,16 @@ const barra_inferior = (
   } />
 );
 
-const menu_materias =<>
+const menu_materias = <>
 
 </>
-const menu_mensajes =<>
+const menu_mensajes = <>
 
 </>
-const menu_alertas =<>
+const menu_alertas = <>
 
 </>
-const menu_actualizaciones =<>
+const menu_actualizaciones = <>
 
 </>
 
@@ -126,7 +126,7 @@ export const TeacherAssignment = () => {
         </div>
       </div>
       <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />
-            <footer>Grupo Derecho & Progreso &copy; 2024</footer>
+      <footer>Grupo Derecho & Progreso &copy; 2024</footer>
     </div>
   );
 };

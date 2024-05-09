@@ -30,16 +30,18 @@ const menu_alertas =<>
 const menu_actualizaciones =<>
 
 </>
-const barra_superior = <BarraSuperior texto_cabecera={'Materia 1'} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"monitor-home"} profile_redireccion={"m-profile-page"} />
 
 const MonitorGradeHomework = () => {
     const { data } = useData(); // Obtiene los datos del contexto
+    const { dataClase } = useData(); // Obtiene los datos del contexto
     const [tareas, setTareas] = useState([]);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const navigateToMenu = () => {
         navigate("/m-pagina-tareas")
     };
+
+    const barra_superior = <BarraSuperior texto_cabecera={dataClase.nombre_clase} menu_materias={menu_materias} menu_mensajes={menu_mensajes} menu_alertas={menu_alertas} menu_actualizaciones={menu_actualizaciones} redireccion={"monitor-home"} profile_redireccion={"m-profile-page"} />
 
     const handleMostrarTareas = async () => {
         if (data) {

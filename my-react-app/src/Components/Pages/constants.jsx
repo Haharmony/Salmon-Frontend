@@ -1,5 +1,5 @@
 // constants.js
-export const apiUrl = 'http://jmf.0b1.mytemp.website/abogadosprogreso';
+export const apiUrl = 'https://gdpcursa.grupoderechoyprogreso.com/abogadosprogreso';
 //http://jmf.0b1.mytemp.website/abogadosprogreso
 
 export const routeFindUserByRol = `${apiUrl}/api/users/findByRole`;
@@ -29,4 +29,7 @@ export const setComment = `${apiUrl}/api/tablon_datos/insertar`;
 export const getComment = `${apiUrl}/api/tablon_datos/todos`;
 export const getClases = `${apiUrl}/api/clases/ClasesMaestroAdmin`;
 export const getCommentMatricula = `${apiUrl}/api/tablon_datos/todosMatricula`;
+export const postContent = `${apiUrl}/api/contenido_clases/subirContenido`;
+export const downlodContent = `${apiUrl}/api/contenido_clases/descargarContenido`;
+export const showContent = `${apiUrl}/api/contenido_clases/mostrarContenido`;
 
