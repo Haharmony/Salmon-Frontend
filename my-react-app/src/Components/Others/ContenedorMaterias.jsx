@@ -34,7 +34,7 @@ const ContenedorMaterias = ({ redireccionB }) => {
         <BotonMateria
           key={index}
           imagen={imagen_materia}
-          nombre={materia.nombre_clase}
+          nombre={(index+1) + " "+ materia.nombre_clase}
           descripcion={materia.descripcion}
           salon={materia.matricula_clase}
           profesor={materia.matricula_maestro}

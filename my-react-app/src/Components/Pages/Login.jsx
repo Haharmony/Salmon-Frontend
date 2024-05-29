@@ -19,7 +19,7 @@ function Login() {
     const [contraseña, setPassword] = useState('');
     const [errorM, setError] = useState('');
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook|example)\.com$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@(hotmail|gmail|yahoo|outlook|example|derechoyprogreso)\.com$/;
 
     const isLoginDisabled = email.trim() === '' || contraseña.trim() === '';
     const isShowPasswordDisabled = contraseña.trim() === '';

@@ -15,22 +15,24 @@ const barra_inferior = (
         <>
             <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"pagina-tablon"} />
             <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"pagina-content"} />
-            <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"pagina-tareas"} />
+            <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios"} redireccion={"pagina-tareas"} />
+            <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Diagnostica"} redireccion={"pagina-evaluacion"} />
+            <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Final"} redireccion={"pagina-evaluacionfi"} />
             <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"pagina-zoom"} />
         </>
     } />
 );
 
-const menu_materias =<>
+const menu_materias = <>
 
 </>
-const menu_mensajes =<>
+const menu_mensajes = <>
 
 </>
-const menu_alertas =<>
+const menu_alertas = <>
 
 </>
-const menu_actualizaciones =<>
+const menu_actualizaciones = <>
 
 </>
 
@@ -104,21 +106,21 @@ export const HomeworkPage = () => {
             formData.append('archivo', selectedFile);
             formData.append('matricula_clase', matriculaClase);
             const response = await axios.post(postPDFApiAlumno, formData, {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-              }
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
             });
             if (response.data.success) {
-              setMessage('Archivo Excel subido exitosamente');
-              alert(message);
-              // Realizar acciones adicionales después de subir el archivo
+                setMessage('Archivo Excel subido exitosamente');
+                alert(message);
+                // Realizar acciones adicionales después de subir el archivo
             } else {
-              setMessage('Hubo un error al subir el archivo Excel');
+                setMessage('Hubo un error al subir el archivo Excel');
             }
-          } catch (error) {
+        } catch (error) {
             console.error('Error uploading Excel file:', error);
             setMessage('Hubo un error al subir el archivo Excel');
-          }
+        }
     };
 
     return (

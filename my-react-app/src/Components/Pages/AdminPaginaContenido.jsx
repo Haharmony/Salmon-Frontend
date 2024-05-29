@@ -6,7 +6,7 @@ import Cabecera from '../Others/Cabecera';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
-import { downlodContent, showContent, postContent } from "./constants";
+import { downlodContent, showContent, postContent, deleteContent } from "./constants";
 import PiePagina from '../Others/PiePagina';
 import { useData } from './DataContext';
 
@@ -14,7 +14,10 @@ const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"a-pagina-tablon"} />
         <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"a-pagina-content"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"a-pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios"} redireccion={"a-pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Diagnostica"} redireccion={"a-pagina-evaluacion"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Final"} redireccion={"a-pagina-evaluacionfi"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/herramientas.png")} texto={"Eliminar Curso"} redireccion={"a-delete-course"} />
     </>
 } />
 
@@ -40,6 +43,7 @@ export const AdminPaginaContenido = () => {
     const [mensaje, setMensaje] = useState('');
     const [archivos, setArchivos] = useState([]);
     const [mensaje2, setMensaje2] = useState('');
+    const [contenido, setContenido] = useState([]);
 
     const obtenerContenido = async () => {
             
@@ -74,6 +78,27 @@ export const AdminPaginaContenido = () => {
         } catch (error) {
             console.error('Error al descargar contenido:', error);
             throw error;
+        }
+    };
+
+    const deleteContenidoClasesEntry = async (id_archivo) => {
+        try {
+            const response = await axios.delete(deleteContent, {
+                data: { id_archivo },
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status === 200) {
+                alert('Entrada eliminada correctamente');
+                // Actualiza la lista de contenido
+                setContenido(contenido.filter(item => item.id_archivo !== id_archivo));
+            } else {
+                alert('Error al eliminar la entrada');
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud:', error);
         }
     };
 
@@ -128,6 +153,7 @@ export const AdminPaginaContenido = () => {
                                 <th>Nombre del Archivo</th>
                                 <th>Tipo de Archivo</th>
                                 <th>Descargar Archivo</th>
+                                <th>Eliminar Archivo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -138,6 +164,7 @@ export const AdminPaginaContenido = () => {
                                     <td>
                                         <span className='descargar-pdf-alumno' onClick={() => descargarContenido(archivo.id_archivo, archivo.nombre_archivo)}>Descargar</span>
                                     </td>
+                                    <td><span className='descargar-pdf-alumno' onClick={() => deleteContenidoClasesEntry(archivo.id_archivo)}>Eliminar</span></td>
                                 </tr>
                             ))}
                         </tbody>

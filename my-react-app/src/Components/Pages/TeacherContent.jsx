@@ -6,7 +6,7 @@ import Cabecera from '../Others/Cabecera';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
-import { downlodContent, showContent, postContent } from "./constants";
+import { downlodContent, showContent, postContent, deleteContent } from "./constants";
 import PiePagina from '../Others/PiePagina';
 import { useData } from './DataContext';
 
@@ -14,7 +14,9 @@ const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"t-pagina-tablon"} />
         <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"t-pagina-content"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"t-pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios"} redireccion={"t-pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Diagnostica"} redireccion={"t-pagina-evaluacion"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Final"} redireccion={"t-pagina-evaluacionfi"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"t-pagina-zoom"} />
     </>
 } />
@@ -41,6 +43,7 @@ export const TeacherContent = () => {
     const [mensaje, setMensaje] = useState('');
     const [archivos, setArchivos] = useState([]);
     const [mensaje2, setMensaje2] = useState('');
+    const [contenido, setContenido] = useState([]);
 
     const obtenerContenido = async () => {
             
@@ -75,6 +78,27 @@ export const TeacherContent = () => {
         } catch (error) {
             console.error('Error al descargar contenido:', error);
             throw error;
+        }
+    };
+
+    const deleteContenidoClasesEntry = async (id_archivo) => {
+        try {
+            const response = await axios.delete(deleteContent, {
+                data: { id_archivo },
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status === 200) {
+                alert("Entrada eliminada correctamente");
+                // Actualiza la lista de contenido
+                setContenido(contenido.filter(item => item.id_archivo !== id_archivo));
+            } else {
+                alert('Error al eliminar la entrada');
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud:', error);
         }
     };
 
@@ -138,6 +162,11 @@ export const TeacherContent = () => {
                                 <option value="pdf">PDF</option>
                                 <option value="pptx">PPTX</option>
                                 <option value="xlsx">XLSX</option>
+                                <option value="mp3">MP3</option>
+                                <option value="mp4">MP4</option>
+                                <option value="docx">DOCX</option>
+                                <option value="png">PNG</option>
+                                <option value="txt">TXT</option>
                             </select>
                         </div>
                         <div className='ingresar-mat'>
@@ -152,6 +181,7 @@ export const TeacherContent = () => {
                                 <th>Nombre del Archivo</th>
                                 <th>Tipo de Archivo</th>
                                 <th>Descargar Archivo</th>
+                                <th>Eliminar Archivo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -162,6 +192,7 @@ export const TeacherContent = () => {
                                     <td>
                                         <span className='descargar-pdf-alumno' onClick={() => descargarContenido(archivo.id_archivo, archivo.nombre_archivo)}>Descargar</span>
                                     </td>
+                                    <td><span className='descargar-pdf-alumno' onClick={() => deleteContenidoClasesEntry(archivo.id_archivo)}>Eliminar</span></td>
                                 </tr>
                             ))}
                         </tbody>

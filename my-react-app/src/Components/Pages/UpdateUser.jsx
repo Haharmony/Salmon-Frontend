@@ -3,11 +3,12 @@ import axios from "axios";
 import './UpdateUser.css'
 import './Directories.css';
 import { useNavigate } from "react-router-dom";
-import { routeFindUserByRol, routeUpdateUser } from "./constants";
+import { routeFindUserByRol, routeUpdateUser, deleteUser } from "./constants";
 
 export const UpdateUser = () => {
 
     const [usuarios, setUsuarios] = useState([]); // Estado para almacenar los datos de usuarios
+    const [usuariosTabla, setUsuariosTabla] = useState([]); // Estado para almacenar los datos de usuarios
     const [showTable, setShowTable] = useState(false);
     const [email, setEmail] = useState('');
     const [nombre, setNombre] = useState('');
@@ -28,7 +29,8 @@ export const UpdateUser = () => {
         try {
             const response = await axios.get(`${routeFindUserByRol}?role=${rolSeleccionado}`);
             setShowTable(!showTable);
-            setUsuarios(response.data); // Guardar los datos recibidos en el estado usuarios
+            setUsuarios(response.data);
+            setUsuariosTabla(response.data); // Guardar los datos recibidos en el estado usuarios
         } catch (error) {
             console.error('Error:', error);
         }
@@ -50,6 +52,26 @@ export const UpdateUser = () => {
         setTelefono(val.telefono);
         setTieneCertificado(val.tiene_certificado);
         setId(val.id);
+    };
+
+    const deleteUsuario = async (email, rol) => {
+        try {
+            const response = await axios.delete(`${deleteUser}?email=${email}&rol=${rol}`, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+    
+            if (response.status === 200) {
+                alert("Usuario e incidencias relacionadas eliminados correctamente.");
+                // Actualiza la lista de usuariosTabla
+                setUsuariosTabla(usuariosTabla.filter(usuario => usuario.email !== email));
+            } else {
+                alert("Error al eliminar el usuario");
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud:', error);
+        }
     };
 
     const update = async () => {
@@ -113,7 +135,7 @@ export const UpdateUser = () => {
                     <div className="id-field-uu-input"><input type="text" value={matricula} onChange={e => setMatricula(e.target.value)} /></div>
                 </div>
                 <div className="cert-field-uu">
-                    <label>Certificado:</label>
+                    <label>Constancia:</label>
                     <div className="cert-field-uu-input"><input type="bool" value={tiene_certificado} onChange={e => setTieneCertificado(e.target.value)} /></div>
                 </div>
                 <div className="underline2"></div>
@@ -127,7 +149,7 @@ export const UpdateUser = () => {
                             <th>Imagen</th>
                             <th>Contraseña</th>
                             <th>Matricula</th>
-                            <th>Certificado</th>
+                            <th>Constancia</th>
 
                             <th>Acciones</th>
                         </tr>
@@ -146,7 +168,7 @@ export const UpdateUser = () => {
 
                                 <td>
                                     <button onClick={() => { editarEmpleados(usuario); }}>Editar</button>
-                                    <button>Eliminar</button>
+                                    <button onClick={() => deleteUsuario(usuario.email, usuario.rol)}>Eliminar</button>
                                 </td>
                             </tr>
                         ))}

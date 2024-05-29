@@ -14,7 +14,9 @@ const barra_inferior = <BarraInferior contenido={
     <>
         <BotonBarraInferior imagenSrc={require("../Assets/tablon.png")} texto={"Tablón"} redireccion={"t-pagina-tablon"} />
         <BotonBarraInferior imagenSrc={require("../Assets/contenido.png")} texto={"Contenido"} redireccion={"t-pagina-content"} />
-        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios y Calificaciones"} redireccion={"t-pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Ejercicios"} redireccion={"t-pagina-tareas"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Diagnostica"} redireccion={"t-pagina-evaluacion"} />
+        <BotonBarraInferior imagenSrc={require("../Assets/tareas.png")} texto={"Evaluación Final"} redireccion={"t-pagina-evaluacionfi"} />
         <BotonBarraInferior imagenSrc={require("../Assets/zoom.png")} texto={"Zoom"} redireccion={"t-pagina-zoom"} />
     </>
 } />
@@ -38,6 +40,7 @@ const TeacherGradeHomework = () => {
     const [tareas, setTareas] = useState([]);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const [calificacion, setCalificacion] = useState('');
     const navigateToMenu = () => {
         navigate("/t-pagina-tareas")
     };
@@ -77,16 +80,24 @@ const TeacherGradeHomework = () => {
 
     const handleCalificarTarea = async (idArchivo, nueva_calificacion) => {
         try {
-            await axios.put(updateCalificacionApiAlumno, {
-                id_archivo: idArchivo,
-                nueva_calificacion: nueva_calificacion
+            const response = await axios.put(updateCalificacionApiAlumno, null, {
+                params: {
+                    id_archivo: idArchivo,
+                    nueva_calificacion: nueva_calificacion
+                },
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
-            alert("Calificación actualizada");
-            console.log("exito tarea actualizada");
-            // Actualizar la lista de tareas después de calificar
-            handleMostrarTareas();
+
+            if (response.status === 200) {
+                alert('Calificación actualizada.');
+                handleMostrarTareas();
+            } else {
+                alert('Error al actualizar calificación.');
+            }
         } catch (error) {
-            console.error('Error al calificar la tarea:', error);
+            console.error('Error al realizar la solicitud:', error);
         }
     };
 
@@ -124,26 +135,14 @@ const TeacherGradeHomework = () => {
                                     </td>
                                     <td>
                                         <input
-                                            type="number"
-                                            min="0"
-                                            max="10"
-                                            value={tarea.calificacion}
+                                            type="text"
                                             onChange={(e) => {
-                                                const newCalificacion = e.target.value;
-                                                setTareas(prevTareas => {
-                                                    const updatedTareas = prevTareas.map(prevTarea => {
-                                                        if (prevTarea.id_archivo === tarea.id_archivo) {
-                                                            return { ...prevTarea, calificacion: newCalificacion };
-                                                        }
-                                                        return prevTarea;
-                                                    });
-                                                    return updatedTareas;
-                                                });
+                                                setCalificacion(e.target.value);
                                             }}
                                         />
                                     </td>
                                     <td>
-                                        <button onClick={() => handleCalificarTarea(tarea.id_archivo, tarea.calificacion)}>Calificar</button>
+                                        <button onClick={() => handleCalificarTarea(tarea.id_archivo, calificacion)}>Calificar</button>
                                     </td>
                                     <td>{tarea.calificacion}</td>
                                 </tr>
@@ -154,7 +153,6 @@ const TeacherGradeHomework = () => {
             </div>
         </div>
     )
-
 }
 
 export default TeacherGradeHomework;

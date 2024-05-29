@@ -27,6 +27,9 @@ const AdminAdministration = () => {
     const handleSubirExcel = () => {
         navigation("/upload-excel");
     };
+    const handleCrearCertificado = () => {
+        navigation("/create-cert");
+    };
     return (
         <div className="administration">
             <div>
@@ -36,7 +39,7 @@ const AdminAdministration = () => {
             </div>
             <div>
                 <button onClick={handleActualizarUsuariosButton}>Actualizar Usuarios</button>
-                Actualiza los datos de un usario ya existente.
+                Actualiza o elimina los datos de un usuario ya existente.
                 <div className="a-underline"></div>
             </div>
             <div>
@@ -62,6 +65,11 @@ const AdminAdministration = () => {
             <div>
                 <button onClick={handleDescargarExcel}>Ver tabla de excel</button>
                 Visualice archivos de excel.
+                <div className="a-underline"></div>
+            </div>
+            <div>
+                <button onClick={handleCrearCertificado}>Subir Constancias</button>
+                Sube las constancias para los alumnos.
                 <div className="a-underline"></div>
             </div>
         </div>

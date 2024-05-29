@@ -54,8 +54,6 @@ export const ProfilePage = () => {
                             <input type="text" placeholder={data.email}/>
                             <div className="name-text">Matricula</div>
                             <input type="text" placeholder={data.matricula}/>
-                            <div className="constance-header">Constancia de Alumno</div>
-                            <div className="constance-field"></div>
                         </div>
                     </div>
                 </div>

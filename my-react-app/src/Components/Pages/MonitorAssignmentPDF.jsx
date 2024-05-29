@@ -100,15 +100,8 @@ function MonitorAssignmentPDF() {
                     <h2>Subir Archivo PDF</h2>
                     <form onSubmit={handleSubmitPDF}>
                         <div>
-                            <label>Matrícula de Clase:</label>
-                            <input type="text" value={matriculaClase} onChange={handleMatriculaClaseChange} required />
+                            <label>No puedes subir archivos como "Monitor".</label>
                         </div>
-                        <div>
-                            <label>Archivo PDF:</label>
-                            <input type="file" onChange={handleFileChange} accept=".pdf" required />
-                        </div>
-                        {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
-                        <button type="submit">Subir PDF</button>
                     </form>
                 </div>
             </div>

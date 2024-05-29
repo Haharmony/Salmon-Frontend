@@ -19,7 +19,7 @@ export const ContenidoTablon = ({ anuncios_tablon, calendario, redireccion }) =>
                 </div>
 
                 <div className='right-side'>
-                    <ContenedorDesplegable titulo={'Liga de acceso al aula virtual'} contenido={<div className="zoom-url"><span onClick={navigateToMenu}>https://availableclasseslinks.com</span></div>} />
+                    <ContenedorDesplegable titulo={'Ligas de Zoom'} contenido={<div className="zoom-url"><span onClick={navigateToMenu}>Ir a las ligas de zoom</span></div>} />
                 </div>
             </div>
         </div>

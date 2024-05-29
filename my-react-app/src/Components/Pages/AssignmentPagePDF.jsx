@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './AssignmentPage.css';
 import Cabecera from '../Others/Cabecera';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
 import BarraInferior from '../Others/BarraInferior';
-import { useNavigate } from 'react-router-dom';
-import { postPDFApi } from "./constants";
+import { deleteFolder, createFolder, selectFolder, showFolderContent, downloadFolderContent, deleteFolderContent, uploadFolderContent } from "./constants";
 import PiePagina from '../Others/PiePagina';
+import { useData } from './DataContext';
 
 const barra_inferior = (
     <BarraInferior contenido={
@@ -20,16 +20,16 @@ const barra_inferior = (
     } />
 );
 
-const menu_materias =<>
+const menu_materias = <>
 
 </>
-const menu_mensajes =<>
+const menu_mensajes = <>
 
 </>
-const menu_alertas =<>
+const menu_alertas = <>
 
 </>
-const menu_actualizaciones =<>
+const menu_actualizaciones = <>
 
 </>
 
@@ -38,58 +38,187 @@ const barra_superior = (
 );
 
 function AssignmentPagePDF() {
-    const navigate = useNavigate();
-    const navigateToMenu = () => {
-        navigate("/pagina-entregables")
-    }
+    const { data } = useData();
+    const [nombreCarpeta, setNombreCarpeta] = useState("");
+    const [message, setMessage] = useState("");
+    const [carpetas, setCarpetas] = useState([]);
+    const [contenidoCarpetas, setContenidoCarpetas] = useState([]);
+    const fileInputRef = useRef(null); // Reference to the file input
 
-    // State para manejar la subida de PDF
-    const [file, setFile] = useState(null);
-    const [matriculaClase, setMatriculaClase] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-
-    // Función para manejar el cambio de archivo
-    const handleFileChange = (event) => {
-        setFile(event.target.files[0]);
-        setErrorMessage('');
-    };
-
-    // Función para manejar el cambio de matrícula
-    const handleMatriculaClaseChange = (event) => {
-        setMatriculaClase(event.target.value);
-    };
-
-    // Función para manejar la subida de PDF
-    const handleSubmitPDF = async (event) => {
+    const crearCarpeta = async (event) => {
         event.preventDefault();
-
-        // Verificar que se haya seleccionado un archivo y se haya ingresado la matrícula
-        if (file && matriculaClase) {
-            const formData = new FormData();
-            formData.append('archivo', file);
-            formData.append('matricula_clase', matriculaClase);
-
-            try {
-                // Realizar la solicitud POST para subir el PDF
-                const response = await axios.post(postPDFApi, formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                });
-
-                // Verificar si la subida fue exitosa
-                if (response.data.success) {
-                    alert("Archivo subido correctamente");
-                } else {
-                    setErrorMessage('Error al subir archivo PDF');
-                }
-            } catch (error) {
-                console.error('Error uploading PDF:', error);
-                setErrorMessage('Error al subir archivo PDF');
+        try {
+            const response = await axios.post(createFolder, null, {
+                params: {
+                    matricula: data.matricula,
+                    nombre_carpeta: nombreCarpeta,
+                },
+            });
+            alert("Carpeta creada con exito.");
+            selectCarpetas();
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                alert("La carpeta NO fue creada con exito.");
+                return { success: false, message: error.response.data.message || 'Error creando carpeta' };
             }
-        } else {
-            setErrorMessage('Por favor, completa todos los campos y selecciona un archivo PDF.');
+            alert("La carpeta NO fue creada con exito.");
+            return { success: false, message: error.message };
         }
+    };
+
+    const selectCarpetas = async () => {
+        try {
+            const response = await axios.get(selectFolder, {
+                params: {
+                    matricula: data.matricula,
+                },
+            });
+            setCarpetas(response.data);
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                return { success: false, message: error.response.data.message || 'Error obteniendo carpetas' };
+            }
+            return { success: false, message: error.message };
+        }
+    };
+
+    const handleEliminarCarpeta = async (id_carpeta) => {
+        try {
+            const response = await axios.delete(deleteFolder, {
+                params: {
+                    id_carpeta: id_carpeta,
+                },
+            });
+            alert("Carpeta eliminada.");
+            selectCarpetas();
+            return { success: true, message: 'Carpeta eliminada exitosamente' };
+        } catch (error) {
+            if (error.response) {
+                return { success: false, message: error.response.data.message || 'Error eliminando carpeta' };
+            }
+            return { success: false, message: error.message };
+        }
+    };
+
+    const subirContenidoCarp = async (idCarpeta, archivo) => {
+        const formData = new FormData();
+        formData.append('archivo', archivo);
+        formData.append('id_carpeta', idCarpeta);
+
+        try {
+            const response = await axios.post(uploadFolderContent, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            alert("Archivo subido correctamente.");
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                alert("El archivo no se subió correctamente.");
+                return { success: false, message: error.response.data.message || 'Error subiendo contenido' };
+            }
+            alert("El archivo no se subió correctamente.");
+            return { success: false, message: error.message };
+        }
+    };
+
+    const mostrarContenidoCarpetas = async (idCarpeta) => {
+        try {
+            const response = await axios.get(showFolderContent, {
+                params: {
+                    id_carpeta: idCarpeta,
+                },
+            });
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                return { success: false, message: error.response.data.message || 'Error mostrando contenido' };
+            }
+            return { success: false, message: error.message };
+        }
+    };
+
+    const descargarContenidoCarpetas = async (idArchivo) => {
+        try {
+            const response = await axios.get(downloadFolderContent, {
+                params: {
+                    id_archivo: idArchivo,
+                },
+                responseType: 'blob',
+            });
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                return { success: false, message: error.response.data.message || 'Error descargando contenido' };
+            }
+            return { success: false, message: error.message };
+        }
+    };
+
+    const deleteContenidoCarpeta = async (idArchivo) => {
+        try {
+            const response = await axios.delete(deleteFolderContent, {
+                data: {
+                    id_archivo: idArchivo,
+                },
+            });
+            alert("Archivo eliminado.");
+            return response.data;
+        } catch (error) {
+            if (error.response) {
+                return { success: false, message: error.response.data.message || 'Error eliminando contenido' };
+            }
+            return { success: false, message: error.message };
+        }
+    };
+
+    const handleMostrarContenido = async (idCarpeta) => {
+        const response = await mostrarContenidoCarpetas(idCarpeta);
+        if (response.success === false) {
+            setMessage(response.message);
+        } else {
+
+            setContenidoCarpetas(response); 
+            console.log(contenidoCarpetas);// Actualiza el estado con el contenido de la carpeta
+        }
+    };
+
+    const handleSubirContenido = async (e, idCarpeta) => {
+        const archivo = e.target.files[0];
+        const response = await subirContenidoCarp(idCarpeta, archivo);
+        setMessage(response.message);
+    };
+
+    const handleDescargarContenido = async (idArchivo) => {
+        const response = await descargarContenidoCarpetas(idArchivo);
+        if (response.success === false) {
+            setMessage(response.message);
+        } else {
+            const url = window.URL.createObjectURL(new Blob([response]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'archivo.pdf'); // Puedes ajustar el nombre del archivo
+            document.body.appendChild(link);
+            link.click();
+        }
+    };
+
+    const handleEliminarContenido = async (idArchivo) => {
+        const response = await deleteContenidoCarpeta(idArchivo);
+        setMessage(response.message);
+    };
+
+    const handleAgregarContenidoClick = (idCarpeta) => {
+        fileInputRef.current.setAttribute('data-id-carpeta', idCarpeta);
+        fileInputRef.current.click();
+    };
+
+    const handleFileInputChange = (e) => {
+        const idCarpeta = fileInputRef.current.getAttribute('data-id-carpeta');
+        handleSubirContenido(e, idCarpeta);
     };
 
     return (
@@ -97,19 +226,55 @@ function AssignmentPagePDF() {
             <Cabecera contenidosuperior={barra_superior} contenidoInferior={barra_inferior} />
             <div className="folders-container">
                 <div className="assignment-holder">
-                    <h2>Subir Archivo PDF</h2>
-                    <form onSubmit={handleSubmitPDF}>
-                        <div>
-                            <label>Matrícula de Clase:</label>
-                            <input type="text" value={matriculaClase} onChange={handleMatriculaClaseChange} required />
-                        </div>
-                        <div>
-                            <label>Archivo PDF:</label>
-                            <input type="file" onChange={handleFileChange} accept=".pdf" required />
-                        </div>
-                        {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
-                        <button type="submit">Subir PDF</button>
+                    <button onClick={selectCarpetas}>Mostrar Carpetas</button>
+                    <form onSubmit={crearCarpeta}>
+                        <input type="text" value={nombreCarpeta} onChange={(e) => setNombreCarpeta(e.target.value)} placeholder='Nombre de la carpeta.' />
+                        <button type='submit'>Crear Carpeta</button>
                     </form>
+
+                    <div>
+                        <ul>
+                            {carpetas.map((carpeta) => (
+                                <li key={carpeta.id_carpeta}>{carpeta.nombre_carpeta}
+                                    <button onClick={() => handleMostrarContenido(carpeta.id_carpeta)}>
+                                        Mostrar contenido
+                                    </button>
+                                    <button onClick={() => handleAgregarContenidoClick(carpeta.id_carpeta)}>
+                                        Agregar contenido
+                                    </button>
+                                    <button onClick={() => handleEliminarCarpeta(carpeta.id_carpeta)}>
+                                        Eliminar carpeta
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <input
+                        type="file"
+                        ref={fileInputRef}
+                        style={{ display: 'none' }}
+                        onChange={handleFileInputChange}
+                    />
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Archivo</th>
+                                <th>Descargar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {contenidoCarpetas.map((contenido, id) => (
+                                <tr key={id}>
+                                    <td>{contenido.nombre_archivo}</td>
+                                    <td><div className="zoom-url"><span onClick={() => handleDescargarContenido(contenido.id_archivo)}>Descargar</span></div></td>
+                                    <td><div className="zoom-url"><span onClick={() => handleEliminarContenido(contenido.id_archivo)}>Eliminar</span></div></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />

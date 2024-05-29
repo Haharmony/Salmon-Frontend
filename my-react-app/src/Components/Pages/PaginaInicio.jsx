@@ -1,7 +1,7 @@
 import React from 'react'
 import './PaginaInicio.css';
 import Cabecera from '../Others/Cabecera';
-import ContenidoInicio from '../Others/ContenidoInicio';
+import ContenidoInicioAlumno from '../Others/ContenidoInicioAlumno';
 import PiePagina from '../Others/PiePagina';
 import BotonBarraInferior from '../Others/BotonBarraInferior';
 import BarraSuperior from '../Others/BarraSuperior';
@@ -12,6 +12,7 @@ const barra_inferior = <BarraInferior contenido={
     <BotonBarraInferior imagenSrc={require("../Assets/calendario.png")} texto={"Calendario"} redireccion={"calendar-page-s"} />
     <BotonBarraInferior imagenSrc={require("../Assets/tutoriales.png")} texto={"Tutoriales"} redireccion={"pagina-tutoriales"} />
     <BotonBarraInferior imagenSrc={require("../Assets/directorio.png")} texto={"Directorio"} redireccion={"directory-s"} />
+    <BotonBarraInferior imagenSrc={require("../Assets/noticias.png")} texto={"Constancia"} redireccion={"pagina-constancia"} />
     <BotonBarraInferior imagenSrc={require("../Assets/soporte.png")} texto={"Soporte"} redireccion={"pagina-soporte"} />
   </>
 }/>
@@ -34,7 +35,7 @@ export const PaginaInicio= () => {
   return (
     <div className='contenedor-pagina'>
       <Cabecera contenidosuperior = {barra_superior} contenidoInferior={barra_inferior} />
-      <ContenidoInicio redireccionC={"/pagina-tablon"}/>
+      <ContenidoInicioAlumno redireccionC={"/pagina-tablon"}/>
       <PiePagina imagenSrc={require('../Assets/piepagina.jpg')} />
       <footer>Grupo Derecho & Progreso &copy; 2024</footer>
     </div>

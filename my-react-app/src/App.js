@@ -61,6 +61,17 @@ import { MonitorTablon } from './Components/Pages/MonitorTablon';
 import { MonitorHomework } from './Components/Pages/MonitorHomework';
 import { MonitorTutorials } from './Components/Pages/MonitorTutorials';
 import { MonitorContent } from './Components/Pages/MonitorContent';
+import { PaginaCertificado } from './Components/Pages/PaginaCertificado';
+import { CrearCertificado } from './Components/Pages/CrearCertificado';
+import AdminFormF from './Components/Pages/AdminFormF';
+import AdminForm from './Components/Pages/AdminForm';
+import TeacherForm from './Components/Pages/TeacherForm';
+import TeacherFormF from './Components/Pages/TeacherFormF';
+import StudentForm from './Components/Pages/StudentForm';
+import StudentFormF from './Components/Pages/StudentFormF';
+import MonitorForm from './Components/Pages/MonitorForm';
+import MonitorFormF from './Components/Pages/MonitorFormF';
+import { AdminDeleteCourse } from './Components/Pages/AdminDeleteCourse';
 
 function App() {
 
@@ -81,12 +92,14 @@ function App() {
           <Route path="/pagina-zoom" element={<ZoomPage/>} />
           <Route path="/pagina-content" element={<PaginaContenido/>} />
           <Route path="/a-pagina-zoom" element={<AdminZoomPage/>} />
+          <Route path="/pagina-constancia" element={<PaginaCertificado/>} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="/update-user" element={<UpdateUser />} />
           <Route path="/create-class" element={<CreateClass />} />
           <Route path="/assign-class" element={<AssignClass />} />
           <Route path="/zoom-link" element={<ZoomLink />} />
           <Route path="/upload-excel" element={<UploadExcel />} />
+          <Route path="/create-cert" element={<CrearCertificado />} />
           <Route path="/admin-home" element={<AdminHome />} />
           <Route path="/excel-table" element={<ExcelTable />} />
           <Route path="/pagina-tareas" element={<HomeworkPage />} />
@@ -126,6 +139,15 @@ function App() {
           <Route path="/m-pagina-tareas" element={< MonitorHomework/>} />
           <Route path="/m-pagina-tutoriales" element={< MonitorTutorials/>} />
           <Route path="/m-pagina-content" element={< MonitorContent/>} />
+          <Route path="/a-pagina-evaluacion" element={< AdminFormF/>} />
+          <Route path="/a-pagina-evaluacionfi" element={< AdminForm/>} />
+          <Route path="/t-pagina-evaluacion" element={< TeacherForm/>} />
+          <Route path="/t-pagina-evaluacionfi" element={< TeacherFormF/>} />
+          <Route path="/pagina-evaluacion" element={< StudentForm/>} />
+          <Route path="/pagina-evaluacionfi" element={< StudentFormF/>} />
+          <Route path="/m-pagina-evaluacion" element={< MonitorForm/>} />
+          <Route path="/m-pagina-evaluacionfi" element={< MonitorFormF/>} />
+          <Route path="/a-delete-course" element={< AdminDeleteCourse/>} />
         </Routes> 
       </BrowserRouter>
     </DataProvider>
