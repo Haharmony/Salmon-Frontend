@@ -69,11 +69,7 @@ function AssignmentPagePDF() {
 
     const selectCarpetas = async () => {
         try {
-            const response = await axios.get(selectFolder, {
-                params: {
-                    matricula: data.matricula,
-                },
-            });
+            const response = await axios.get(selectFolder);
             setCarpetas(response.data);
             return response.data;
         } catch (error) {

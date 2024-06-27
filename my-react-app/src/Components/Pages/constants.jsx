@@ -1,5 +1,5 @@
 // constants.js
-export const apiUrl = 'https://gdpcursa.grupoderechoyprogreso.com/abogadosprogreso';
+export const apiUrl = 'http://18.116.132.3:3000';
 //http://jmf.0b1.mytemp.website/abogadosprogreso
 
 export const routeFindUserByRol = `${apiUrl}/api/users/findByRole`;

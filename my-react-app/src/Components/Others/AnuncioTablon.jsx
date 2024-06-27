@@ -1,5 +1,5 @@
 import './AnuncioTablon.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useData } from '../Pages/DataContext';
 import { getComment, setComment, getCommentMatricula } from '../Pages/constants';
@@ -37,7 +37,7 @@ export const AnuncioTablon = ({ nombre, fecha, titulo, imagen, descripcion, come
     const obtenerComentariosDelServidor = async () => {
         try {
             const response = await axios.get(getComment);
-            setComentariosData(response.data);
+            setComentariosData(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error al obtener comentarios del servidor:', error);
         }
@@ -47,7 +47,7 @@ export const AnuncioTablon = ({ nombre, fecha, titulo, imagen, descripcion, come
         const matriculaClase = dataClase.matricula_clase;
         try {
             const response = await axios.get(`${getCommentMatricula}?matricula_clase=${matriculaClase}`);
-            setComentariosData(response.data);
+            setComentariosData(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error al seleccionar datos:', error);
         }
@@ -67,13 +67,14 @@ export const AnuncioTablon = ({ nombre, fecha, titulo, imagen, descripcion, come
         }
     };
 
+    useEffect(() => {
+        handleSeleccionarTodosLosDatosMatricula();
+    }, []);
+
     let existe_imagen = null;
     if (imagen && typeof imagen === 'string' && imagen.trim() !== "") {
         existe_imagen = <img className='imagen' src={imagen} alt='imagen' />;
     }
-
-    // Llamada a la función para obtener los comentarios cuando el componente se renderiza
-    handleSeleccionarTodosLosDatosMatricula();
 
     return (
         <div className='anuncio-tablon'>
@@ -95,7 +96,7 @@ export const AnuncioTablon = ({ nombre, fecha, titulo, imagen, descripcion, come
                 <div className="submit-comment"><button type="submit">Enviar</button></div>
             </form>
             <div className='comentarios'>
-                {comentariosData.map((comentario, index) => (
+                {Array.isArray(comentariosData) && comentariosData.map((comentario, index) => (
                     <div key={index} className="comment">
                         <div>{comentario.long_text}</div>
                         <div>{comentario.matricula_clase}</div>
