@@ -47,3 +47,4 @@ export const deleteFolderContent = `${apiUrl}/api/carpeta_documentos/deleteConte
 export const downloadFolderContent = `${apiUrl}/api/carpeta_documentos/descargarContenidoCarpeta`;
 export const showFolderContent = `${apiUrl}/api/carpeta_documentos/mostrarContenidoCarpeta`;
 export const uploadFolderContent = `${apiUrl}/api/carpeta_documentos/subirContenidoCarpeta`;
+export const deleteZoomLink = `${apiUrl}/api/zoom/deleteZoomEntry`;

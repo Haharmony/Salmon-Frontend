@@ -85,6 +85,7 @@ function TeacherCalendar() {
                                     <th>Nombre de la Clase</th>
                                     <th>Enlace Zoom</th>
                                     <th>Fecha</th>
+                                    <th>Hora</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,6 +94,7 @@ function TeacherCalendar() {
                                         <td>{link.matricula_clase}</td>
                                         <td>{link.url}</td>
                                         <td>{link.fecha}</td>
+                                        <td>{link.hora}</td>
                                     </tr>
                                 ))}
                             </tbody>

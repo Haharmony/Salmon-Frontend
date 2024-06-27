@@ -49,7 +49,11 @@ function CalendarPage() {
     const handleDates = async () => {
         try {
             const formattedDate = formatDate(date);
-            const response = await axios.get(`${getLinksDate}?fecha=${formattedDate}`);
+            const response = await axios.get(getLinksDate, {
+                params: {
+                    fecha : formattedDate,
+                },
+            });
             console.log(date);
             setLinks(response.data);
             if (response.data.length === 0) {
@@ -85,6 +89,7 @@ function CalendarPage() {
                                     <th>Nombre de la Clase</th>
                                     <th>Enlace Zoom</th>
                                     <th>Fecha</th>
+                                    <th>Hora</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,6 +98,7 @@ function CalendarPage() {
                                         <td>{link.matricula_clase}</td>
                                         <td>{link.url}</td>
                                         <td>{link.fecha}</td>
+                                        <td>{link.hora}</td>
                                     </tr>
                                 ))}
                             </tbody>

@@ -9,6 +9,7 @@ export const ZoomLink = () => {
     const [matricula_clase, setMatriculaClase] = useState('');
     const [url, setUrl] = useState('');
     const [fecha, setFecha] = useState('');
+    const [hora, setHora] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -18,7 +19,8 @@ export const ZoomLink = () => {
             const response = await axios.post(routeCreateLink, {
                 url,
                 matricula_clase,
-                fecha
+                fecha,
+                hora,
             }); console.log(response.data);
             alert("Link creado con exito :)");
         } catch (error) {
@@ -47,6 +49,10 @@ export const ZoomLink = () => {
                 <div className='insertar-fecha'>
                     <label>Fecha</label>
                     <div><input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)}></input></div>
+                </div>
+                <div className='insertar-fecha'>
+                    <label>Hora</label>
+                    <div><input type="time" value={hora} onChange={(e) => setHora(e.target.value)}></input></div>
                 </div>
                 <div className='submit'>
                     <button type="submit">Insertar Link</button>

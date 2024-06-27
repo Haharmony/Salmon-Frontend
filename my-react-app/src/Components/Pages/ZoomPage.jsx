@@ -94,6 +94,7 @@ const ZoomPage = () => {
                                         <th>Nombre de la Clase</th>
                                         <th>Enlace Zoom</th>
                                         <th>Fecha</th>
+                                        <th>Hora</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -102,6 +103,7 @@ const ZoomPage = () => {
                                             <td>{link.matricula_clase}</td>
                                             <td>{link.url}</td>
                                             <td>{link.fecha}</td>
+                                            <td>{link.hora}</td>
                                         </tr>
                                     ))}
                                 </tbody>

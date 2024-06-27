@@ -90,6 +90,7 @@ const TeacherZoom = () => {
                                         <th>Nombre de la Clase</th>
                                         <th>Enlace Zoom</th>
                                         <th>Fecha</th>
+                                        <th>Hora</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -98,6 +99,7 @@ const TeacherZoom = () => {
                                             <td>{link.matricula_clase}</td>
                                             <td>{link.url}</td>
                                             <td>{link.fecha}</td>
+                                            <td>{link.hora}</td>
                                         </tr>
                                     ))}
                                 </tbody>
